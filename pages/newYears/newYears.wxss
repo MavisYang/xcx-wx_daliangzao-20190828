@@ -1,0 +1,85 @@
+/* pages/newYears/newYears.wxss */
+page{
+  background-color: #e4d9c3;
+}
+.container{
+  padding-bottom: 30rpx;
+}
+.content_wrap{
+  position: relative;
+  z-index: 1;
+}
+.ny_bg{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+image{
+  display: block;
+}
+.ny_top_bg,.ny_title image{
+  width: 100%;
+}
+.ny_active_icon{
+  width: 712rpx;
+  margin: 0 auto;
+}
+/*  商品1 */
+.ny_goods_wrap_1 image{
+  width: 100%;
+  margin: 0 auto;
+}
+.ny_goods_wrap_2{
+  margin: 14rpx auto 0;
+}
+.each_goods{
+  display: block;
+  float: left;
+  width: 249rpx;
+  height: 311rpx;
+}
+.each_goods_img{
+  width: 243rpx;
+  height: 311rpx;
+}
+.each_goods image{
+  width: 249rpx;
+  height: 311rpx;
+  margin: 0 auto;
+}
+.goods_name{
+  height: 52rpx;
+  font-size: 19rpx;
+  line-height: 52rpx;
+  color: #232323;
+  text-align: center;
+  padding-bottom: 5rpx;
+}
+.goods_name_2{
+  height: 26rpx;
+  font-size: 19rpx;
+  line-height:26rpx;
+}
+.goods_old_price{
+  font-size: 18rpx;
+  color: #8b8b8b;
+  text-align: center;
+  text-decoration: line-through;
+}
+.goods_new_price{
+  font-size: 20rpx;
+  color: #be1a21;
+  text-align: center;
+}
+.goods_top{
+  margin-top:14rpx;
+}
+/*  更多 */
+.new_years_more{
+  padding-right: 14rpx;
+  height: 40rpx;
+  font-size: 18rpx;
+  color: #dd060e;
+  text-align: right;
+}

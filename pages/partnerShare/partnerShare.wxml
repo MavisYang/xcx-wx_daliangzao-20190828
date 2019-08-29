@@ -1,0 +1,62 @@
+<!--pages/partnerShare/partnerShare.wxml  分销 - 分享页  -->
+<view class='container'>
+  
+  <view class='main_content'>
+
+      <!-- 邀请成为合伙人 -->
+
+      <image src='{{urlHttp}}images/partner/mine_earnings_bg.jpg' mode='widthFix'  class='mine_bg'></image>
+      <view class='user_infor'>
+        <image src='{{fromUserPhoto?  fromUserPhoto: "/images/def_photo.png"}}'  class='user_photo'></image>
+        <view class='user_name'>{{fromUserName}}</view>
+      </view>
+
+      <view class='content_cont'>
+        <image src='/images/partner/partner_earnings_title.png' mode='widthFix' class='partner_title'></image>
+        <view class='content_intro'>
+          <view class='content_intro_cont'>
+          
+            <view class='each_intro  each_intro_title  clearfix'>
+              <view class='each_intro_left'>规则</view>
+              <view class='each_intro_right'>说明</view>
+            </view>
+            <view class='each_intro  clearfix'>
+              <view class='each_intro_left'>参与条件</view>
+              <view class='each_intro_right'>新用户</view>
+            </view>
+            <view class='each_intro  clearfix'>
+              <view class='each_intro_left'>好友下单</view>
+              <view class='each_intro_right'>收益为订单金额5%-10%</view>
+            </view>
+            <view class='each_intro  clearfix'>
+              <view class='each_intro_left'>好友邀请的好友下单</view>
+              <view class='each_intro_right'>收益为订单金额2%-5%</view>
+            </view>
+            <view class='each_intro  clearfix'>
+              <view class='each_intro_left'>收益有效时间</view>
+              <view class='each_intro_right'>终身</view>
+            </view>
+            <view class='each_intro  clearfix'>
+              <view class='each_intro_left'>关于收益层级</view>
+              <view class='each_intro_right'>只可收益包含好友在内的两级</view>
+            </view>
+
+          </view>
+        </view>
+
+        <view class='add_btn'  bindtap='addPartner'>立即加入</view>
+
+      </view>
+   
+  </view>
+</view>
+
+<!-- 提示弹窗 -->
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>
+
+<!-- 回到首页 -->
+<view  bindtap='backIndex'  class="back_btn">
+  <image src='/images/share_back_index.png'  class='back_btn_icon'></image>
+</view>

@@ -1,0 +1,133 @@
+/* brandInfor.wxss */
+page{
+  background-color: #fff;
+}
+.container{
+  display: flex;
+  /* max-height: 100vh; */
+  /* overflow: hidden; */
+}
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: #fff;
+}
+::-webkit-scrollbar-thumb{
+  color:transparent;
+}
+::-webkit-scrollbar-track-piece{
+  color: transparent;
+}
+
+/*  列表 */
+.list{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #fff;
+}
+.list_item_wrap{
+  width: 50%;
+  box-sizing: border-box;
+  border-bottom:1px solid #f0f0f0;
+}
+
+.list_item_wrap:nth-child(odd){
+  border-right:1px solid #f0f0f0;
+}
+.list_item_wrap:nth-child(even){
+  border-left:1px solid #f0f0f0;
+}
+
+.list_item{
+  width: 100%;
+  /* height:340rpx; */
+  overflow: hidden;
+  position: relative;
+   margin: 0 auto;
+}
+.full_image{
+  display: block;
+  width: 100%;
+}
+.full_img_footer{
+  width:100%;
+  height:50rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  color:#fff;
+  text-align: center;
+  background-color: rgba(0,0,0,0.6);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.full_title{
+  height:72rpx;
+  font-size: 30rpx;
+  line-height: 36rpx;
+  color:#444;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding: 23rpx 20rpx 0 32rpx ;
+}
+.full_price{
+  font: bold 30rpx "Microsoft Yahei";
+  color:#b4a078;
+  padding: 34rpx 0 30rpx 32rpx;
+}
+.full_price_unit{
+  font: normal  normal  22rpx Arial;
+  text-decoration: line-through;
+  color:#c8c8c8;
+  padding-left:26rpx;
+}
+/* 列表结束 */
+
+.list_banner{
+  width: 100%;
+  height: 376rpx;
+  position: relative;
+  overflow: hidden;
+}
+.list_banner_img{
+  display: block;
+  width: 100%;
+  height: 376rpx;
+}
+.list_banner_cont_wrap{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+}
+.list_banner_cont_wrap:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.list_banner_cont{
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  background-color: rgba(255,255,255,0.81);
+  border: 1px rgba(255,255,255,0.18) 4rpx;
+}
+.cont_wrap{
+  padding:24rpx 40rpx;
+}
+.cont_cont{
+  font-size: 30rpx;
+  color: #2c2e2f;
+  padding: 20rpx 28rpx;
+  border: 1px dashed #f5c01f;
+  border-radius: 4rpx;
+  word-wrap:break-word;
+}

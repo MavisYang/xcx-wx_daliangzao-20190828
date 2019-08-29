@@ -1,0 +1,7 @@
+<!--pages/jianshe/jianshe.wxml-->
+<view class='container'>
+  <view class='cont_wrap'>
+    <image src='/images/dingzhi_null.png' class='cont_icon'></image>
+    <view class='cont_cont'>正在建设中</view>
+  </view>
+</view>

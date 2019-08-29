@@ -1,0 +1,154 @@
+<!--pages/mineGiftList/mineGiftList.wxml  我的礼物 - 列表  -->
+<!--orderList.wxml    我的订单  -->
+<view class="container">
+  <view class='header_wrap'>
+    <view class="header">
+      <block wx:for="{{navList}}"  wx:for-index="i">
+        <view  bindtap="tabNav"  data-id="{{i}}" class="header_each  {{isSelect == i ? 'header_each_active' : ''}}">{{item.navName}}</view>
+      </block> 
+    </view>
+  </view>
+  <!-- 循环每一个订单 -->
+
+  <!-- 送出的礼物 -->
+  <view class='list_wrap'>
+    <scroll-view scroll-y class="scoll-h"   bindscrolltolower="searchScrollLower">
+
+      <block wx:if="{{isSelect == 0}}">
+          <block wx:for="{{goosdListnew}}"  wx:key="index" wx:for-index="i">
+      
+            <!-- 待发货之后的所有状态 -->
+            <block  wx:if="{{item.order.order_sta > 2}}">
+
+              <view  wx:if="{{item.order.order_type == 2  || item.order.order_type == 3 }}"  class="each_order"  >
+                <view bindtap='giftInfor' data-id="{{i}}"    data-onum='{{item.order.order_number_o}}'  data-nnum="{{item.orderNumber}}"   data-snum="{{item.orderNumberGift}}"  data-id="{{i}}">
+                  <view class="order_num">订单号：{{item.orderNumberGift ? item.orderNumberGift : item.order.order_number_o}}</view>
+                </view>
+                <view class="goods_infor"  bindtap='giftInfor'  data-onum='{{item.order.order_number_o}}'  data-nnum="{{item.orderNumber}}"   data-snum="{{item.orderNumberGift}}"    data-id="{{i}}">          
+                  <view class="each_goods">
+
+                    <!-- 循环相同订单的不同产品 -->  
+                    <block wx:for="{{item.affList}}" wx:key="*this" wx:for-index="j"> 
+
+                      <view  class="each_goods_infor">
+                        <!-- 定制 - 预览 -->
+                        <!-- <view  wx:if="{{(item.img2 || item.img1) && item.order_sta > 2}}"  bindtap='preview'  data-id="{{i}}" data-index="{{j}}" data-url="{{item.img2}}" class="yulan_btn">定制预览</view>  -->
+                        <image    src="{{item.logo}}" class="goods_img"></image>
+
+                        <view  data-id="{{i}}" class="goods_cont">
+                            <view class="goods_name">{{item.com_name}}</view>
+                            <view class="goods_style">
+                                <text wx:if="{{item.com_style1 != 'null'}}">{{item.com_style1}} </text>
+                                <text wx:if="{{item.com_style2 != 'null'}}">{{item.com_style2}} </text>
+                                <text wx:if="{{item.com_style3 != 'null'}}">{{item.com_style3}} </text>
+                                <text wx:if="{{item.com_style4 != 'null'}}">{{item.com_style4}} </text>
+                                <text wx:if="{{item.com_style5 != 'null'}}">{{item.com_style5}} </text>
+                                <text wx:if="{{item.com_dz != 'null'}}">{{item.com_dz}} </text>
+                                <text wx:if="{{item.com_lh != 'null'}}">{{item.com_lh}}</text>
+                            </view>
+                            <view class="goods_num">×{{item.com_num}}</view>
+                        </view>
+                        <view class="clearfix"></view>
+                      </view>            
+                    </block>
+                  </view> 
+                </view>
+                <view class="order_btn_wrap  clearfix">
+                    <block  wx:if="{{item.receive_flag == 0  || item.receive_flag == null}}">
+                        <view  class="order_btn  order_btn2">未接收</view> 
+                    </block>
+                    <block  wx:elif="{{item.receive_flag == 2}}">
+                        <view  class="order_btn">礼物超时</view> 
+                    </block>  
+                    <block  wx:else>
+                        <view  class="order_btn">已接收</view> 
+                    </block>                 
+                </view> 
+              </view>
+            </block>    
+          </block>
+      </block>
+
+      <block  wx:else>
+        <block wx:for="{{goosdListnew}}"  wx:key="index" wx:for-index="i" >
+            <view wx:if="{{item.order != null && item.order.order_sta > 2 && item.order.order_sta < 6  && item.receive_flag == 1}}">           
+                <view class="each_order">
+                    <view class="order_num"  bindtap='giftSendInfor'  data-onum='{{item.order.order_number_o}}'  data-nnum="{{item.orderNumber}}"   data-snum="{{item.orderNumberGift}}"  data-id="{{i}}">订单号：{{item.orderNumberGift ? item.orderNumberGift : item.order.order_number_o}}</view>
+                    <view class="goods_infor"   bindtap='giftSendInfor'   data-onum='{{item.order.order_number_o}}'  data-nnum="{{item.orderNumber}}"   data-snum="{{item.orderNumberGift}}"  data-id="{{i}}">
+                        <view class="each_goods">
+                            <block wx:for="{{item.affList}}" wx:key="*this" wx:for-index="j">
+                                <view  class="each_goods_infor">
+
+                                    <!-- 定制 - 预览 -->
+                                    <!-- <view  wx:if="{{(item.img2 || item.img1) && item.order_sta > 2}}"  bindtap='preview'  data-id="{{i}}" data-index="{{j}}" data-url="{{item.img2}}" class="yulan_btn">定制预览</view>  -->
+
+                                    <image src="{{item.logo}}" class="goods_img"></image>
+
+                                    <view  data-id="{{i}}" class="goods_cont">
+                                      <view class="goods_name">{{item.com_name}}</view>
+                                      <view class="goods_style">
+                                        <text wx:if="{{item.com_style1 != 'null'}}">{{item.com_style1}} </text>
+                                        <text wx:if="{{item.com_style2 != 'null'}}">{{item.com_style2}} </text>
+                                        <text wx:if="{{item.com_style3 != 'null'}}">{{item.com_style3}} </text>
+                                        <text wx:if="{{item.com_style4 != 'null'}}">{{item.com_style4}} </text>
+                                        <text wx:if="{{item.com_style5 != 'null'}}">{{item.com_style5}} </text>
+                                        <text wx:if="{{item.com_dz != 'null'}}">{{item.com_dz}} </text>
+                                        <text wx:if="{{item.com_lh != 'null'}}">{{item.com_lh}}</text>
+                                      </view>
+                                      <view class="goods_num">×{{item.com_num}}</view>
+                                    </view>
+                                    <view class="clearfix"></view>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                    <view class="order_btn_wrap  clearfix">
+
+                        <!-- 收到的礼物 ： 查看物流   -->
+                        <block  wx:if="{{item.order.order_type == 2}}">
+                              <navigator url='/pages/wuliu/wuliu?id={{item.orderNumber ? item.orderNumber : item.order.order_number_o}}'  class="order_btn">查看物流</navigator>
+                        </block>
+                        <!-- 收到的礼物 ：  领取 -->
+                        
+                        <block  wx:else>
+                            <!-- <view bindtap='sureSendFriend'  data-id="{{i}}"  class="order_btn">送朋友</view> -->
+                            <form bindsubmit="sureSendFriend"   data-id="{{i}}"  report-submit  >
+                              <button formType="submit"  class='form_button'>
+                                  <view  data-id="{{i}}"  class="order_btn">送朋友</view>
+                              </button>
+                            </form>
+                            <navigator url='/pages/addAddressFriend/addAddressFriend?order_number={{item.orderNumber ? item.orderNumber : item.order.order_number_o}}'  class="order_btn">填写地址</navigator> 
+                        </block>
+                    </view> 
+                
+                </view>
+            </view> 
+        </block>
+      </block>
+
+      <view class="loading" hidden="{{!searchLoading}}">加载中...</view>  
+      <view class="loading complete" hidden="{{!searchLoadingComplete}}"></view>
+    </scroll-view>
+  </view>
+
+</view>
+
+<!-- 回到首页 -->
+<view  bindtap='backIndex'  class="back_btn  {{showBtn ? '' : 'back_btn_hidden'}}">
+  <image src='/images/share_back_index.png'  class='back_btn_icon'></image>
+</view>
+
+
+<!-- 送朋友  -->
+<view class="qrfh_wrap  {{showSendFriendMsg ? '' : 'hidden'}}">
+  <view class='qrfh_content_wrap'>
+    <view class='qrfh_cont_wrap'>
+      <view class='qrfh_cont'>将会按照朋友填写的地址为您发货，</view>
+      <view class='qrfh_cont'>是否确认？</view>
+    </view>
+    <view class='qrsh_btn_wrap  clearfix'>
+      <view class='qrfh_cancle'  bindtap='cancelSendFriend'>取消</view>
+      <view class='qrfh_sure'  bindtap='sureSendFriend'>确定</view>
+    </view>
+  </view>
+</view>

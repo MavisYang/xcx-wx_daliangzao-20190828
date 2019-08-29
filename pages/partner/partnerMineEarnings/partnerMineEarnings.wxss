@@ -1,0 +1,12 @@
+/* pages/partner/mineEarnings/mineEarnings.wxss */
+.mine_bg{
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.main_content{
+  position: relative;
+}

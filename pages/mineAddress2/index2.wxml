@@ -1,0 +1,20 @@
+<!--index.wxml  我的地址  -->
+<view class="container">
+  <block wx:for="{{addressList}}"  wx:key="index"  wx:for-index="i">
+    <view class="each_address"  bindtap="selectAddress"  data-id="{{i}}">
+
+    <block wx:if="{{selectnum == i}}">
+      <image class="select_address"  src="/images/address_pre.png"></image>
+    </block>
+
+      <view class="user_name">{{item.consignee}}<text>{{item.phone}}</text></view>
+      <view class="user_addr">{{item.province}}{{item.city}}{{item.area}}{{item.adress}}</view>
+
+      <image  data-deleteid="{{item.id}}"  bindtap="deleteAddress"  class="delete_address" src="/images/address_delete.png"></image>
+
+    </view>
+  </block>
+
+  <navigator url="/pages/addAddress/addAddress" class="add_btn">+添加新地址</navigator>
+
+</view>

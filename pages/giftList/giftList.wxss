@@ -1,0 +1,28 @@
+/* pages/giftList/giftList.wxss */
+page{
+  background-color: #fff;
+}
+.container{
+  padding-top:33rpx;
+}
+.each_list{
+  margin-bottom: 20rpx;
+}
+.each_list_icon{
+  float: left;
+  width: 210rpx;
+  border-radius: 8rpx;
+  margin: 0 24rpx 0 38rpx;
+}
+.list_title,.list_cont_time{
+  width: 460rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 30rpx;
+  padding-bottom: 12rpx;
+}
+.list_cont_time{
+  color: #d6dbe5;
+  font-size: 26rpx;
+}

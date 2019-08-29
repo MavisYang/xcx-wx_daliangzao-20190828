@@ -1,0 +1,63 @@
+<!--pages/share/share.wxml  来自礼物的分享 -->
+<view class="container">
+
+  <view class="banner">
+
+    <!-- 选中场景 -->
+    <block wx:if='{{cardSrc != ""}}'>
+      <image  src='{{cardSrc}}' class="card_src"  mode='widthFix'></image>
+    </block>
+    <block wx:elif='{{src}}'>
+      <image  src='{{src}}' mode='widthFix'></image>
+    </block>
+  </view>
+
+  <!-- <view class="upload_wrap">
+    <block wx:if="{{uploadImgList}}" wx:for="{{uploadImgList}}" wx:key="index" wx:for-index="i">
+      <view class="upload_img_wrap">
+        <image src='{{item}}'  data-id="{{i}}" class="upload_img"></image>
+        <image src='/images/delete.png' data-id="{{i}}" bindtap='deleteUploadImg'  class="delete_img"></image> 
+      </view>  
+    </block> 
+    <block wx:if="{{uploadImgList == '' || uploadImgList == undefined || uploadImgListLength < 9}}">
+      <view class="upload_img_wrap">
+        <image src='/images/add_img.png'  bindtap='uploadImg' class="upload_img"></image>
+      </view>
+    </block> 
+    
+  </view> -->
+
+  <view class="write_msg">
+      <textarea bindblur="textFocus" class="msg_tetxarea" value='{{msg}}'  placeholder="给他/她留个言吧......" placeholder-style="color:#ccc;"></textarea>
+  </view>
+
+  <view class='card_space'></view>
+
+  <!-- 选择场景 -->
+  <view class='send_card_wrap'>
+    <view class='card_title'>选择一个场景：</view>
+     <view class='card_list clearfix'> 
+    <scroll-view  scroll-x class="card_list_cont"  scroll-left="{{scrollLeft}}">
+      <block  wx:for="{{cardList}}"  wx:key="index"  wx:for-index="i">
+        <view class='each_card_wrap'  bindtap='cardSelect'  data-id="{{i}}"  data-src="{{urlHttp}}{{item.src}}"  data-intro="{{item.intro}}">
+          <view class='each_card_cont'>
+            <image wx:if='{{urlHttp}}'  src='{{urlHttp}}{{item.src}}'  class='card_img'  mode='widthFix'></image>
+            <view class='card_intro'>{{item.intro}}</view>
+            <block wx:if='{{selectId == i }}'>
+              <image wx:if='{{selectFlag}}' src='/images/send_card_select.png'  class='card_select'></image>
+            </block>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+     </view> 
+  </view>
+
+  <block wx:if="{{shareNum == 0}}">
+    <button  open-type="share"  plain="true" class="save_btn">赠送</button>
+  </block>
+  <block wx:else>
+    <view  class="save_btn">赠送</view>
+  </block>
+  
+</view>

@@ -1,0 +1,13 @@
+<!--pages/problemListCont/problemListCont3.wxml-->
+<view class="container">
+  <view class="problem_title">关于大良造定制</view>
+  <view class="problem_cont">依托10几年服务大客户定制礼品经验，大良造积累了行业高标准的服务经验及定制工艺，为客户提供专业的定制方案及成熟的定制工艺产出品，并且提供一站式管家服务，让您在高性价比的情况下，享受500强客服服务体验。</view>
+
+  <view class="problem_title">3.2.	定制工艺解读</view>
+  <view class="problem_cont">压印：</view>
+  <view class="problem_cont">丝印：</view>
+  <view class="problem_cont">烫金：</view>
+  <view class="problem_cont">烫银：</view>
+  <view class="problem_cont">烫黑金：</view>
+
+</view>

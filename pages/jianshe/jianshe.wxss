@@ -1,0 +1,23 @@
+/* pages/jianshe/jianshe.wxss */
+.page{
+  background-color: #f7f7f7;
+}
+.container{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+}
+.cont_icon{
+  display: block;
+  width: 380rpx;
+  height: 391rpx;
+  margin: 200rpx auto 20rpx;
+}
+.cont_cont{
+  text-align: center;
+  font-size: 30rpx;
+  color: #999;
+}

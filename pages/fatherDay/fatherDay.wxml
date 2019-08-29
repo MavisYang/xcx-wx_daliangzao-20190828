@@ -1,0 +1,13 @@
+<!--pages/dragonBoatFestival/dragonBoatFestival.wxml 父亲节  -->
+<view class="container">
+    <view class="main_wrap">
+      <image src='/images/father_day_bg.jpg'  class='festival_bg'  mode='widthFix'></image>
+      <navigator url="/pages/kindSecondList/kindSecondList?classify_name=父亲节&classify_des=父亲节&id=3007" class='festival_buy_btn'>
+        <image src='/images/father_day_btn.png'  class="festival_buy_btn_img"></image>
+      </navigator>
+    </view>
+    <view  bindtap='linkIndex'  class='festival_btn'>
+      <image src='/images/dragon_boat_festival_icon.png' class='festival_icon'></image>
+      <view class='festival_btn_name'> 按 下 选 购 更 多 好 礼 </view>
+    </view>
+</view>

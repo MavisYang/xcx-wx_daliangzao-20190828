@@ -1,0 +1,73 @@
+/* pages/patternList/patternList.wxss */
+.container{
+    min-height: 100vh;
+    background-color: #fff;
+}
+.each_title_icon{
+    display: block;
+    width: 599rpx;
+    height: 70rpx;
+    margin: 20rpx auto 30rpx;
+}
+.each_tab{
+    display: inline-block;
+    width: 28.5%;
+}
+.each_tab_1{
+    width: 100%;
+}
+.each_tab_2{
+    width: 50%;
+}
+.each_tab_3{
+    width: 33.3%;
+}
+.each_tab_4{
+    width: 25%;
+}
+.each_cont_icon{
+    display: block;
+    width: 160rpx;
+    height: 160rpx;
+    margin: 0 auto;
+}
+.each_cont_name{
+    font-size: 28rpx;
+    line-height: 60rpx;
+    color: #b4a078;
+    text-align: center;
+}
+.finish_btn{
+    display: block;
+    width: 294rpx;
+    height: 80rpx;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    color: #b4a078;
+    background-color: #e5e5e5;
+    margin: 60rpx auto  0;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.header_nav_wrap{
+  width:100%;
+  color:#fff;
+  overflow : auto ;
+}
+.header_nav{
+  white-space: nowrap; 
+  /* display: flex; */
+}
+/* .header_nav_each{
+  display: inline-block;
+  height:40rpx;
+  font-size: 28rpx;
+  line-height:44rpx;
+  padding: 0 20rpx;
+  margin:18rpx 20rpx;
+} */
+.header_nav_active{
+  border:1px solid #fff;
+  border-radius: 20rpx;
+}

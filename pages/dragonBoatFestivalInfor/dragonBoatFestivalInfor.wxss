@@ -1,0 +1,84 @@
+/* pages/dragonBoatFestivalInfor/dragonBoatFestivalInfor.wxss */
+.container{
+  background-color: #f7f7f9;
+}
+.hidden{
+  display: none;
+}
+.big_img{
+  display: block;
+  width: 100%;
+}
+.goods_img{
+  display: block;
+  width: 490rpx;
+  height: 490rpx;
+  margin: 0 auto;
+}
+/* 价钱 */
+.goods_price_wrap{
+  position: relative;
+  padding: 26rpx 0 20rpx 0;
+}
+.goods_price_bg{
+  display: block;
+  width: 328rpx;
+  height: 62rpx;
+  margin: 0 auto
+}
+.goods_price_cont{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top:26rpx;
+  font-size: 46rpx;
+  font-weight: bolder;
+  line-height: 62rpx;
+  font-family: '宋体';
+  text-align: center;
+}
+.goods_price_cont_icon{
+  font-size: 30rpx;
+  padding: 0 20rpx;
+}
+/* 购买按钮 */
+.goods_btn_wrap{
+  position: relative;
+}
+.goods_btn_bg{
+  display: block;
+  width: 540rpx;
+  height: 169rpx;
+  margin: 0 auto;
+}
+.goods_btn{
+  position: absolute;
+  top: 26rpx;
+  left: 50%;
+  margin: 0 0 0 -80rpx;
+  width: 160rpx;
+  height: 60rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  color: #fff;
+  background-color: #47a14a;
+  text-align: center;
+  border-radius: 30rpx;
+}
+/* footer */
+.footer_wrap{
+  position: relative;
+}
+.footer_msg{
+  width: 570rpx;
+  height: 56rpx;
+  position: absolute;
+  top: 18rpx;
+  left: 50%;
+  font-size: 20rpx;
+  line-height: 56rpx;
+  color: #ff0000;
+  text-align: center;
+  border: 1px solid #e30a20;
+  margin: 0 0 0 -285rpx;
+}

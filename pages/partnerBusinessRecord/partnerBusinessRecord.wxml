@@ -1,0 +1,62 @@
+<!--pages/partnerBusinessRecord/partnerBusinessRecord.wxml  商务 - 收益记录  -->
+<scroll-view class='container'>
+
+  <view class='top_wrap'>
+    <view class='month_wrap'>
+      <view class='month_change_left'   bindtap='monthPre'><image wx:if="{{urlHttp}}" src='{{urlHttp}}images/partner/partner_tab_jt_left.png'   class='month_change_left_icon'  ></image></view>
+      <view class='month_change_time'>{{year}}年{{month}}月</view>
+      <view class='month_change_right'  bindtap='monthN'><image wx:if="{{urlHttp}}" src='{{urlHttp}}images/partner/partner_tab_jt_right.png' class='month_change_right_icon'  ></image></view>
+    </view>
+
+    <!-- tab切换 -->
+    <view class='top_tab_wrap  clearfix'>
+      <view class='each_tab  {{tabId == 0 ? "each_tab_active" : ""}}'  data-id="0"  bindtap='tabChange'>邀请客户</view>
+      <view class='each_tab  {{tabId == 1 ? "each_tab_active" : ""}}'  data-id="1"  bindtap='tabChange'>累计成交</view>
+    </view>
+  </view>
+
+  <!-- 内容 -->
+  <scroll-view wx:if="{{scrollTrue ? 'scroll-y' : ''}}"   class="scoll-h"   bindscrolltolower="searchScrollLower">
+
+    <view class='tab_content'>
+      <view class='tab_content_list'>
+      
+
+        <!-- 邀请客户 -->
+        <block wx:if="{{tabId == 0}}">
+            <view class='tab_title  clearfix'>
+              <view class='tab_title_time'>时间</view>
+              <view class='tab_title_name'>用户名</view>
+              <view class='tab_title_type'>邀请类型</view>
+            </view>
+            <block wx:if="{{recordList}}"  wx:for="{{recordList}}"  wx:key="index" wx:for-index="{{i}}">
+              <view class='each_tab_cont  clearfix'>
+                <view class='tab_cont_time'>{{item.createTime}}</view>
+                <view class='tab_cont_name'>{{item.distributeSellUser}}</view>
+                <view class='tab_cont_type'>{{item.shareUser}}</view>
+              </view>
+            </block>
+        </block>
+
+        <!-- 累计成交 -->
+        <block wx:else>
+          <view class='tab_title  clearfix'>
+              <view class='tab_title_time'>时间</view>
+              <view class='tab_title_name'>用户名</view>
+              <view class='tab_title_type'>成交金额</view>
+            </view>
+            <block wx:if="{{recordList}}"  wx:for="{{recordList}}"  wx:key="index" wx:for-index="{{i}}">
+              <view class='each_tab_cont  clearfix'>
+                <view class='tab_cont_time'>{{item.createTime}}</view>
+                <view class='tab_cont_name'>{{item.consumeUserName}}</view>
+                <view class='tab_cont_type'>{{item.money}}</view>
+              </view>
+            </block>
+        </block>
+      </view>
+    </view>
+    <view class="loading" hidden="{{!searchLoading}}">加载中...</view>  
+    <view class="loading complete" hidden="{{!searchLoadingComplete}}"></view>
+  </scroll-view>
+
+</scroll-view>

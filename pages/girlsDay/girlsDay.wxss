@@ -1,0 +1,36 @@
+/* pages/girlsDay/girlsDay.wxss 女神节  */
+.container{
+  background-color: #fff;
+  min-height: 100vh;
+  display: block;
+}
+.logo_wrap{
+  padding: 36rpx 0;
+}
+.logo_img{
+  display: block;
+  width: 140rpx;
+  margin: 0 auto;
+}
+.goods_2{
+  display: block;
+  float: left; 
+  width: 50%;
+}
+.goods_img_1{
+  display: block;
+  width: 100%;
+}
+.goods_img_2{
+  display: block;
+  width: 100%;
+}
+.footer_btn_title{
+  text-align: center;
+  padding:46rpx 0;
+}
+.footer_icon{
+  display: block;
+  width: 324rpx;
+  margin: 0 auto;
+}

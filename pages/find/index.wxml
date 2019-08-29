@@ -1,0 +1,94 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 导航 -->
+  <view class="header_nav_wrap">
+      <scroll-view scroll-x="true" class="header_nav">
+        <block wx:for="{{navList}}"  wx:key="index" wx:for-index="i">
+          <!-- <navigator url="/pages/kindList/kindList?com_id={{item.id}}&name={{item.findclassify_name}}"  class="header_nav_each">
+            <image src="{{item.findclassify_logo}}"></image>
+          </navigator>           -->
+        
+          <view class="header_nav_each"  bindtap='changeTab'  data-index="{{i}}">
+            <image src="{{item.findclassify_logo}}"></image>
+          </view>
+
+        </block>      
+      </scroll-view>
+  </view>
+
+  <!-- 图片轮播 -->
+  <view class="each_content_wrap">
+     <block wx:if="{{tab == 0}}">
+      <view class='swiper'>  
+        <view class='swiper-lb'  bindtouchmove="scroll"  bindtouchstart='startTou'  bindtouchend='endTou'  style="height:{{bigImgHeight+urlTop*prop+60*prop}}px">  
+            <view  animation="{{animationData}}" class='swiper-ul' style='width:{{swiperUlWidth}}px;top:{{urlTop}}rpx;left:{{swiperLeft}}px;'>  
+                <view id='swiper{{index}}' class='swiper-li'  wx:for="{{images}}"  style="top:{{styleArr[index].top}}rpx;margin-left:{{imgLeft}}px;"> 
+                  <image wx:if="{{item.imgLogo}}" src='{{item.imgLogo}}' class='img_logo'></image> 
+                  <image animation="{{styleArr[index].animationliscal}}"   class='swiper-image swiper-image{{index}} '  src='{{item.imageSrc}}' style='width:{{styleArr[index].imgwidth}}px;height:{{styleArr[index].imgheight}}px'></image> 
+                  <image class='img_bg' src='/images/find_img_bg.png' style="width:{{styleArr[index].imgwidth}}px;"></image>
+                  <image class='img_left_bg' src='/images/img_left_bg.png' style="height:{{styleArr[index].imgheight+6}}px;"></image>
+                </view>  
+            </view>  
+        </view>  
+      </view>  
+    </block> 
+
+    <block wx:elif="{{tab == 1}}">
+      <view class='swiper'>  
+        <view class='swiper-lb'  bindtouchmove="scroll"  bindtouchstart='startTou'  bindtouchend='endTou2'  style="height:{{bigImgHeight2+urlTop*prop+60*prop}}px">  
+            <view  animation="{{animationData2}}" class='swiper-ul' style='width:{{swiperUlWidth2}}px;top:{{urlTop}}rpx;left:{{swiperLeft2}}px;'>  
+                <navigator  url="{{item.url}}" id='swiper{{index}}' class='swiper-li'  wx:for="{{images}}"  style="top:{{styleArr2[index].top}}rpx;margin-left:{{imgLeft}}px;"> 
+                  <image wx:if="{{item.imgLogo}}" src='{{item.imgLogo}}' class='img_logo'></image> 
+                  <image animation="{{styleArr2[index].animationliscal}}"   class='swiper-image swiper-image{{index}} '  src='{{item.imageSrc}}' style='width:{{styleArr2[index].imgwidth}}px;height:{{styleArr2[index].imgheight}}px'></image> 
+                  <image class='img_bg' src='/images/find_img_bg.png' style="width:{{styleArr2[index].imgwidth}}px;"></image>
+                  <image class='img_left_bg' src='/images/img_left_bg.png' style="height:{{styleArr2[index].imgheight+6}}px;"></image>
+                </navigator>  
+            </view>  
+        </view>  
+      </view>  
+    </block>
+
+    
+    <block  wx:else>
+      <block  wx:for="{{contentList}}">
+        <!-- 文章详情  articleInfor  -->
+        <navigator url="/pages/articleInfor/articleInfor?id={{item.id}}" class="each_content">
+          <image src="{{item.find_logo}}"  class="content_img"  mode='widthFix'></image>
+          <view class='each_cont_wrap'>
+            <view class='each_cont'>
+
+              <!-- 分类名 -->
+              <view class='content_kind_name'  wx:if="{{item.find_lev_name && item.find_lev_name != null}}">{{item.find_lev_name}}</view>
+
+              <!-- 描述 -->
+              <view class='content_infor_wrap'>
+                <view class='content_title'>{{item.find_name}}</view>
+                <view class='content_intro'>{{item.find_des}}</view>
+              </view>
+              
+
+              <!-- 浏览+关注 -->
+              <view class="content_infor">
+                <view class="content_infor_cont">
+                  <image src="/images/liulan_gray.png"  class="content_icon"></image>
+                  <text>{{item.find_yuedu}}</text>
+                  <image src="/images/zan_gray_n.png"    class="content_icon"></image>
+                  <text>{{item.find_shoucang}}</text>
+                </view>        
+              </view>
+
+            </view>
+          </view>
+        </navigator>
+      </block>
+    </block>
+  </view>  
+
+  <!-- footer title -->
+  <view class='img_title_wrap'  wx:if="{{imagesTitle}}"  style="width:{{bigImgWidth}}rpx;">
+    <view class='img_title_line'></view>
+    <view class='img_title_cont'>{{imagesTitle}}</view>
+  </view>
+
+</view>

@@ -1,0 +1,136 @@
+/* pages/partnerBusinessEarnings /partnerBusinessEarnings .wxss */
+page{
+  background-color: #f9f9f9;
+}
+.container{
+  display: block;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+.partner_banner{
+  display: block;
+  width: 100%;
+}
+.month_wrap{
+  position: relative;
+  height: 130rpx;
+  background-color: #fff;
+  margin: 15rpx 0 0 0;
+}
+.month_change_left{
+  width:130rpx;
+  height: 130rpx;
+  position: absolute;
+  left:52rpx;
+  top: 0;
+  z-index:10;
+}
+.month_change_right{
+  width:130rpx;
+  height: 130rpx;
+  position: absolute;
+  right:52rpx;
+  top: 0;
+  z-index:10;
+}
+.month_change_left_icon,.month_change_right_icon{
+  display: block;
+  width: 16rpx;
+  height: 32rpx;
+  position: relative;
+  top: 49rpx;
+}
+.month_change_right_icon{
+  left: 114rpx;
+}
+.month_change_time{
+  text-align: center;
+  line-height: 130rpx;
+}
+
+/* 每个月数据 */
+.month_cont_wrap{
+  background-color: #fff;
+}
+.month_cont_title{
+  width: 646rpx;
+  height: 50rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  color: #2d2d2d;
+  background-color: #f4f4f4;
+  margin: 0 auto;
+}
+.month_cont_title_left,.month_cont_left{
+  float: left;
+  width: 196rpx;
+  height: 50rpx;
+}
+.month_cont_each{
+  width: 646rpx;
+  height: 100rpx;
+  font-size: 22rpx;
+  line-height: 100rpx;
+  margin: 0 auto;
+}
+.month_cont_title_center,.month_cont_center{
+  float: left;
+  width: 236rpx;
+  text-align: center;
+}
+
+.month_cont_title_right{
+  float: right;
+  font-size: 26rpx;
+  padding-right: 30rpx;
+}
+.month_cont_right{
+  float: right;
+  font-size: 26rpx;
+  color: #666;
+}
+.month_cont_right text{
+  font-size: 16rpx;
+  padding: 0 0 0 16rpx;
+}
+text.month_cont_right_underline{
+  font-size: 26rpx;
+  text-decoration: underline;
+}
+.month_cont_center{
+  color: #666;
+  font-size: 26rpx;
+}
+.month_cont_finish{
+  text-decoration: underline;
+}
+.month_cont_nofinish,text.month_cont_nofinish{
+  font-size: 26rpx;
+  color: #f10505;
+  /* text-decoration: underline; */
+}
+
+
+.cont_line{
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+}
+/* 邀请加入 */
+button.invite_join,button.button-hover[plain]{
+  display: block;
+  width: 644rpx;
+  height: 100rpx;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #b4a078;
+  cursor: pointer;
+  border: 0px none;
+  border-radius: 0px;
+  margin: 18rpx auto;
+}
+button.invite_join:after,button.invite_join:before{
+  display: none;
+  border: 0px;
+}

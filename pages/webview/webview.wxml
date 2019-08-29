@@ -1,0 +1,15 @@
+<!--pages/webview/webview.wxml-->
+<web-view  src="{{webUrl}}"></web-view>
+
+<!-- https://52yqf.cn/customization/index?order_aff_num=1510709387&order_aff_id=3202&order_aff_gg_id=1510709388325&order_gy_id=4&order_aff_dz_id=null&unionid=oovpNwvQGE0uUqpsQrbiVigaEFM0 -->
+
+
+<!--  定单号id   商品id   规格id   工艺id   定制id(标志是否定制过)   -->
+
+<!-- https://www.daliangzao.net/customization/index_jpg?order_aff_dz_id=3035 -->
+
+<!-- https://daliangzao.net/customization/list?uid=oovpNwvQGE0uUqpsQrbiVigaEFM0 -->
+
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。</view>
+</view>

@@ -1,0 +1,132 @@
+/* pages/awaitState/awaitState.wxss */
+page{
+  background-color: #fff;
+}
+.banner image{
+  width:710rpx;
+}
+.choose_wrap{
+  height: 86rpx;
+  padding:30rpx 0;
+  background-color: #fff;
+}
+.choose_content{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: relative;
+}
+.user_photo{
+  float:left;
+  width: 62rpx;
+  height: 62rpx;
+  margin:12rpx 24rpx 0 36rpx;
+}
+.choose_msg{
+  font-size: 26rpx;
+  line-height: 42rpx;
+  margin-left:122rpx;
+}
+.msg_name{
+  width: 560rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.msg_infor{
+  width: 560rpx;
+  color: #b2b2b2;
+}
+
+.choose_icon{
+  width: 20rpx;
+  height: 32rpx;
+  position: absolute;
+  top:27rpx;
+  right: 40rpx;
+}
+.msg_tetxarea{
+  width: 710rpx;
+  padding:20rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  color: #ccc;
+}
+.send_btn{
+  width: 88%;
+  height: 96rpx;
+  font-size: 34rpx;
+  line-height: 96rpx;
+  color: #fff;
+  text-align: center;
+  background-color: #169bd5;
+  position: fixed;
+  bottom: 20rpx;
+  left:6%;
+  border-radius: 8rpx;
+  z-index: 1;
+}
+
+.state_title{
+  display: inline-block;
+  margin: 90rpx auto 20rpx;
+}
+.await_icon,.await_title{
+  float: left;
+}
+.await_icon{
+  width: 42rpx;
+  height: 42rpx;
+  margin:0 40rpx;
+}
+.await_title{
+  font-size: 30rpx;
+}
+.banner{
+  width: 580rpx;
+  margin:50rpx auto 20rpx;
+}
+.banner image{
+  width: 100%;
+}
+.footer_btn{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 30rpx;
+  display: flex;
+  justify-content: center;
+}
+.footer_each_btn{
+  display: inline-block;
+  color: #8594b2;
+  font-size: 26rpx;
+  padding:0 16rpx;
+  box-sizing:border-box;
+}
+.footer_each_btn_left{
+  border-right: 1px solid #8594b2;
+}
+/* 上传图片 */
+.upload_wrap{
+  padding:20rpx;
+}
+.upload_img_wrap{
+  float:left;
+  width: 110rpx;
+  height: 110rpx;
+  margin: 25rpx;
+  position: relative;
+}
+.delete_img{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: -15rpx;
+  right: -15rpx;
+  z-index: 2;
+}
+.upload_img{
+  width: 110rpx;
+  height: 110rpx;
+}

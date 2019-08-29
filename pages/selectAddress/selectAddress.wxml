@@ -1,0 +1,18 @@
+<!--selectAddress.wxml  选择地址  -->
+<view class="container  {{hidden}}">
+  <block wx:for="{{addressList}}"  wx:key="index"  wx:for-index="i">
+    <view class="each_address"  bindtap="selectAddress"  data-id="{{i}}" data-province="{{item.province}}" data-city="{{item.city}}" data-area="{{item.area}}" data-adress="{{item.adress}}" data-consignee="{{item.consignee}}"  data-phone="{{item.phone}}">
+
+      <block wx:if="{{item.adress_flag == 1}}">
+        <image class="select_address"  src="/images/address_pre.png"></image>
+      </block>
+
+      <view class="user_name">{{item.consignee}}<text>{{item.phone}}</text></view>
+      <view class="user_addr">{{item.province}}{{item.city}}{{item.area}}{{item.adress}}</view>
+
+    </view>
+  </block>
+
+  <navigator url="/pages/addAddress/addAddress" class="add_btn">+添加新地址</navigator>
+
+</view>

@@ -1,0 +1,358 @@
+<!--confirmedList.wxml    订单详情    -->
+<view class="container">
+
+  <!-- 订单信息  -->
+  <view class="header">
+
+    <block wx:if="{{goosdListnew.order_number_o == ''}}">
+        <view class="order_time  order_time_line">下单时间：<text>{{orderTime}}</text></view>
+    </block>
+    <block wx:else>
+        <view class="order_time  order_time_line">赠送时间：<text>{{orderTime}}</text></view>
+    </block>
+    <view class="order_time">订单编号：<text>{{goosdListnew.order_number}}</text></view>
+
+    <!-- 未拆分订单 -->
+    <block wx:if="{{goosdListnew.order_number_o == ''}}">
+        <view wx:if="{{orderState == 1}}"    class="confirme_btn  btn_red">待付款</view>
+        <view wx:elif="{{orderState == 2}}"  class="confirme_btn  btn_green">待定制</view>
+        <view wx:elif="{{orderState == 4}}"  class="confirme_btn  btn_purple">已发货</view>
+        <view wx:elif="{{orderState == 5}}"  class="confirme_btn  btn_blue">已完成</view>
+        <view wx:elif="{{orderState == 6}}"  class="confirme_btn  btn_blue">已取消</view>
+        <view wx:elif="{{orderState == 10}}"  class="confirme_btn  btn_blue">待送礼</view>
+        
+        <!-- <block wx:else>
+            <block wx:if="{{goosdListnew.order_split_flag != 2 }}">
+                <view  class="confirme_btn  btn_green">待送礼</view>
+            </block> 
+        </block> -->
+    </block>
+    <block wx:else>
+        <!-- 子订单状态 -->
+        <view wx:if="{{orderState == 3}}"    class="confirme_btn  btn_yellow">待发货</view>
+        <view wx:elif="{{orderState == 4}}"  class="confirme_btn  btn_purple">已发货</view>
+        <view wx:elif="{{orderState == 5}}"  class="confirme_btn  btn_blue">已完成</view>
+        <view wx:elif="{{orderState == 6}}"  class="confirme_btn  btn_blue">已取消</view>
+    </block>
+  </view>
+
+  <view class="goods_infor">
+    <view class="goods_top_title">商品信息</view>
+    <block wx:for="{{goosdListnew.list_order_aff_data}}" wx:key="*this" wx:for-index="i"> 
+      <view  bindtap='buyUrl' data-id="{{i}}"  class="each_goods">
+        <image src="{{item.logo}}" class="goods_img"></image>
+        <view class="goods_cont">
+          <view class="goods_name">{{item.com_name}}</view>
+          <view class="goods_style">
+            <text wx:if="{{item.com_style1 != 'null'}}">{{item.com_style1}} </text>
+            <text wx:if="{{item.com_style2 != 'null'}}">{{item.com_style2}} </text>
+            <text wx:if="{{item.com_style3 != 'null'}}">{{item.com_style3}} </text>
+            <text wx:if="{{item.com_style4 != 'null'}}">{{item.com_style4}} </text>
+            <text wx:if="{{item.com_style5 != 'null'}}">{{item.com_style5}} </text>
+            <text wx:if="{{item.com_dz != 'null'}}">{{item.com_dz}} </text>
+            <text wx:if="{{item.com_lh != 'null'}}">{{item.com_lh}} </text>
+            <text> ×{{item.com_num}}</text>
+          </view>
+          <!-- <view class="goods_num">×{{item.com_num}}</view> -->
+          <view class="goods_price">￥<text>{{item.new_price}}</text></view>
+        </view>
+        <view class="clearfix"></view>
+      </view> 
+    </block>
+  </view>
+
+  <view class="infor_content">
+
+    <view class="each_infor borderBottom">
+      <view class="infor_title">配送费</view>
+      <view class="infor_num">快递￥0.00</view>
+      <view class="clearfix"></view>
+    </view>
+
+    <view class="each_infor peisong  borderBottom">
+      <view class="infor_title">定制费用</view>
+      <view class="infor_num">￥0.00</view>
+      <view class="clearfix"></view>
+    </view>
+
+    <!-- 优惠劵 -->
+    <block wx:if="">
+      <view class="each_infor peisong  borderBottom">
+        <view class="infor_title">优惠劵</view>
+        <view class="coupon_num">1张可用</view>
+        <block wx:if="">
+          <view class="infor_num">未使用</view>
+        </block>
+        <block wx:else>
+          <view class="infor_num">-￥0.00</view>
+        </block>
+        <view class="clearfix"></view>
+      </view>
+    </block>
+     <block wx:else>
+      <view class="each_infor peisong  borderBottom">
+        <view class="infor_title">优惠劵</view>
+        <view class="infor_num">￥{{orderr_Coupon}}</view>
+        <view class="clearfix"></view>
+      </view>
+    </block>
+    
+
+    <view class="each_infor peisong">
+      <view class="infor_title">商品合计</view>
+      <view class="infor_num">￥{{goosdListnew.total}}</view>
+      <view class="clearfix"></view>
+    </view>
+  </view>
+
+  <!-- <view class="fapiao_infor">
+    <view class="infor_title">收货信息:</view>
+    <view class="fp_infor_cont">
+      <view>{{order_Consignee}}   {{order_phone}}</view>
+      <view>{{order_address}}</view>
+    </view>
+  </view>  -->
+
+  <view class="fapiao_infor"  wx:if="{{invoice_type_name}}">
+    <view class="infor_title">发票信息:</view>
+    <view class="fp_infor_cont">
+      <view>发票类型：{{invoice_type_name}}</view>
+      <block wx:if="{{invoice_number != ''}}">
+        <view>发票抬头：单位</view>
+      </block>
+      <block wx:else>
+        <view>发票抬头：个人</view>
+      </block>
+      <view wx:if="{{invoice_number}}">纳税识别号：{{invoice_number}}</view>
+    </view>
+  </view> 
+
+  <!-- 补开发票  ： 如果没有开发票这里显示，补开发票，右侧右箭头，点击进入填写发票页面。-->
+  <!-- <view class="fapiao_infor">
+    <view class="infor_title">发票信息:</view>
+    <view class="fp_infor_cont">
+      <view></view>
+      <view></view>
+    </view>
+  </view> -->
+
+  <view class="service_wrap">
+    <view class="service_title">服务时间: 周一至周五  9:00-18:00</view>
+    <view class="service_tel">客服电话：{{phone}}</view>
+  </view>
+
+  <!-- 待付款 -->
+  <view wx:if="{{orderState == 1}}" class="footer_total">
+    <view  bindtap='save' class="footer_total_each">立即付款</view>
+    <view  bindtap='cancalSaveMsg' class="footer_total_each  footer_total_right">取消</view>
+  </view>
+
+  <!-- 待定制   -->
+  <view  wx:elif="{{orderState == 2}}" class="footer_total">
+    <block wx:if="{{order_check_sta == 0}}">
+      <view   data-order_number="{{order_number}}" bindtap='dzwc' class="footer_total_each">定制完成</view>  
+      <view   bindtap='openCancelWind' class="footer_total_each  footer_total_right">取消</view>  
+    </block>
+    <block wx:else>
+      <view  class="footer_total">审核中</view>
+    </block>
+  </view>
+
+  <!-- 待送礼 -->
+  <view wx:elif="{{orderState == 10}}"   class="footer_total"> 
+    <view bindtap='breakFriend'  data-sendflag="0"  data-order="{{goosdListnew}}"  class="footer_total_each">送朋友</view>
+    <view bindtap='breakFriend'  data-sendflag="1"  data-order="{{goosdListnew}}"  class="footer_total_each footer_total_right">送自己</view>
+  </view>
+
+
+  <!-- 待发货 -->
+  <view wx:elif="{{orderState == 3}}"   class="footer_total"> 
+    <!-- 待发货 - 礼物状态为1/2 -  -->
+    <!-- <block wx:if="{{order_type == 0}}">
+      <view bindtap='breakFriend'  data-sendflag="1"  data-order="{{goosdListnew}}"  class="footer_total_each">送朋友</view>
+      <view bindtap='breakFriend'  data-sendflag="0"  data-order="{{goosdListnew}}"  class="footer_total_each footer_total_right">送自己</view>
+    </block>
+    <block wx:else> -->
+      <view  bindtap='fahuo'  class="footer_total">提醒发货</view>
+    <!-- </block> -->
+  </view>  
+
+
+  <!-- 已发货 -->
+  <view wx:elif="{{orderState == 4}}" class="footer_total">
+    <view  data-order_number="{{order_number}}" bindtap='qrsh' class="footer_total_each">确认收货</view>
+    <navigator url='/pages/wuliu/wuliu?id={{order_number}}'  class="footer_total_each  footer_total_right">查看物流</navigator>
+  </view>
+
+  <!-- 已完成 -->
+  <view wx:elif="{{orderState == 5}}"    class="footer_total">
+    <block wx:if="{{order_check_sta == 1}}">
+        <view  class="footer_total">处理中</view>
+    </block>
+    
+    <block wx:else>
+      <block wx:if="{{goosdListnew.order_number_o == '' && goosdListnew.order_split_flag == ''}}">
+        <navigator url='/pages/wuliu/wuliu?id={{order_number}}'  class="footer_total_each">查看物流</navigator>
+        <view  class="footer_total_each  footer_total_right"  bindtap='openShowhouWind'>申请售后</view>
+      </block>
+      <block wx:elif="{{goosdListnew.order_number_o != ''}}">
+        <navigator url='/pages/wuliu/wuliu?id={{order_number}}'  class="footer_total_each">查看物流</navigator>
+        <view  class="footer_total_each  footer_total_right"  bindtap='openShowhouWind'>申请售后</view>
+      </block>
+      <block wx:else>
+        <view  class="footer_total"  bindtap='openShowhouWind'>申请售后</view>
+      </block>
+    </block>
+
+    
+  </view>
+
+  
+</view>
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>
+<view wx:if="{{maskBg}}" class="modal_bg "></view>
+
+<!-- 定制完成  -->
+<view class="qrfh_wrap  {{showQrfhMode ? '' : 'hidden'}}">
+  <view class='qrfh_content_wrap'>
+    <view class='qrfh_cont_wrap'>
+      <view class='qrfh_cont'>定制确认后将无法修改，</view>
+      <view class='qrfh_cont'>是否确认？</view>
+    </view>
+    <view class='qrsh_btn_wrap  clearfix'>
+      <view class='qrfh_cancle'  bindtap='cancelFh'>取消</view>
+      <view class='qrfh_sure'  bindtap='sureFh'>确定</view>
+    </view>
+  </view>
+</view>
+
+<!-- 送自己  -->
+<view class="qrfh_wrap  {{showSendMineMsg ? '' : 'hidden'}}">
+  <view class='qrfh_content_wrap'>
+    <view class='qrfh_cont_wrap'>
+      <view class='qrfh_cont'>将会按照订单地址为您发货，</view>
+      <view class='qrfh_cont'>是否确认？</view>
+    </view>
+    <view class='qrsh_btn_wrap  clearfix'>
+      <view class='qrfh_cancle'  bindtap='cancelSendMine'>取消</view>
+      <view class='qrfh_sure'  bindtap='sureSendMine'>确定</view>
+    </view>
+  </view>
+</view>
+
+<!-- 送朋友  -->
+<view class="qrfh_wrap  {{showSendFriendMsg ? '' : 'hidden'}}">
+  <view class='qrfh_content_wrap'>
+    <view class='qrfh_cont_wrap'>
+      <view class='qrfh_cont'>将会按照朋友填写的地址为您发货，</view>
+      <view class='qrfh_cont'>是否确认？</view>
+    </view>
+    <view class='qrsh_btn_wrap  clearfix'>
+      <view class='qrfh_cancle'  bindtap='cancelSendFriend'>取消</view>
+      <view class='qrfh_sure'  bindtap='sureSendFriend'>确定</view>
+    </view>
+  </view>
+</view>
+
+<!-- 待定制 - 申请取消  -->
+<view class="qrfh_wrap  {{showCancelOrder ? '' : 'hidden'}}">
+  <view class='qrfh_content_wrap'>
+    <view class='qrfh_cont_wrap'>
+      <view class='qrfh_cont'>将会为您申请取消，</view>
+      <view class='qrfh_cont'>是否确认？</view>
+    </view>
+    <view class='qrsh_btn_wrap  clearfix'>
+      <view class='qrfh_cancle'  bindtap='cancelCancelOrder'>取消</view>
+      <view class='qrfh_sure'  bindtap='cancelOrder'>确定</view>
+    </view>
+  </view>
+</view>
+
+<!-- 已完成 - 申请售后  -->
+<view class="qrfh_wrap  {{showShouhou ? '' : 'hidden'}}">
+  <view class='qrfh_content_wrap'>
+    <view class='qrfh_cont_wrap'>
+      <view class='qrfh_cont'>将会为您申请售后，</view>
+      <view class='qrfh_cont'>是否确认？</view>
+    </view>
+    <view class='qrsh_btn_wrap  clearfix'>
+      <view class='qrfh_cancle'  bindtap='cancelShouhou'>取消</view>
+      <view class='qrfh_sure'  bindtap='sureShouhou'>确定</view>
+    </view>
+  </view>
+</view>
+
+<!-- 待付款 - 取消  -->
+<view class="qrfh_wrap  {{showCancelPay ? '' : 'hidden'}}">
+  <view class='qrfh_content_wrap'>
+    <view class='qrfh_cont_wrap'>
+      <view class='qrfh_cont'>取消后订单无法恢复，</view>
+      <view class='qrfh_cont'>是否确认？</view>
+    </view>
+    <view class='qrsh_btn_wrap  clearfix'>
+      <view class='qrfh_cancle'  bindtap='closeSaveMsg'>取消</view>
+      <view class='qrfh_sure'  bindtap='sureSave'>确定</view>
+    </view>
+  </view>
+</view>
+
+<!-- 拆分订单弹窗  -->
+<view class='qrfh_wrap  {{showSendFriendMsg ? "" : "hidden"}}'>
+  <view class='break_order_content'>
+      <view class='break_title_wrap'>
+          <view class='break_title'>请选择需要赠送的礼物及数量</view>
+      </view>
+      
+      <view class='break_content'>
+          <block wx:for="{{breakOrderList.list_order_aff_data}}"  wx:key="index" wx:for-index="i">
+              <view class='each_break_goods  clearfix'>
+
+                  <image src="{{item.logo}}" class="goods_img"></image>
+                  <!-- 商品信息开始 -->
+                  <view class='break_goods_infor'>
+                      <view class='break_infor_content  clearfix'>
+                          <view class="goods_name  break_goods_name">{{item.com_name}}</view>
+                          <view class="goods_style  break_goods_style">
+                            <text wx:if="{{item.com_style1 != 'null'}}">{{item.com_style1}} </text>
+                            <text wx:if="{{item.com_style2 != 'null'}}">{{item.com_style2}} </text>
+                            <text wx:if="{{item.com_style3 != 'null'}}">{{item.com_style3}} </text>
+                            <text wx:if="{{item.com_style4 != 'null'}}">{{item.com_style4}} </text>
+                            <text wx:if="{{item.com_style5 != 'null'}}">{{item.com_style5}} </text>
+                            <text wx:if="{{item.com_dz != 'null'}}">{{item.com_dz}} </text>
+                            <text wx:if="{{item.com_lh != 'null'}}">{{item.com_lh}}</text>
+                          </view>
+                          <view class="goods_num  break_goods_num">×{{item.com_num}}</view>
+                      </view>
+                      <view class='break_num_wrap  clearfix'>
+                        <view class='each_break_btn'>选择数量：</view>
+                        <view class='each_break_btn_wrap'>
+                            <view  class='each_break  {{item.minus}}' bindtap='minusCount'  data-breaknum="{{item.break_num}}"  data-price="{{item.com_price}}"  data-id="{{i}}"  data-num='{{item.com_num}}'>-</view>
+
+                            <input class='each_break' type='number'  bindblur='writeNum'  bindconfirm='writeNum'  data-breaknum="{{item.break_num}}"  data-num='{{item.com_num}}'  value='{{item.break_num}}'  data-id="{{i}}"   />
+
+                            <!-- <view class='each_break'>{{item.break_num}}</view> -->
+                            <view class='each_break  {{item.add}}'  bindtap='addCount'  data-breaknum="{{item.break_num}}"   data-price="{{item.com_price}}"  data-id="{{i}}"  data-num='{{item.com_num}}'>+</view>
+                        </view>
+                      </view>
+                      
+                  </view>
+                  <!-- 商品信息结束 -->
+
+              </view>
+          </block>
+      </view>
+      <!-- 操作按钮 -->
+      <view class='break_btn_wrap'>
+        <view class='break_btn  break_btn_left'  bindtap='cancelSendFriend'>取消</view>
+        <form bindsubmit="sureSendFriend"  report-submit  >
+          <button formType="submit"  class='form_button'>
+              <view class='break_btn  break_btn_right'>确定</view>
+          </button>
+        </form>
+
+        <!-- <view class='break_btn  break_btn_right' bindtap='sureSendFriend'>确定</view> -->
+      </view>
+  </view>
+</view>

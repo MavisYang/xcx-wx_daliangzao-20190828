@@ -1,0 +1,23 @@
+<!--pages/shareState/shareState.wxml-->
+<view class="container">
+
+  <view class="state_title">
+    <image src='/images/await_icon.png' class='await_icon'></image>
+    <text class='await_title'>等待对方查看</text>
+    <view class='clear'></view>
+  </view>
+
+  <view class="banner">
+    <image  src='{{src}}' mode='widthFix'></image>
+  </view>
+
+  <view class="choose_wrap">
+    <view class="choose_content">
+      <image src='{{url}}' class="user_photo"></image>
+      <view class="choose_msg">
+        <view class="msg_name">{{name}}</view>
+        <view class="msg_infor">{{msg}}</view>
+      </view>
+    </view>
+  </view>
+</view>

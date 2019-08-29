@@ -1,0 +1,29 @@
+/* pages/serviceCont/serviceCont.wxss */
+.container{
+  padding: 0 20rpx 20rpx;
+  background-color: #fff;
+}
+.service_title{
+  text-align: center;
+  font-size: 30rpx;
+  line-height:100rpx;
+}
+.service_cont{
+  font-size: 22rpx;
+  line-height:40rpx;
+}
+.cont_cont{
+  text-indent: 2em;
+}
+.cont_title{
+  font-size: 24rpx;
+  line-height:80rpx;
+  color: red;
+}
+.cont_cont_title{
+  text-indent: 2em;
+}
+.cont_cont_title_2{
+  color: red;
+  padding-top:20rpx;
+}

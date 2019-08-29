@@ -1,0 +1,19 @@
+<!--pages/indepCoupon/indepCoupon.wxml   28张优惠劵  -->
+<view class="container">
+  <view class='indep_coupon_wrap'>
+    <image src='/images/coupon_20180412.png' mode='widthFix' class="indep_coupon_bg"></image>
+    <view class='indep_coupon_cont'>
+      <image src='/images/coupon_logo_20180412.png'  class='indep_coupon_logo'></image>
+      <view class='indep_coupon_title'>送你一张优惠劵</view>
+      <image src='/images/coupon_open_btn_20180412.png'  bindtap='getCoupon'  class='indep_coupon_btn'></image>
+    </view>
+  </view>
+</view>
+<!-- 提示弹窗 -->
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>
+<!-- 回到首页 -->
+<view  bindtap='backIndex'  class="back_btn  {{shareFlag == 1 ? '' : 'back_btn_hidden'}}">
+  <image src='/images/share_back_index.png'  class='back_btn_icon'></image>
+</view>

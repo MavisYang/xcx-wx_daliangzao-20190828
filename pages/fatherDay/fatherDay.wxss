@@ -1,0 +1,43 @@
+/* pages/dragonBoatFestival/dragonBoatFestival.wxss */
+.container{
+  display: block;
+  min-height: 100vh;
+  background-color: #fff;
+}
+.main_wrap{
+  position: relative;
+  padding: 0 0 0 0;
+}
+.festival_bg{
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+.festival_buy_btn{
+  display: block;
+  width: 196rpx;
+  height: 56rpx;
+  position: absolute;
+  left: 50%;
+  bottom: 60rpx;
+  margin: 0 0 0 -98rpx;
+  border-radius: 30rpx;
+}
+.festival_buy_btn_img{
+  width: 196rpx;
+  height: 56rpx;
+}
+.festival_btn{
+  margin: 32rpx 0 0 0;
+}
+.festival_icon{
+  display: block;
+  width: 122rpx;
+  height: 122rpx;
+  margin: 0 auto;
+}
+.festival_btn_name{
+  text-align: center;
+  font-size: 24rpx;
+  padding: 30rpx 0 0 0;
+}

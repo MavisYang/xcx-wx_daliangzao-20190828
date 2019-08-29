@@ -1,0 +1,71 @@
+<!--addressList.wxml  填写收货地址  -->
+<view class="container">
+  <view class="address_msg">为了更好的为您配送，请填写服务地址和联系方式</view>
+
+  <view class="address_cont">
+
+    <view class="each_section">
+      <image src="/images/address_msg_name.png"  class="each_section_icon"></image>
+      <input type="text"  bindinput ="userNameInput"  focus  name="input"  placeholder-class="placeholder_style"  placeholder="收货人姓名" />
+    </view>
+
+    <view class="each_section"  bindtap="open">
+      <image src="/images/address_msg_addr.png"  class="each_section_icon"></image>
+      <input disabled="true"  value="{{province}}{{city}}{{county}}" placeholder-class="placeholder_style"  placeholder="请选择您的省市区" /> 
+      <image src="/images/gray_back.png"  class="each_section_icon_right"  ></image>
+    </view>
+
+
+    <view class="each_section">
+    <image src="/images/address_msg_addr_more.png"  class="each_section_icon"></image>
+    <input type="text" bindinput ="userAddressInput"  placeholder-class="placeholder_style"  placeholder="请填写您的详细地址（门牌号等）" /> 
+  </view>
+
+
+    <view class="each_section">
+    <image src="/images/address_msg_tel.png"  class="each_section_icon"></image>
+    <input type="number" bindinput ="userTelephoneInput"  name="input"  placeholder-class="placeholder_style"  placeholder="电话号码" maxlength="11" />
+  </view>
+
+    
+    <view class="switch_section">
+      <view class="switch_title">设置为默认地址</view>
+      <switch type="switch" bindchange="switchChange" color="#b4a078" checked="{{checked}}" class="switch_icon"/>
+    </view>
+    <view bindtap="saveInfor"  class="save_btn">保存地址</view>
+  </view>
+
+  <view  wx:if="{{condition}}"   class="citypicker">  
+    <view class="city_cont">       
+      <picker-view  mask-style="color:#a8a4a4;"  indicator-style="border:0px none;"  value="{{value}}" bindchange="bindChange" class="citybody">  
+        
+        <view class="city_top">  
+          <view class="city_top_cont">
+            <view class="city_title_line"></view>
+            <view class="city_title">省市选择</view>
+          </view>        
+        </view> 
+
+        <view class="cityfooter">  
+          <view bindtap="open" class="city-cancel">取消</view>  
+          <view bindtap="open" class="city-true">确定</view>  
+        </view> 
+      
+        <picker-view-column  class="picker_view_column">  
+          <view wx:for="{{provinces}}" wx:key="item" class="each_city">{{item}}</view>  
+        </picker-view-column>  
+        <picker-view-column class="picker_view_column">  
+          <view wx:for="{{citys}}" wx:key="item" class="each_city">{{item}}</view>  
+        </picker-view-column>  
+        <picker-view-column class="picker_view_column">  
+          <view wx:for="{{countys}}" wx:key="item" class="each_city">{{item}}</view>  
+        </picker-view-column>  
+
+      </picker-view> 
+    </view>  
+  </view>  
+
+</view>
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>

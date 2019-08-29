@@ -1,0 +1,130 @@
+<!--articleInfor.wxml   文章详情  -->
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container">
+
+  <view class="content_wrap">
+    <!-- banner -->
+    <view class="article_banner">
+      <image  class="article_banner_img" src="{{find_logo}}" mode="widthFix"></image>
+    </view>
+
+    <!-- 标题、描述 -->
+    <view class="article_infor_wrap">
+      <view class="article_title">{{find_name}}</view>
+      <view class="article_intro">{{find_des}}</view>
+
+      <view class="article_opera">
+        <image src="../../images/liulan_gray.png"  class="jingpin_icon"></image>
+        <text>{{find_yuedu}}</text>
+        <image src="../../images/zan_gray_n.png"    class="jingpin_icon"></image>
+        <text>{{find_shoucang}}</text>
+      </view>
+
+      <!-- 收藏 -->
+      <view class='article_collect_wrap'>
+        <image class="article_banner_zan"  bindtap="selectZan"  data-opera="{{isSelect}}" data-id="{{id}}" src="{{isSelect ? '/images/zan_gray_pre.png' : '/images/zan_gray_n.png'}} "></image>
+        <view class='article_collect_title'>收藏</view>
+      </view>
+
+    </view>
+    
+  </view>
+  <!-- 内容 -->
+  <view class="article_cont">   
+      
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"  class="article_cont_cont"/>
+    <block  wx:if="{{id1}}">
+      <navigator url="/pages/buy/buy?com_id={{id1}}"  class="article_gift  clearfix">
+        <image src="{{img1}}"></image>
+        <view class="article_gift_infor">
+          <view class="article_gift_title">{{cmname1}}</view>
+          <view class="classname">
+            <view class="article_gift_intro">{{title1}}</view>
+            <view class="article_gif_price">
+              <text class="new_price">¥ {{price1}}</text>
+              <text class="old_price"  decode='true'>&nbsp;&nbsp;¥{{oldPrice1}}&nbsp;&nbsp;</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+
+    <template is="wxParse" data="{{wxParseData:article1.nodes}}" class="article_cont_cont"/>
+    <block wx:if="{{id2}}">
+      <navigator url="/pages/buy/buy?com_id={{id2}}"  class="article_gift  clearfix">
+        <image src="{{img2}}"></image>
+        <view class="article_gift_infor">
+          <view class="article_gift_title">{{cmname2}}</view>
+          <view class="classname">
+            <view class="article_gift_intro">{{title2}}</view>
+            <view class="article_gif_price">
+              <text class="new_price">¥ {{price2}}</text>
+              <text class="old_price"  decode='true'>&nbsp;&nbsp;¥{{oldPrice2}}&nbsp;&nbsp;</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+
+    <template is="wxParse" data="{{wxParseData:article2.nodes}}" class="article_cont_cont"/>
+    <block wx:if="{{id3}}">
+      <navigator url="/pages/buy/buy?com_id={{id3}}"  class="article_gift  clearfix">
+        <image src="{{img3}}"></image>
+        <view class="article_gift_infor">
+          <view class="article_gift_title">{{cmname3}}</view>
+          <view class="classname">
+            <view class="article_gift_intro">{{title3}}</view>
+            <view class="article_gif_price">
+              <text class="new_price">¥ {{price3}}</text>
+              <text class="old_price"  decode='true'>&nbsp;&nbsp;¥{{oldPrice3}}&nbsp;&nbsp;</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+
+    <template is="wxParse" data="{{wxParseData:article3.nodes}}" class="article_cont_cont"/>
+    <block  wx:if="{{id4}}">
+      <navigator url="/pages/buy/buy?com_id={{id4}}"  class="article_gift  clearfix">
+        <image src="{{img4}}"></image>
+        <view class="article_gift_infor">
+          <view class="article_gift_title">{{cmname4}}</view>
+          <view class="classname">
+            <view class="article_gift_intro">{{title4}}</view>
+            <view class="article_gif_price">
+              <text class="new_price">¥ {{price4}}</text>
+              <text class="old_price"  decode='true'>&nbsp;&nbsp;¥{{oldPrice4}}&nbsp;&nbsp;</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+
+    <template is="wxParse" data="{{wxParseData:article4.nodes}}" class="article_cont_cont"/>
+    <block  wx:if="{{id5}}">
+      <navigator url="/pages/buy/buy?com_id={{id5}}"  class="article_gift  clearfix">
+        <image src="{{img5}}"></image>
+        <view class="article_gift_infor">
+          <view class="article_gift_title">{{cmname5}}</view>
+          <view class="classname">
+            <view class="article_gift_intro">{{title5}}</view>
+            <view class="article_gif_price">
+              <text class="new_price">¥ {{price5}}</text>
+              <text class="old_price"  decode='true'>&nbsp;&nbsp;¥{{oldPrice5}}&nbsp;&nbsp;</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+    <!--articleInfor.wxml   文章详情  --> 
+
+  </view> 
+</view>
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>
+
+<!-- 回到首页 -->
+<view  bindtap='backIndex'  class="back_btn  {{showBtn ? '' : 'back_btn_hidden'}}">
+  <image src='/images/share_back_index.png'  class='back_btn_icon'></image>
+</view>

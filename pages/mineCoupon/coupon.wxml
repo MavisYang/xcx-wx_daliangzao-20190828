@@ -1,0 +1,33 @@
+<!--coupon.wxml   优惠劵  -->
+<view class="container">
+  <block wx:for="{{couponList}}" wx:key="index"  wx:for-index="i">
+    <!-- 每一个优惠劵 -->
+    <view class="coupon_wrap   {{item.coupon_state == 2 ? 'coupon_wrap_2' : ''}} ">
+      <view class="coupon_title_wrap">
+        <!-- 优惠金额 -->
+        <view class="coupon_title">¥{{item.coupon_cou_money}}</view>
+
+        <block wx:if="{{item.coupon_state == 0}}">
+          <view wx:if="{{usey}}"  bindtap="usrCoupon"  data-id="{{i}}"  class="use_state    use_state_0">使用</view>
+        </block>
+        <view  wx:elif="{{item.coupon_state == 1}}"  class="use_state  use_state_1">已使用</view>
+
+        <!-- 不可用 -->
+        
+
+        <!-- 已过期 -->
+        <view  wx:elif="{{item.coupon_state == 4}}"  class="use_state  use_state_2"><image src="/images/youhuijuan_guoqi.png"></image></view>
+      </view>
+      <!-- 分隔线 -->
+      <view class="coupon_line"><image src='/images/youhuijuan_line.png'></image></view>
+      <!-- 使用条件 -->
+      <view class="coupon_infor">
+        <view class="coupon_infor_left">{{item.coupon_start == null ? '' : item.coupon_start}}{{item.coupon_start == null ? '' : ' - '}}{{item.coupon_stop == null ? '' : item.coupon_stop}}</view>
+        <view class="coupon_rule">{{item.coupon_rule}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>

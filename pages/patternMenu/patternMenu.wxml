@@ -1,0 +1,80 @@
+<!--pages/patternList/patternList.wxml-->
+<view class='container'>
+    <view class='pattern_each_wrap'>
+
+
+          <!-- 选礼用途 -->
+          <view class="header_nav_wrap">
+            <image src='/images/xuanli_each_icon_1.png' class='each_title_icon'></image>
+            <scroll-view  scroll-x class="header_nav"  scroll-left="{{scrollLeft}}">
+
+                <block wx:for="{{yongtuList}}"  wx:key="index" wx:for-index="i">
+                    <view class='each_tab  each_tab_{{yongtuLength+1}}'  data-id="{{i}}"  data-flagid="{{item.id}}"  data-name="{{item.scene_name}}"  bindtap='yongtuClick'>
+                        <image  wx:if="{{activeTab1 == i}}" src="{{item.select_img}}"  class='each_cont_icon'></image>
+                        <image  wx:else src="{{item.default_img}}"  class='each_cont_icon'></image>
+                        <view class='each_cont_name'>{{item.scene_name}}</view>
+                    </view>
+                </block>
+                <view class='each_tab  each_tab_{{yongtuLength+1}}'  data-id="{{yongtuLength}}"  data-flagid=""  data-name="全部"  bindtap='yongtuClick'>
+                    <image  wx:if="{{activeTab1 == yongtuLength}}" src="{{urlHttp}}images/page_one_4_pre.png"  class='each_cont_icon'></image>
+                    <image  wx:elif="{{urlHttp}}" src="{{urlHttp}}images/page_one_4_n.png"  class='each_cont_icon'></image>
+                    <view class='each_cont_name'>全部</view>
+                </view>
+            </scroll-view>
+        </view>
+
+
+        <!-- 选礼对象 -->
+        <view class='header_nav_wrap'>
+            <image src='/images/xuanli_each_icon_2.png' class='each_title_icon'></image>
+            <scroll-view  scroll-x class="header_nav"  scroll-left="{{scrollLeft}}">
+                <block wx:for="{{duxiangList}}"  wx:key="index" wx:for-index="i">
+                    <view class='each_tab  each_tab_{{duixiangLength+1}}'  data-id='{{i}}'  data-flagid="{{item.id}}"   data-name="{{item.scene_name}}"  bindtap='duixiangClick'>
+                        <image  wx:if="{{activeTab2 == i}}" src="{{item.select_img}}"  class='each_cont_icon'></image>
+                        <image  wx:else src="{{item.default_img}}"  class='each_cont_icon'></image>
+                        <view class='each_cont_name'>{{item.scene_name}}</view>
+                    </view>
+                </block>
+                <view class='each_tab  each_tab_{{duixiangLength+1}}'  data-id='{{duixiangLength}}'  data-flagid=""  data-name="全部"  bindtap='duixiangClick'>
+                    <image  wx:if="{{activeTab2 == duixiangLength}}" src="{{urlHttp}}images/page_one_4_pre.png"  class='each_cont_icon'></image>
+                    <image  wx:elif="{{urlHttp}}" src="{{urlHttp}}images/page_one_4_n.png"  class='each_cont_icon'></image>
+                    <view class='each_cont_name'>全部</view>
+                </view>
+            </scroll-view>
+        </view>
+
+
+        <!-- 预算范围 -->
+        <view class='header_nav_wrap'>
+            <image src='/images/xuanli_each_icon_3.png' class='each_title_icon'></image>
+            <scroll-view  scroll-x class="header_nav"  scroll-left="{{scrollLeft}}">
+                <view class='each_tab  each_tab_5'  data-id='0'  data-flagid="4"  data-name="￥200以下"  bindtap='fanweiClick'>
+                    <image  wx:if="{{activeTab3 == 0}}" src="{{urlHttp}}images/page_three_1_pre.png"  class='each_cont_icon'></image>
+                    <image  wx:elif="{{urlHttp}}" src="{{urlHttp}}images/page_three_1_n.png"  class='each_cont_icon'></image>
+                    <view class='each_cont_name'>￥200以下</view>
+                </view>
+                <view class='each_tab  each_tab_5'  data-id='1'  data-flagid="5"  data-name="￥200~1000"  bindtap='fanweiClick'>
+                    <image  wx:if="{{activeTab3 == 1}}" src="{{urlHttp}}images/page_three_2_pre.png"  class='each_cont_icon'></image>
+                    <image  wx:elif="{{urlHttp}}" src="{{urlHttp}}images/page_three_1_n.png"  class='each_cont_icon'></image>
+                    <view class='each_cont_name'>￥200~1000</view>
+                </view>
+                <view class='each_tab  each_tab_5'  data-id='2'  data-flagid="6"  data-name="￥1000~2000"  bindtap='fanweiClick'>
+                    <image  wx:if="{{activeTab3 == 2}}" src="{{urlHttp}}images/page_three_3_pre.png"  class='each_cont_icon'></image>
+                    <image  wx:elif="{{urlHttp}}" src="{{urlHttp}}images/page_three_1_n.png"  class='each_cont_icon'></image>
+                    <view class='each_cont_name'>￥1000~2000</view>
+                </view>
+                <view class='each_tab  each_tab_5'  data-id='3'  data-flagid="7"  data-name="￥2000以上"  bindtap='fanweiClick'>
+                    <image  wx:if="{{activeTab3 == 3}}" src="{{urlHttp}}images/page_three_4_pre.png"  class='each_cont_icon'></image>
+                    <image  wx:elif="{{urlHttp}}" src="{{urlHttp}}images/page_three_1_n.png"  class='each_cont_icon'></image>
+                    <view class='each_cont_name'>￥2000以上</view>
+                </view>
+            </scroll-view>
+        </view>
+
+        <view class='finish_btn'  bindtap='saveChange'>生成礼品清单</view>
+
+    </view>
+</view>
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>

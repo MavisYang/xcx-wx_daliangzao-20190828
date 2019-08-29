@@ -1,0 +1,256 @@
+<!--pages/invoiceInfor/invoiceInfor.wxml-->
+<view class="container  {{hidden}}">
+
+  <view class="each_invoice  invoice_type">
+    <view class="each_invoice_cont">
+      <text class="invoice_left_title">发票类型</text>
+      <block  wx:if="{{invoiceTypeFlag == 0 || invoiceTypeFlag == 1}}">
+        <text class="invoice_type_val">纸质普通发票</text>
+      </block>
+      <block  wx:else>
+        <text class="invoice_type_val">增值税专用发票</text>
+      </block>
+    </view>
+  </view>
+
+  <view class="each_invoice">
+    <block wx:if="{{invoiceTypeFlag == 0 || invoiceTypeFlag == 1}}">
+      <view class="invoice_intro">部分纸质普通发票无法随箱寄出，将在最后一个包裹发货后15-30个工作日单独寄出</view>
+    </block>
+    <block wx:else>
+      <view class="invoice_intro">我公司依法开具发票，如你购买的商品按税法规定属于不得从增值税销项税中抵扣的项目（如集体福利或个人消费等），请选择普通发票</view>
+    </block>
+  </view>
+  
+  <view class="space"></view>
+
+  <view class="each_invoice">
+    <view class="each_invoice_cont">
+      <text class="invoice_left_title">*发票抬头</text>
+      <view class="invoice_title_type">
+        <block  wx:if="{{invoiceTypeFlag == 0 || invoiceTypeFlag == 1}}">
+          <view  bindtap='titleClick' data-id="0" class="invoice_title_each  {{isClick == 0 ? 'invoice_title_active' : ''}}">个人</view>
+          <view  bindtap='titleClick' data-id="1" class="invoice_title_each  {{isClick == 1 ? 'invoice_title_active' : ''}}">单位</view>
+        </block>
+        <block  wx:else  data-id="1">
+          <view class="invoice_title_each  invoice_title_active">单位</view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 纸质 -->
+  <block  wx:if="{{invoiceTypeFlag == 0}}">
+
+    <!-- 纸质 - 个人 -->
+    <view class="invoice_content">
+
+      <view class="each_invoice  invoice_type">
+        <view class="each_invoice_cont">
+          <input type="text" bindinput='userNameInput' value="{{userName}}" placeholder='请输入个人或姓名'></input>
+          <icon type="clear" size="14" wx:if="{{userName}}"   bindtap='clearuserName'  class="clear_input_icon"></icon>
+        </view>
+      </view>
+
+      <view class="each_invoice  invoice_type">
+        <view class="each_invoice_cont">
+          <text class="invoice_left_title">*发票内容</text>
+          <text>明细</text>
+        </view>
+      </view>
+
+      <view class="each_invoice  invoice_type">
+        <view class="each_invoice_cont">
+          <text class="invoice_left_title">发票金额</text>
+          <text class="invoice_type_val">￥{{price}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 纸质 - 单位 -->
+  <block  wx:elif="{{invoiceTypeFlag == 1}}">
+    <view class="invoice_content">
+      <view class="each_invoice  invoice_type">
+        <view class="each_invoice_cont">
+          <input type="text" bindinput='companyNameInput' value="{{companyName}}" placeholder='请输入单位名称'></input>
+          <icon type="clear" wx:if="{{companyName}}" bindtap='clearcompanyName' size="14"  class="clear_input_icon"></icon>
+        </view>
+      </view>
+
+      <view class="each_invoice  invoice_type">
+        <view class="each_invoice_cont">
+          <text class="invoice_left_title">*纳税人识别号</text>
+          <input type="text" bindinput='sbNumInput' value="{{sbNum}}" placeholder='或统一社会信用代码'  class="short_input"></input>
+          <icon type="clear" wx:if="{{sbNum}}" bindtap='clearsbNum' size="14"  class="clear_input_icon"></icon>
+        </view>
+      </view>
+
+      <view class="each_invoice  invoice_type">
+        <view class="each_invoice_cont">
+          <text class="invoice_left_title">*发票内容</text>
+          <text>明细</text>
+        </view>
+      </view>
+
+      <view class="each_invoice  invoice_type">
+        <view class="each_invoice_cont">
+          <text class="invoice_left_title">发票金额</text>
+          <text class="invoice_type_val">￥{{price}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 增值税 -->
+  <block  wx:else>
+    <view class="invoice_content">
+        <view class="each_invoice  invoice_type">
+          <view class="each_invoice_cont">
+            <input type="text" bindinput='companyNameInput' value="{{companyName}}" placeholder='请输入单位名称'></input>
+            <icon type="clear" wx:if="{{companyName}}" bindtap='clearcompanyName' size="14"  class="clear_input_icon"></icon>
+          </view>
+        </view>
+
+        <view class="each_invoice  invoice_type">
+          <view class="each_invoice_cont">
+            <text class="invoice_left_title">*纳税人识别号</text>
+            <input type="text" bindinput='sbNumInput' value="{{sbNum}}" placeholder='或统一社会信用代码' class="short_input"></input>
+            <icon type="clear" wx:if="{{sbNum}}" bindtap='clearsbNum' size="14"  class="clear_input_icon"></icon>
+          </view>
+        </view>
+
+        <view class="each_invoice  invoice_type">
+          <view class="each_invoice_cont">
+            <text class="invoice_left_title">*注册地址</text>
+            <input type="text" bindinput='addressInput' value="{{address}}" placeholder='请确保与贵司税务登记信息一致' class="short_input"></input>
+            <icon type="clear" wx:if="{{address}}" bindtap='clearaddress' size="14"  class="clear_input_icon"></icon>
+          </view>
+        </view>
+
+        <view class="each_invoice  invoice_type">
+          <view class="each_invoice_cont">
+            <text class="invoice_left_title">*注册电话</text>
+            <input type="text" bindinput='telphoneInput' value="{{telphone}}" placeholder='请输入注册电话' class="short_input"></input>
+            <icon type="clear" wx:if="{{telphone}}" bindtap='cleartelphone' size="14"  class="clear_input_icon"></icon>
+          </view>
+        </view>
+
+        <view class="each_invoice  invoice_type">
+          <view class="each_invoice_cont">
+            <text class="invoice_left_title">*开户银行</text>
+            <input type="text" bindinput='brandNameInput' value="{{brandName}}" placeholder='请输入开户银行' class="short_input"></input>
+            <icon type="clear" wx:if="{{brandName}}" bindtap='clearbrandName' size="14"  class="clear_input_icon"></icon>
+          </view>
+        </view>
+
+        <view class="each_invoice  invoice_type">
+          <view class="each_invoice_cont">
+            <text class="invoice_left_title">*银行账户</text>
+            <input type="text" bindinput='brandNumInput' value="{{brandNum}}" placeholder='请输入银行账户' class="short_input"></input>
+            <icon type="clear"  wx:if="{{brandNum}}" bindtap='clearbrandNum' size="14"  class="clear_input_icon"></icon>
+          </view>
+        </view>
+
+        <view class="each_invoice  invoice_type">
+          <view class="each_invoice_cont">
+            <text class="invoice_left_title">*发票内容</text>
+            <text>明细</text>
+          </view>
+        </view>
+
+        <view class="each_invoice  invoice_type">
+          <view class="each_invoice_cont">
+            <text class="invoice_left_title">发票金额</text>
+            <text class="invoice_type_val">￥{{price}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="each_invoice">
+        <view class="invoice_intro">开具增值税专票，确保开票信息与贵司税务登记证信息一致，避免因开票信息给贵司带来损失</view>
+      </view>
+
+      <view class="space"></view>
+
+      <!-- 已有收货地址 -->
+       <!-- <navigator url="/pages/selectAddress/selectAddress" wx:if="{{province}}" class="address_nav ">
+        <view class="save_address">
+          <view class="invoice_left_title">*收票地址</view>
+          <view class="save_address_right">
+            <view>{{consignee}}</view>
+            <view>{{phone}}</view>
+            <view>{{province}}{{city}}{{area}}{{adress}}</view>
+          </view>
+        </view>
+        <image src="/images/gray_more_2.png"  class="address_edit_img  flexbox"/>
+      </navigator>   -->
+
+      <!-- 添加收票地址 -->
+      <!-- <navigator wx:else  url="/pages/selectAddress/selectAddress" class="address_nav">
+        <text class="invoice_left_title">*添加收票地址</text>
+        <image src="/images/gray_more_2.png"  class="address_edit_img  flexbox"/>
+      </navigator> -->
+
+  </block>
+
+ 
+  <view class="invoice_information">
+    <view class="invoice_type_choose"  bindtap='typeopen'>更多发票类型>></view>
+    <view class="invoice_intro_cont">
+      <view>发票须知：</view>
+      <view>1.开票金额为用户实际支付的金额（不含礼品卡与不支持该发票类型的商品实付金额）</view>
+      <view>2.单笔订单只支持开具一种类型的发票</view>
+      <view>3.年购订单发票随每期子单寄出</view>
+    </view>
+  </view>
+  <view class="save_btn"  bindtap='save'>保存</view>
+
+
+
+  <view class="cont_bg"  wx:if="{{condBg}}"  bindtap='showState'></view>
+  
+  <!-- 发票内容 -->
+  <view  wx:if="{{condition}}"   class="citypicker">  
+    <view class="city_cont">       
+      <view class="citybody">  
+        
+        <view class="city_top">  
+          <view class="city_top_cont">
+            <view class="city_title">发票内容</view>
+            <view bindtap="invoiceContSure"  data-id="{{contNum}}" class="city-true">确定</view>  
+          </view>        
+        </view> 
+        <scroll-view scroll-y class="cont_body">
+          <block wx:for="{{invoiceContList}}"  wx:key="{{index}}" wx:for-index="i">
+            <view  bindtap='invoiceContChoose' data-id="{{i}}"  class="cont_body_each  {{contNum == i ? 'cont_body_each_active' : '' }}">{{item}}</view> 
+          </block>
+        </scroll-view>
+      </view> 
+    </view>  
+  </view> 
+
+  <!-- 发票类型 -->
+  <view  wx:if="{{conditionType}}"   class="citypicker">  
+    <view class="city_cont">       
+      <view class="citybody">  
+        
+        <view class="city_top">  
+          <view class="city_top_cont">
+            <view class="city_title">发票类型</view>
+            <view bindtap="invoiceTypeSure"  data-id="{{contTypeNum}}" class="city-true">确定</view>  
+          </view>        
+        </view> 
+        <scroll-view scroll-y class="cont_body">
+          <view  bindtap='invoiceTypeChoose' data-id="0"  class="cont_body_each  {{contTypeNum == 0 ? 'cont_body_each_active' : '' }}">纸质普通发票</view>
+          <view  bindtap='invoiceTypeChoose' data-id="1"  class="cont_body_each  {{contTypeNum == 1 ? 'cont_body_each_active' : '' }}">增值税专用发票</view>
+        </scroll-view>
+      </view> 
+    </view>  
+  </view> 
+  <!-- 消息提示框  -->
+  <view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+    <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+  </view>
+</view>

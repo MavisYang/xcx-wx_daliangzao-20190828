@@ -1,0 +1,4 @@
+// invite.js
+Page({
+
+})

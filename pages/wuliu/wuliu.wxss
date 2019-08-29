@@ -1,0 +1,212 @@
+/* pages/wuliu/wuliu.wxss */
+page{
+  background-color: #fff;
+}
+.container_gray{
+  display: block;
+  height: 100vh;
+  background-color: #F7F7F7;
+}
+.header{
+  height: 114rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  margin-bottom:20rpx;
+}
+.wuliu_icon,.wuliu_infor{
+  float: left;
+  font-size: 26rpx;
+}
+.wuliu_icon{
+  position: relative;
+  width: 50rpx;
+  height: 50rpx;
+  top:32rpx;
+  margin:0 18rpx 0 27rpx;
+}
+.wuliu_infor{
+  margin-top:23rpx;
+}
+.infor_title{
+  line-height: 34rpx;
+  color: #b5aea3;
+}
+
+
+
+
+.header_title{
+  height: 102rpx;
+  font-size: 28rpx;
+  line-height: 102rpx;
+  color: #fff;
+  text-align: center;
+}
+.header_each,.header_each_line{
+  float: left;
+}
+.header_each{
+  width: 246rpx;
+  color: #fff;
+}
+.header_each_title,.header_each_num{
+  font-size: 30rpx;
+  line-height: 60rpx;
+  padding-left: 50rpx;
+}
+.header_each_num{
+  font-size: 40rpx;
+  padding-left: 54rpx;
+}
+.header_each_line{
+  width: 1rpx;
+  height: 104rpx;
+  background-color: #fff;
+  margin-top:18rpx;
+}
+.list_title{
+  padding-left: 38rpx;
+  height: 70rpx;
+}
+.list_title_icon{
+  float: left;
+  width: 16rpx;
+  height: 16rpx;
+  background-color: #a4b6c2;
+  border-radius: 50%;
+  margin:27rpx 12rpx 0 0;
+}
+.list_title_cont{
+  font-size: 30rpx;
+  line-height: 70rpx;
+  color: #666;
+}
+
+.list_content_wrap{
+  width: 100%;
+  background-color: #fff;
+}
+.list_content_wrap_gray{
+  background-color: #F7F7F7;
+}
+.list_content{
+  padding:0 0 0 38rpx;
+}
+
+.list_each{
+  height: 130rpx;
+  border-left: 3rpx dashed #ccc;
+  position: relative;
+  padding:0 30rpx;
+}
+.each_title_icon{
+  width: 16rpx;
+  height: 16rpx;
+  background-color: #ccc;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left:0;
+  margin: 0 0 0 -8rpx;
+}
+.each_title_icon_1{
+  background-color: #b4272d;
+}
+.cont_time{
+  font-size: 18rpx;
+  color: #a9a9a9;
+  padding-bottom:10rpx;
+}
+.cont_state{
+  font-size: 28rpx;
+}
+.cont_state_1{
+  color: #b4272d;
+}
+
+
+
+
+.each_title{
+  float: left;
+  width: 16rpx;
+  height: 130rpx;
+  
+  position: relative;
+}
+.each_title_line{
+  width: 4rpx;
+  height: 120rpx;
+  background-color: #b4272d;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -2rpx;
+}
+
+.each_cont{
+  height: 120rpx;
+}
+.cont_left{
+  float: left;
+}
+.cont_title{
+  width: 430rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding:32rpx 0 18rpx 0 ;
+  font-size: 30rpx;
+  color: #333;
+}
+.cont_time{
+  font-size: 26rpx;
+  color: #848484;
+  padding-left: 8rpx;
+}
+.cont_right{
+  float: right;
+  padding-right: 30rpx;
+}
+.right_num,.right_icon{
+  float: right;
+}
+.right_icon{
+  width: 33rpx;
+  height: 30rpx;
+  margin:50rpx 0 0 20rpx;
+}
+.right_num{
+  font-size: 32rpx;
+  line-height: 130rpx;
+  color: #ff7200;
+}
+.tack_btn{
+  width: 88%;
+  height: 96rpx;
+  font-size: 34rpx;
+  line-height: 96rpx;
+  color: #fff;
+  text-align: center;
+  background-color: #ffa200;
+  margin: 0 auto;
+  /* position: fixed;
+  left:6%;
+  bottom:45rpx; */
+}
+/* 无物流信息 */
+.wuliu_null{
+  display: block;
+  /* width: 300rpx;
+  height: 233rpx;
+  margin: 100rpx auto 50rpx; */
+  width: 380rpx;
+  height: 390rpx;
+  margin: 0 auto 50rpx;
+  padding-top: 100rpx;
+}
+.wuliu_msg{
+  font-size: 28rpx;
+  text-align: center;
+  color: #999;
+}

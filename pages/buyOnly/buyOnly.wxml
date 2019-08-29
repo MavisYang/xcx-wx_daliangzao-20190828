@@ -1,0 +1,357 @@
+<!--buy.wxml  购买商品 - 详情页-->
+<import src="../../wxParse/wxParse.wxml"/> 
+<scroll-view class="container"  style="{{state}}" scroll-y="true">
+  
+  <!-- banner -->
+  <view class="goods_img">
+    <swiper class="banner_swiper"  indicator-dots="true"   circular="true"  duration="1000" style="height: 750rpx;"> 
+      <block wx:for="{{banner}}"   wx:key="{{index}}">  
+        <swiper-item class="banner">  
+          <image wx:if="{{urlHttp}}"  bindtap="previewImg"  src="{{urlHttp}}images/{{item}}" data-src="{{urlHttp}}images/{{item}}"  mode="widthFix"></image>       
+        </swiper-item>  
+      </block>  
+    </swiper>  
+  </view>  
+
+  <!-- 商品详情  -->
+  <view class="goods_infor_wrap">
+
+      <view class='goods_title_wrap'>
+        <view class="goods_title">{{title}}</view>
+        <view class='goods_title_intro'>{{intro}}</view>
+        <button class='collect_wrap  share_wrap'  plain="true"  open-type="share">
+          <image src="/images/bug_share_icon.png"  class='collect_icon'></image>
+          <view class='collect_cont'>分享</view>
+        </button>
+         <view class='collect_wrap'  bindtap='collect'  data-state="{{collectState}}">
+          <image src="{{collectState ? '/images/zan_gray_pre.png' : '/images/zan_gray_n.png'}}"  class='collect_icon'></image>
+          <view class='collect_cont'>{{collectState ? '已收藏' : ' 收藏'}}</view>
+        </view>
+      </view>
+      
+      <view class="goods_infor  clearfix">
+        <view class="goods_price">
+          <text class="new_price">￥{{newPrice}}</text>
+          <text class="old_price"  decode="true" >&nbsp;￥{{oldPrice}}&nbsp;&nbsp;</text>
+        </view>
+        <view class="goods_limit  clearfix">
+          <view class='goods_limit_each'>
+            <text class='goods_limit_each_tit'>起订</text>
+            <text class="min_number">起订量{{num}}件</text>
+          </view>
+          <view class='goods_limit_each'>
+            <text class='goods_limit_each_tit'>定制</text>
+            <text class="min_number">定制周期{{cycle}}天</text>
+          </view>
+        </view>
+    </view>
+  </view>
+
+
+  <!-- 选择商品&定制详情 -->
+  <view class='choose_goods_wrap  clearfix'  bindtap='showGoodsInfor'>
+    <image src='/images/buy_choose_icon.png' class="choose_goods_icon"></image>
+    <text class='choose_goods_title'  wx:if="{{chooseResult == 0}}">选择商品&定制详情</text> 
+
+    <text class='choose_goods_title' wx:else>已选择 {{rule1}} {{rule2}} {{rule3}} {{rule4}} {{rule5}} {{selectBox}} {{selectDingZhi}}</text> 
+
+    <image class='brand_jiantou' src='/images/black_more_2.png'></image>
+  </view>
+
+
+  <!-- 服务 -->
+  <view class='choose_goods_wrap  clearfix'  bindtap='showServiceInfor'>
+    <image src='/images/buy_service_icon.png' class="choose_goods_icon"></image>
+    <text class='choose_service_title'>服务</text>
+    <view class='choose_service_infor '>
+      <block wx:for="{{goodsService}}" wx:key="index"  wx:index-for="i">
+        <block wx:if="{{iconNum != 0}}">
+          <view class='choose_service_each '>
+            <image class="service_cont_icon" wx:if="{{item.acceptance_logo}}" src="{{item.acceptance_logo}}"></image>
+            <text class='service_cont_title  choose_service_tit'>{{item.acceptance_name}}</text>
+          </view>
+        </block>  
+
+        <!-- <image src='/images/buy_service_each_icon.png' class="service_cont_icon"></image>
+        <text class='service_cont_title  choose_service_tit'>{{item.acceptance_name}}</text> -->
+        
+      </block>
+    </view>
+    <image class='brand_jiantou' src='/images/black_more_2.png'></image>
+  </view>
+
+
+  <!-- 品牌信息 -->
+  <!-- <navigator wx:if="{{brandname}}"  url="/pages/brandInfor/brandInfor?title={{brandname}}&intro={{brandtitle}}&src={{brandBanner}}&id={{brandid}}"  class="brand_infor_wrap">
+    <image src="{{brandlogo}}"  class="brand_mark"></image>
+    <view class="brand_name">{{brandname}}</view>
+    <image src="/images/black_more_2.png" class="brand_jiantou"></image>
+  </navigator> -->
+
+  <!-- 具体信息 -->
+  <view class="goods_content">
+    <template is="wxParse" data="{{wxParseData:article1.nodes}}" class="article_cont_cont"/>
+  </view>
+  <view style='height:98rpx;'></view>
+</scroll-view>
+
+<!-- 底部购买栏 -->
+<view class="footer">
+  <view class="footer_left"> 
+    <navigator class="footer_left_each">
+      <contact-button class="button-image" type="default-light" size="27" class="kefu_icon"/>
+      <image src="/images/goods_footer_kefu.png"></image>
+      <view>客服</view>
+    </navigator>
+    
+    <view   bindtap='linkCart' class="footer_left_each  footer_left_cart">
+      <image src="/images/goods_footer_cart.png"></image>
+      <view>购物车</view>
+      <view  wx:if="{{cartNum != 0}}"  class="cart_num">
+        <image  src='/images/buy_cart_num.png'  class="cart_num_icon"></image>
+        <view class='cart_num_num'>{{cartNum}}</view>
+      </view>
+    </view>
+  </view>
+
+  <block wx:if="{{soldOutShow}}">
+      <!-- 下架 -->
+      <view class='footer_add  footer_btn_gray'>商品已经下架啦~</view>
+  </block>
+  
+  <block wx:elif="{{(user_id == 'oovpNwsvEqHHupisE0dWIZeOi6Jg') || (user_id == 'oovpNwvQGE0uUqpsQrbiVigaEFM0') || (user_id == 'oovpNwo_ocpujBYeYATSXkDUfJnU')}}">
+      <!-- 客户：oovpNwsvEqHHupisE0dWIZeOi6Jg  我：oovpNwvQGE0uUqpsQrbiVigaEFM0   喜滨： -->
+      <block wx:if="{{user_allow_num > 0}}">
+          <view class='footer_buy'  bindtap="buyCart"> 立 即 购 买 </view>
+      </block>
+      <block wx:else>
+          <view class='footer_buy  footer_btn_gray'>数量已达上限</view>
+      </block> 
+  </block>
+  <block wx:else>
+      <view class='footer_buy  footer_btn_gray'>非特定用户不可购买</view>
+  </block>
+</view> 
+
+
+<!-- 服务 - 弹窗 -->
+<view  class="rule_made_wrap_wrap"  animation="{{animationDataSer}}">
+  <view class="rule_made_wrap"> 
+    <view class="made_bg"  bindtap='closeService'></view>
+    <view class="rule_made  rule_made_ser">
+    
+      <view class="picker_top  picker_top_ser">
+        <icon type="cancel"  bindtap="closeService"  size="21"  color="#b5b6b6" class="picker_cancel"/>
+        <view class="picker_top_cont">       
+          <view class='service_title_wrap'>
+            <view class="service_title_line"></view>
+            <view class="service_title_cont">服务保证</view>
+          </view>
+        </view>
+      </view>
+      <view class="picker_body  picker_body_ser">
+        <view class="picker_body_cont">
+          <view class='service_cont_wrap'>
+              <!-- 服务保证 -->
+              <block  wx:for="{{goodsService}}"    wx:key="index" wx:for-index="i">
+                <view class='service_each'>
+                  <view class='service_each_title  clearfix'>
+                    <image wx:if="{{item.acceptance_logo}}" src="{{item.acceptance_logo}}" class="service_cont_icon"></image>
+                    <text class='service_cont_title'>{{item.acceptance_name}}</text>
+                  </view>
+                  <view class='service_each_cont'>{{item.acceptance_des}}</view>
+                </view>
+              </block>
+              <!-- 服务保证结束 -->
+          </view>     
+        </view>
+        <view class="picker_btn"  bindtap="closeService"  animation="{{animationData}}">确  定</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 立即购买 - 弹出选择规格详情列表 -->
+<view class="windBg  {{isShow ? '' : 'hidden'}}"  animation="{{windBgShow}}"></view>
+<view  class="rule_made_wrap_wrap"  animation="{{animationDataBuy}}">
+  <view class="rule_made_wrap">
+    <view class="made_bg"  bindtap='closeBuy'></view>
+    <image wx:if="{{bannerSml}}" src="{{bannerSml}}"   class="picker_goods_img"></image>
+    <view class="rule_made">
+      <view class="picker_top">
+        <view class="picker_top_cont">       
+          <view class="picker_goods_infor">
+            <view class="picker_name">{{title}}</view>
+            <view class="picker_rule">选择了
+              <text>{{rule1}} {{rule2}} {{rule3}} {{rule4}} {{rule5}} {{selectBox}} {{selectDingZhi}}</text>
+            </view> 
+            <view class="picker_price">
+              <text class="price_title">￥ </text>
+              <text class="new_price"> {{allPrice}}</text>
+            </view>
+          </view>
+          <icon type="cancel"  bindtap="closeBuy"  size="21"  color="#b5b6b6" class="picker_cancel"/>
+        </view>
+
+      </view>
+
+      
+      <view class="picker_body">
+        <view class="picker_body_cont">
+
+          <!-- 规格1 -->
+          <view  wx:if="{{style1 > 0 }}" class="goods_kind_wrap  margintop">
+            <view  class="goods_service" >
+              <view class="service_title">{{style1_name}}</view>
+              <view wx:for="{{Style1}}"  wx:key="index"  wx:for-index="i"  data-id="{{i}}"  class="each_color" data-rule="1"  bindtap="ruleSelect"  data-sta="0">
+                <block wx:if="{{style1 > 0}}">
+                  <image wx:if="{{item.datasheet_logo}}" src="{{item.datasheet_logo}}"  class="color_icon"></image>
+                  <view class="color_name">{{item.datasheet_name}}</view>
+                  <view class="style_mode  {{ruleClick1 == i ? 'active_style' : ''}}"></view>
+                </block> 
+                <block wx:else>
+                  <view class="color_name  {{ruleClick1 == i ? 'active_style' : ''}}">{{item.datasheet_name}}</view>
+                </block>                
+              </view>
+            </view>
+          </view>
+          <!-- 规格2 -->
+          <view  wx:if="{{style2 > 0 }}" class="goods_kind_wrap  margintop">
+            <view  class="goods_service" >
+              <view class="service_title">{{style2_name}}</view>
+              <view wx:for="{{Style2}}"  wx:key="index"  wx:for-index="i"  data-id="{{i}}"  class="each_color" data-rule="2"  bindtap="ruleSelect">
+                <block wx:if="{{style2 > 0}}">
+                  <image wx:if="{{item.datasheet_logo}}" src="{{item.datasheet_logo}}"  class="color_icon"></image>
+                  <view class="color_name">{{item.datasheet_name}}</view>
+                  <view class="style_mode  {{ruleClick2 == i ? 'active_style' : ''}}"></view>
+                </block> 
+                <block wx:else>
+                  <view class="color_name  {{ruleClick2 == i ? 'active_style' : ''}}">{{item.datasheet_name}}</view>
+                </block>                
+              </view>
+            </view>
+          </view>
+          <!-- 规格3 -->
+          <view  wx:if="{{style3 > 0 }}" class="goods_kind_wrap  margintop">
+            <view  class="goods_service" >
+              <view class="service_title">{{style3_name}}</view>
+              <view wx:for="{{Style3}}"  wx:key="index"  wx:for-index="i"  data-id="{{i}}"  class="each_color" data-rule="3"  bindtap="ruleSelect">
+                <block wx:if="{{style3 > 0}}">
+                  <image wx:if="{{item.datasheet_logo}}" src="{{item.datasheet_logo}}"  class="color_icon"></image>
+                  <view class="color_name">{{item.datasheet_name}}</view>
+                  <view class="style_mode  {{ruleClick3 == i ? 'active_style' : ''}}"></view>
+                </block> 
+                <block wx:else>
+                  <view class="color_name  {{ruleClick3 == i ? 'active_style' : ''}}">{{item.datasheet_name}}</view>
+                </block>                
+              </view>
+            </view>
+          </view>
+          <!-- 规格4 -->
+          <view  wx:if="{{style4 > 0 }}" class="goods_kind_wrap  margintop">
+            <view  class="goods_service" >
+              <view class="service_title">{{style4_name}}</view>
+              <view wx:for="{{Style4}}"  wx:key="index"  wx:for-index="i"  data-id="{{i}}"  class="each_color" data-rule="4"  bindtap="ruleSelect">
+                <block wx:if="{{style4 > 0}}">
+                  <image wx:if="{{item.datasheet_logo}}" src="{{item.datasheet_logo}}"  class="color_icon"></image>
+                  <view class="color_name">{{item.datasheet_name}}</view>
+                  <view class="style_mode  {{ruleClick4 == i ? 'active_style' : ''}}"></view>
+                </block> 
+                <block wx:else>
+                  <view class="color_name  {{ruleClick4 == i ? 'active_style' : ''}}">{{item.datasheet_name}}</view>
+                </block>                
+              </view>
+            </view>
+          </view>
+          <!-- 规格5 -->
+          <view  wx:if="{{style5 > 0 }}" class="goods_kind_wrap  margintop">
+            <view  class="goods_service" >
+              <view class="service_title">{{style5_name}}</view>
+              <view wx:for="{{Style5}}"  wx:key="index"  wx:for-index="i"  data-id="{{i}}"  class="each_color" data-rule="5"  bindtap="ruleSelect">
+                <block wx:if="{{style5 > 0}}">
+                  <image wx:if="{{item.datasheet_logo}}" src="{{item.datasheet_logo}}"  class="color_icon"></image>
+                  <view class="color_name">{{item.datasheet_name}}</view>
+                  <view class="style_mode  {{ruleClick5 == i ? 'active_style' : ''}}"></view>
+                </block> 
+                <block wx:else>
+                  <view class="color_name  {{ruleClick5 == i ? 'active_style' : ''}}">{{item.datasheet_name}}</view>
+                </block>                
+              </view>
+            </view>
+          </view>
+
+          <!-- 礼盒 -->
+          <view   wx:if="{{giftboxsize != '' }}"   class="goods_kind_wrap  margintop">
+            <view  class="goods_service" >
+              <view class="service_title">礼盒</view>
+              <view  wx:for="{{gixboxService}}"  wx:key="index"  wx:for-index="i"  data-id="{{i}}"  class="each_color"  bindtap="boxSelect">
+                <block wx:if="{{iconNum != 0}}">
+                  <image class="color_icon  {{boxClick == i ? 'active_style' : ''}}" wx:if="{{item.giftbox_logo}}" src="{{item.giftbox_logo}}"></image>
+                  <view class="color_name">{{item.giftbox_name}}</view>
+                  <view class="style_mode  {{boxClick == i ? 'active_style' : ''}}"></view>
+                </block>          
+                <block wx:else>
+                  <view class="color_name {{boxClick == i ? 'active_style' : ''}}">{{item.giftbox_name}}</view>
+                </block>
+                <view class="clearfix"></view>
+              </view>
+              <view class="clearfix"></view>
+            </view>
+          </view>
+
+          <!-- 定制 -->
+          <view   wx:if="{{dingzhiService != ''}}"   class="goods_kind_wrap  margintop">
+            <view  class="goods_service" >
+              <view class="service_title">定制工艺</view>
+              <view  wx:for="{{dingzhiService}}"  wx:key="index"  wx:for-index="i"  data-id="{{i}}"  class="each_color  each_dz_service"  bindtap="dingZhiSelect">
+                <block wx:if="{{iconNum != 0}}">
+                  <image class="color_icon  {{dingZhiClick == i ? 'active_style' : ''}}" wx:if="{{item.process_logo}}" src="{{item.process_logo}}"></image>
+                  <view class="color_name">{{item.process_name}}</view>
+                  <view class="style_mode  {{dingZhiClick == i ? 'active_style' : ''}}"></view>
+                </block>          
+                <block wx:else>
+                  <view class="color_name {{dingZhiClick == i ? 'active_style' : ''}}">{{item.process_name}}</view>
+                </block>
+                <view class="clearfix"></view>
+              </view>
+              <!-- 客服 -->
+              <view  class='each_color  each_dz_service'> 
+                <button  open-type="contact"   class='button-image  contact_button'  plain="true" >
+                  <!-- <button open-type="contact" size="138"  class='contact_button'></button> -->
+                  <image class="color_icon"  src="/images/bug_dz_service_icon.jpg"></image>
+                  <view class="color_name">联系客服</view> 
+                </button>
+              </view>          
+              <view class="clearfix"></view>
+            </view>
+          </view>
+      
+          <!-- 数量 -->
+          <view class="goods_num  margintop">购买数量     
+            <view class="goods_num_wrap">
+              <image    src="{{isMinus?'/images/minus_pre.png':'/images/minus.png'}}" class="num_btn  num_btn_left"></image>
+              <view class="num_num">{{minNumber}}</view>
+              <!-- <text class="num_num">{{minNumber}}</text> -->
+              <image   src="/images/add.png" class="num_btn  num_btn_right"></image>
+            </view>
+          </view>
+
+        </view>
+
+        <!-- 从选择商品口进入 -->
+        <view wx:if="{{chooseFlag == 1}}"  class='picker_btn_wrap  clearfix'>
+          <view class="picker_btn  picker_btn_add"  data-id="0"  bindtap="tz">加 入 购 物 车</view>
+          <view class="picker_btn  picker_btn_buy"  data-id="1"  bindtap="tz">立 即 购 买</view>
+        </view>
+        <!-- footer入口购买 -->
+        <view wx:else class="picker_btn"  data-id="{{stateId}}"  bindtap="tz">确  定</view>
+
+      </view>
+    </view>
+  </view>
+  
+</view>
+
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>

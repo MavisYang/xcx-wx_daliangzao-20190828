@@ -1,0 +1,25 @@
+/* problemInfor.wxss */
+page{
+  background-color: #f4f4f4;
+}
+.container{
+  padding:38rpx;
+}
+.problem_title{
+  font-size: 38rpx;
+  font-weight: bold;
+  line-height: 46rpx;
+  color: #1e1e1e;
+}
+.send_time{
+  font-size:26rpx;
+  line-height: 70rpx;
+  color: #999;
+}
+.problem_cont{
+  padding-top:20rpx;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  color: #333333;
+  text-indent: 2em;
+}

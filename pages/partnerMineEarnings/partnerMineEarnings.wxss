@@ -1,0 +1,225 @@
+/* pages/partner/mineEarnings/mineEarnings.wxss */
+page{
+  background-color: #f9f9f9;
+}
+.container{
+  background-color: #f9f9f9;
+}
+.mine_bg{
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.main_content{
+  position: relative;
+}
+/* 用户信息 */
+.user_infor{
+  padding: 70rpx 0 0 0;
+}
+.user_photo{
+  display: block;
+  width: 110rpx;
+  height: 110rpx;
+  margin: 0 auto;
+  border-radius: 100%;
+}
+.user_name{
+  font-size: 22rpx;
+  line-height: 78rpx;
+  color: #505050;
+  text-align: center;
+}
+.partner_title{
+  display: block;
+  width: 100%;
+}
+.content_intro{
+  text-align: center;
+  margin: 50rpx 0 0 0;
+}
+.content_intro_cont{
+  display: inline-block;
+}
+.each_intro{
+  font-size: 22rpx;
+  line-height: 100rpx;
+  color: #af9d77;
+  border-bottom: 3px solid #fff;
+  background-color: #fdf6ea;
+}
+.each_intro_title{
+  background-color: #f9f0d7;
+}
+.each_intro_left{
+  float: left;
+  width: 232rpx;
+  border-right: 2px solid #fff;
+}
+.each_intro_right{
+  float: left;
+  width: 412rpx;
+}
+.add_btn{
+  width: 646rpx;
+  height: 100rpx;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #b4a078;
+  margin: 24rpx auto 0;
+}
+
+/* 已成为合伙人 */
+.partner_banner{
+  display: block;
+  width: 100%;
+}
+.partner_infor_wrap{
+  margin: 15rpx 0 0 0;
+}
+
+.partner_infor_title{
+  font-size: 30rpx;
+  line-height: 86rpx;
+  color: #2d2d2d;
+  text-align: center;
+}
+.partner_infor_title text{
+  font-size: 18rpx;
+  color: #a7a7a7;
+}
+.partner_infor_title_money{
+  font-size: 52rpx;
+  font-weight: bold;
+  color: #b4a078;
+  text-align: center;
+  text-shadow: 0 6px 4px rgba(78,78,78,0.11);
+  padding-bottom: 52rpx;
+}
+.partner_infor_each{
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #dedede;
+  background-color: #fff;
+  padding: 0 55rpx 0 50rpx;
+}
+.partner_infor_icon{
+  display: block;
+  float: left;
+  width: 30rpx;
+  height: 32rpx;
+  margin: 34rpx 15rpx 0 0;
+}
+.partner_infor_each_title{
+  float: left;
+  font-size: 24rpx;
+  color: #2d2d2d;
+}
+.partner_infor_right{
+  float: right;
+}
+.partner_infor_money{
+  display: block;
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  color: #666;
+}
+.partner_infor_money_u{
+  display: block;
+  float: left;
+  font-size: 16rpx;
+  line-height: 1;
+  padding: 46rpx 0 0 15rpx;
+}
+.partner_infor_jiantou{
+  float: left;
+  display: block;
+  width: 14rpx;
+  height: 24rpx;
+  margin: 39rpx 0 0 32rpx;
+}
+
+/* 提现记录 */
+.record_list{
+  margin: 16rpx 0 0 0;
+  color: #111;
+  background-color: #fff;
+  /* padding-bottom: 80rpx; */
+}
+.record_list_title{
+  height: 90rpx;
+  font-size: 30rpx;
+  line-height: 90rpx;
+  padding: 0 0 0 50rpx;
+}
+.record_list_cont{
+  border-top:1px solid #e5e5e5;
+  border-bottom:1px solid #e5e5e5;
+}
+.each_record{
+  padding: 0 0 0 50rpx;
+  line-height: 100rpx;
+}
+.record_time,.record_money{
+  float: left;
+  font-size: 20rpx;
+}
+.record_time{
+  width: 280rpx;
+}
+.record_money{
+  font-size: 26rpx;
+  color: #b4a078;
+}
+.record_sta{
+  float: right;
+  width: 100rpx;
+  height: 40rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #b4a078;
+  border-radius: 1px;
+  margin: 30rpx 62rpx 0 0;
+  cursor:pointer;
+}
+.record_succeed{
+  background-color: #c5c9cc;
+}
+
+.record_btn_wrap{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+}
+.record_btn_each,button.record_btn_each,button.button-hover[plain]{
+  display: block;
+  float:left;
+  width: 50%;
+  height: 100rpx;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  background-color: #b4a078;
+  padding: 0;
+  border-radius: 0;
+}
+button.record_btn_each:after,button.record_btn_each:before{
+  display: none;
+  border: 0px;
+}
+.record_btn_tx{
+  background-color: #e2bc7a;
+}

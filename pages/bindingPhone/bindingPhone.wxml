@@ -1,0 +1,40 @@
+<!--pages/bindingPhone/bindingPhone.wxml  绑定手机号  -->
+<view class="container">
+
+  <view class="photo_wrap"  id="phoneWrap">
+    <image src="/images/dingzhi_bg.jpg"  class="dingzhi_bg"  alt="大良造"></image>
+    <view class="photo_cont">
+        <image src="/images/yindaotu_logo.png"  class="dingzhi_logo"  alt="大良造"></image>
+        <view class="photo_content">
+            <view class="each_photo_cont  clearfix">
+                <input type="text"   bindinput='userNameInput'  placeholder="请输入联系人" class="each_photo_ipt"></input>
+            </view>
+            <view class="each_photo_cont  clearfix">
+                <input type="text" class="each_photo_ipt  zhuce_border" bindinput ="userTelephoneInput"  placeholder="请输入手机号" maxlength="11" ></input>
+            </view>
+
+
+            <view class="each_photo_cont  clearfix">
+                <view class="photo_have  yan_zhenmg_ma">
+                    <input type="text" bindinput='codeInput'   placeholder="请输入验证码"  class="each_photo_short_ipt"></input>
+                    <view id="huo_qu_ma"  bindtap='checkYanzhengma'   class="huo_qu_ma  {{time_nun}}">{{codeCont}}</view>
+                </view>
+            </view>
+        </view>
+        
+        <view class="phone_line_wrap  clearfix">
+            <view class="phone_line"></view>
+            <view class="phone_line_title">绑定后获取更多服务</view>
+            <view class="phone_line"></view>
+        </view>
+        
+        <view class="phone_btn"  bindtap='bangdingFun'>绑 定 手 机</view>
+        <!-- <view class='back_pay'  bindtap='jumpBinding'>跳 过</view> -->
+    </view>
+  </view>
+
+</view>
+
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>

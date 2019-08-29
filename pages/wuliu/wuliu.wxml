@@ -1,0 +1,36 @@
+<!--pages/wuliu/wuliu.wxml  追踪物流  -->
+<view class="container  {{company ? '' : 'container_gray'}}">
+
+  <view class="header"  wx:if="{{company != ''}}">
+    <view class="header_cont">
+      <image src='/images/wuliu_icon.png' class="wuliu_icon"></image>
+      <view class='wuliu_infor'>
+        <view><text class="infor_title">物流公司：</text>{{company}}</view>
+        <view><text class="infor_title">物流单号：</text>{{orderNum}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="list_content_wrap  {{company ? '' : 'list_content_wrap_gray'}}">
+    <view class="list_content">
+
+      <block   wx:if="{{searchList}}" >
+        <block   wx:for="{{searchList}}" >
+          <view class="list_each">
+            <view class="each_title_icon  {{item.flag == 1 ? 'each_title_icon_1' : ''}}"></view>
+            <view class="each_cont">
+              <view class="cont_left">
+                <view class="cont_time">{{item.time}}</view>
+                <view class="cont_state {{item.flag == 1 ? 'cont_state_1' : ''}}">{{item.status}}</view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </block>
+      <block wx:if="{{company == ''}}"> 
+        <image src='/images/dingzhi_null.png'  class='wuliu_null'></image>
+        <view class="wuliu_msg">您的礼物正在加紧准备中，将会尽快为您发货</view> 
+      </block> 
+    </view>
+  </view>
+</view>

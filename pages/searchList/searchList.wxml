@@ -1,0 +1,58 @@
+<!--searchList.wxml  bindscrolltoupper="refesh"  -->
+<scroll-view scroll-y class="container" bindscrolltolower="searchScrollLower" >
+
+  <view class="header_fixed">
+    <!-- 头部搜索 -->
+    <view class="header">
+      <view class="header_search_wrap">
+        <navigator url="/pages/search/search"  class="header_search">
+          <icon type="search"  size="12" color="#929aa0"  class="header_search_icon"></icon>
+          <view class="header_search_placeholder">{{placeholder}}</view>      
+        </navigator>
+      </view>
+    </view>
+
+    <!-- 顶部导航栏 -->
+    <view class="header_nav">
+      <block wx:for="{{navList}}" wx:key="{{index}}">
+
+        <view class="each_nav  {{index == activeIndex ? 'nav_item_active' : ''}}">
+          <view bindtap="onTapTag" data-index="{{index}}" id="{{item.id}}"  data-type="{{index == activeIndex ? '1' : '0'}}"  data-val="{{dataVal}}" class="nav_item">
+            <text class="header_nav_title">{{item.title}}</text>             
+
+            <block wx:if="{{index == activeIndex}}">
+              <image class="header_nav_icon" src="{{pre}}" ></image>      
+            </block>
+
+            <block wx:elif="{{index != activeIndex && item.id == 'price'}}">
+              <image class="header_nav_icon_price" src="{{noActPrice}}"></image>      
+            </block> 
+
+            <block wx:else>
+              <image class="header_nav_icon" src="{{n}}"></image>      
+            </block> 
+          </view>
+            
+        </view>
+
+      </block>
+    </view>
+  </view>
+
+
+  <view class="list">
+    <block wx:for="{{contentList}}" wx:key="{{index}}">
+      <navigator url="/pages/buy/buy?com_id={{item.id}}"  open-type='redirect'  class="list_item_wrap">
+        <view class="list_item">
+          <image src="{{item.commodity_logo}}" class="full_image" mode="widthFix"/>
+          <!-- <view class="full_img_footer">{{item.commodity_des}}</view> -->
+        </view>        
+        <view class="full_title">{{item.commodity_name}}</view>
+        <view class="full_price">¥ {{item.commodity_sale}} <text class='full_price_unit' decode="true">&nbsp;&nbsp;¥{{item.commodity_cost}}&nbsp;&nbsp;</text></view>
+      </navigator>
+    </block>
+  </view>
+
+  <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>  
+  <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view> 
+</scroll-view>

@@ -1,0 +1,294 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 头部搜索 -->
+  <view class="header">
+    <image src="/images/index_search_icon.png" mode='widthFix'  class="header_logo"></image>
+    <view class="header_search_wrap">
+      <navigator url="/pages/search/search"  class="header_search">
+        <icon type="search"  size="12" color="#929aa0" class="header_search_icon"></icon>
+        <view class="header_search_placeholder">{{search.placeholder}}</view>      
+      </navigator>
+    </view>
+  </view>
+
+  <view class='banner_space'></view>
+
+  <view class="tab-content"  current="{{currentItem}}">
+    <!-- 推荐 -->
+    <view>
+      <view scroll-y="true" class="scoll-h"  data-id="0" data-forid="0"  data-current="0"  style="height:{{winHeight}}rpx">
+        <!-- banner -->
+        <view class="banner_wrap">
+            <swiper indicator-dots="true" indicator-active-color="rgba(255, 255, 255, .3)" indicator-color="#fff"   circular="true"  interval="5000" duration="1000"  autoplay='true'  class="{{bannerFlag == 0 ? 'banner_null_class' : ''}}">  
+                <block wx:for="{{banners}}"  wx:key="{{index}}">  
+                  <block wx:if="{{item.banner_flag == '0'}}">
+                    <swiper-item  wx:if="{{item.banner_logo}}"  class="banner">  
+                        <!-- 跳转到文章 -->
+                        <block wx:if="{{item.classify_id == '' || item.classify_id == null}}">
+                            <navigator url="/pages/articleInfor/articleInfor?id={{item.banner_find}}">
+                              <image  src="{{item.banner_logo}}"  mode="scaleToFill" class="slide-image"></image>  
+                            </navigator>  
+                        </block>
+
+                        <block wx:elif="{{item.id == '2915'}}">
+                            <navigator url="/pages/aboutUs/aboutUs">
+                              <image  src="{{item.banner_logo}}"  mode="scaleToFill" class="slide-image"></image>  
+                            </navigator>  
+                        </block>
+                        <!-- 女神节 -->
+                        <block wx:elif="{{item.id == '2917'}}">
+                            <navigator url="/pages/girlsDayInfo/girlsDayInfo">
+                              <image  src="{{item.banner_logo}}"  mode="scaleToFill" class="slide-image"></image>  
+                            </navigator>  
+                        </block>
+                        <!-- 加班汪 -->
+                        <block wx:elif="{{item.id == '2918'}}">
+                            <navigator url="/pages/newYears/newYears">
+                              <image  src="{{item.banner_logo}}"  mode="scaleToFill" class="slide-image"></image>  
+                            </navigator>  
+                        </block>
+                        <!-- 樱花 -->
+                        <block wx:elif="{{item.id == '2922'}}">
+                            <navigator url="/pages/sakuraDay/sakuraDay">
+                              <image  src="{{item.banner_logo}}"  mode="scaleToFill" class="slide-image"></image>  
+                            </navigator>  
+                        </block>
+
+
+                        <!-- 端午节 -->
+                        <block wx:elif="{{item.id == '2930'}}">
+                            <navigator url='/pages/dragonBoatFestivalInfor/dragonBoatFestivalInfor'>
+                              <image  src="{{item.banner_logo}}"  mode="scaleToFill" class="slide-image"></image>  
+                            </navigator>
+                        </block>
+
+                        <!-- 跳转到分类 -->
+                        <block wx:else>
+                            <navigator url='/pages/kindSecondList/kindSecondList?classify_name={{item.classify_name}}&classify_des={{item.classify_des}}&id={{item.classify_id}}'>
+                              <image  src="{{item.banner_logo}}"  mode="scaleToFill" class="slide-image"></image>  
+                            </navigator>
+                        </block>
+                      </swiper-item> 
+                  </block> 
+                </block>  
+            </swiper>  
+        </view>
+
+
+        <!-- new second nav -->
+        <view class='new_nav_wrap  clearfix'>
+          <navigator class='new_nav_each'  url='/pages/recommendList/recommendList'>
+            <image src='/images/index_top_menu_sec_0.png'  class='new_nav_icon'></image>
+            <view  class="new_nav_name">新鲜上架</view> 
+          </navigator>
+
+          <navigator class='new_nav_each'  url='/pages/patternMenu/patternMenu'>
+            <image src='/images/index_top_menu_sec_1.png'  class='new_nav_icon'></image>
+            <view  class="new_nav_name">一键选礼</view> 
+          </navigator>
+
+          <navigator class='new_nav_each'  url='/pages/goodsGift/goodsGift?classify_name=礼物盒&classify_des=礼物盒&id=2986'>
+            <image src='/images/index_top_menu_sec_2.png'  class='new_nav_icon'></image>
+            <view  class="new_nav_name">心礼盒</view> 
+          </navigator>
+
+          <navigator class='new_nav_each'  url='/pages/brandList/brandList'>
+            <image src='/images/index_top_menu_sec_3.png'  class='new_nav_icon'></image>
+            <view  class="new_nav_name">品牌定制</view> 
+          </navigator>
+
+          <navigator class='new_nav_each'  url='/pages/aboutUs/aboutUs'>
+            <image src='/images/index_top_menu_sec_4.png'  class='new_nav_icon'></image>
+            <view  class="new_nav_name">关于我们</view> 
+          </navigator> 
+        </view>
+
+
+        <!-- 新-新品推荐 -->
+        <view class='new_xinpin_wrap'>
+          <!-- title -->
+          <navigator  url='/pages/recommendList/recommendList'  class='new_title_wrap'>
+            <view class='title_kind_wrap'>
+              <view class='title_kind_name'  >新  品  推  荐</view>
+              <view class='title_kind_intro'>精良之选，用心造物</view>
+            </view>
+            <image src='/images/black_more.png'  class='title_kind_more'></image>
+            <image src='/images/index_title_bg_1.png'  class='index_title_bg'></image>
+          </navigator>
+          
+          <!-- 所有商品 -->
+          <view class="new_rexiao_wrap  clearfix">
+
+            <navigator url='/pages/recommendList/recommendList'>
+              <image wx:if="{{urlHttp}}"  src='{{urlHttp}}images/xinpin_new_1.jpg?v=201806221713' mode='widthFix'  class='rexiao_banner'></image>
+            </navigator>
+            <navigator url='/pages/kindSecondList/kindSecondList?classify_name=白领女士&classify_des=白领女士&id=3023'  class="new_rexiao_each  new_rexiao_3">
+                <image src='/images/rexiao_left_new.jpg'  mode='widthFix'></image>
+            </navigator>
+            <navigator  url='/pages/kindSecondList/kindSecondList?classify_name=精英男士&classify_des=精英男士&id=3012'  class="new_rexiao_each  new_rexiao_4">
+                <image src='/images/rexiao_rx_new_3.jpg'   mode='widthFix'></image>
+            </navigator>
+          </view>
+
+        </view>
+        
+
+        <!-- 品牌定制 -->
+        <view class="dingzhi_content_wrap  {{hidden}}">
+
+
+          <!-- content -->
+          <view class='new_xinpin_cont'>
+            <navigator url='/pages/goodsGift/goodsGift?classify_name=礼物盒&classify_des=礼物盒&id=2986'>
+              <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/rexiao_1.png' mode='widthFix'  class='rexiao_banner'></image>
+            </navigator>
+
+            <!-- /pages/buy/buy?com_id=3544 -->
+
+            <!-- /pages/buy/buy?com_id=3564 -->
+
+            <!-- /pages/buy/buy?com_id=3498 -->
+
+
+            <!-- <view class='new_xinpin_2  clearfix'>
+              <navigator url='/pages/buy/buy?com_id=3544' class='new_xinpin_left'>
+                <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/index_tj_1.png' ></image>
+              </navigator>
+              <navigator url='/pages/buy/buy?com_id=3564' class='new_xinpin_left'>
+                <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/index_tj_2.png' ></image>
+              </navigator>
+              <navigator url='/pages/buy/buy?com_id=3498' class='new_xinpin_right'>
+                <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/index_tj_3.png' ></image>
+              </navigator>
+            </view> -->
+
+            <view class='new_xinpin_2  clearfix'>
+              <navigator url='/pages/buy/buy?com_id=3582' class='new_xinpin_left'>
+                <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/index_zhongqiu_1.png' ></image>
+              </navigator>
+              <navigator url='/pages/buy/buy?com_id=3639' class='new_xinpin_left'>
+                <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/index_zhongqiu_2.png' ></image>
+              </navigator>
+              <navigator url='/pages/buy/buy?com_id=3635' class='new_xinpin_right'>
+                <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/index_zhongqiu_3.png' ></image>
+              </navigator>
+            </view>
+          </view>
+
+
+          
+
+          
+
+          
+          <!--  -->
+          <!-- 新title -->
+          <navigator  url='/pages/brandList/brandList'  class='new_title_wrap'>
+            <view class='title_kind_wrap'>
+              <view class='title_kind_name'  >品  牌  定  制</view>
+              <view class='title_kind_intro'>精良之选，用心造物</view>
+            </view>
+            <image src='/images/black_more.png'  class='title_kind_more'></image>
+            <image src='/images/index_title_bg_2.png'  class='index_title_bg'></image>
+          </navigator>
+          
+          <!-- 内容 -->
+          <view class="new_dingzhi_content">
+            <view class='dingzhi_top'>
+              <!-- <navigator url='/pages/brandInfor/brandInfor?title={{title1}}&intro={{intro1}}&src={{src4}}&id={{id1}}'>
+                <image src='{{src1}}'  mode='widthFix'  class='new_dingzhi_img'></image>
+              </navigator> -->
+              <view>
+                <image src='{{src1}}'  mode='widthFix'  class='new_dingzhi_img'></image>
+              </view>
+            </view>
+            <view class='dingzhi_bottom  clearfix'>
+              <view class='dingzhi_bottom_left'>
+                <navigator url='/pages/brandList/brandList'>
+                  <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/index_footer_left.png'  mode='widthFix'  class='new_dingzhi_img'></image>
+                </navigator>
+              </view>
+              <view class='dingzhi_bottom_right'>
+                <navigator url='/pages/goodsGift/goodsGift?classify_name=礼物盒&classify_des=礼物盒&id=2986'>
+                  <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/index_footer_right.png'  mode='widthFix'  class='new_dingzhi_img'></image>
+                </navigator>
+              </view>
+            </view>
+
+          </view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 优惠劵弹窗 -->
+<view class="coupon_wrap  {{showCoupon ? '' : 'hidden'}}">
+  <view class='coupon_content_wrap'>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/index_coupon_bg_top.png'  class='coupon_top_bg'  mode='widthFix'></image>
+    <view class='coupon_bottom_content'>
+      <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/index_coupon_bg_bottom.png'  class='coupon_bottom_bg'></image>
+      <view class='coupon_bottom_cont'>
+
+        <block wx:for="{{coupon}}"  wx:key="index" wx:index="i">
+          <view class='each_coupon  clearfix'>
+            <view class='each_coupon_left'>
+              <image src='/images/index_coupon_each_left.png' class='coupon_bg_left'></image>
+              <view class='each_coupon_cont'>
+                <view class='each_coupon_money'><text>￥</text>{{item.coupon_monry}}</view>
+                <view class='each_coupon_tj'>满{{item.coupon_rule}}可用</view>
+              </view>
+            </view>
+            <view class='each_coupon_right'>
+              <image src='/images/index_coupon_each_right.png'  class='coupon_bg_right'></image>
+              <view class='coupon_right_cont  clearfix'>
+                <view class='coupon_right_right  clearfix'>
+                  <view class='coupon_right_name'>{{item.coupon_name}}</view>
+                  <navigator url='/pages/kind/index' open-type='switchTab' class='use_btn'>立即使用</navigator>
+                </view>
+                <view class='use_data'>30天内有效</view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class='close_coupon'  bindtap='closeCoupon'>
+          <image src='/images/index_close_coupon.png'></image>
+        </view>
+    </view>
+  </view>
+</view>
+
+<!-- 切换模式按钮 -->
+<view class='change_btn'  bindtap='openChangeModel'>
+  <image src='/images/right_tab_xuanli.png' class='change_btn_icon'></image>
+</view> 
+
+<!-- 切换弹层 -->
+<view class='change_msg_bg  {{showMsg ? "" : "hidden"}}'  bindtap='closeMsg'>
+  <view class='change_msg_wrap'>
+    <view class='change_msg_cont'>
+      您已进入商品浏览模式点击右下角可以切换至一键选礼模式
+      <image src='/images/close_icon_white.png' class='change_msg_close' alt='关闭'></image>
+    </view>
+    <view class='change_msg_icon'><image src='/images/msg_bg_right.png' class='change_msg_icon'></image></view>
+  </view>
+</view>
+
+<!-- 切换提示弹窗 -->
+<view class='change_model_wrap  {{showChangeModel ? "" : "hidden"}}'>
+  <view class='change_model_content'>
+    <image src='/images/close_icon_gray.png'  bindtap='closeChangeModel'  class='change_model_close'  alt='关闭'></image>
+    <view class='change_model_cont'>
+      <view class='change_model_title1'>将为您切换至</view>
+      <view class='change_model_title2'>一键选礼模式</view>
+      <view class='change_model_title3'>是否确认？</view>
+      <view class='change_btn_wrap  clearfix'>
+        <image src='/images/change_msg_bg.png' class='change_model_bg'></image>
+        <view class='each_change_btn  btn_left'  bindtap='goChooseGift'>确认</view>
+        <view class='each_change_btn'  bindtap='closeChangeModel'>取消</view>
+      </view>
+    </view>
+  </view>
+</view>

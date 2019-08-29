@@ -1,0 +1,157 @@
+/* pages/aboutUs/aboutUs.wxss */
+.nav{
+  height: 110rpx;
+  font-size: 30rpx;
+  line-height: 110rpx;
+  text-align: center;
+  color: #b4a078;
+  background-color: #fff;
+}
+.model_intro{
+  background-color: #f2f2f2;
+}
+.model_intro_left{
+  float:left;
+}
+.model_intro_right{
+  float: left;
+  padding-top:60rpx;
+}
+.model_intro_right2{
+  float: right;
+}
+.about_us_img{
+  display: block;
+  width: 312rpx;
+  height:429rpx;
+}
+.model_intro_cont{
+  padding: 0 0 0 40rpx;
+}
+.model_intro_title{
+  display: inline-block;
+  font-size: 30rpx;
+  color: #212121;
+  line-height: 50rpx;
+  padding: 0 88rpx 0 0 ;
+  border-bottom: 1px solid #646464;
+}
+.model_intro_inf{
+  width: 354rpx;
+  font-size: 18rpx;
+  line-height: 30rpx;
+  margin-top:34rpx;
+}
+
+/* 定制工艺 */
+.gongyi_wrap{
+  background-color: #303030;
+}
+.gongyi_title{
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+  padding: 60rpx 0 48rpx 0;
+}
+.each_gongyi{
+  padding: 0 54rpx 40rpx 44rpx;
+}
+.each_gongyi_img{
+  float: left;
+  display: block;
+  width: 236rpx;
+  height: 194rpx;
+  margin-right: 32rpx;
+}
+.each_gongyi_intro{
+  float: left;
+  width: 385rpx;
+}
+.each_gongyi_title{
+  font-size: 26rpx;
+  line-height: 50rpx;
+  color: #fff;
+}
+.each_gongyi_cont{
+  font-size: 16rpx;
+  line-height: 22rpx;
+  color: #bfbfbf;
+}
+/* 加工周期 */
+.each_gongyi_btn{
+  display: inline-block;
+  font-size: 15rpx;
+  color: #bebebe;
+  padding: 8rpx 15rpx;
+  border: 1px solid #bebebe;
+  margin: 12rpx 0 0 0;
+  border-radius: 4px;
+}
+
+/* 定制流程 */
+.liucheng_wrap{
+  padding: 0 0 65rpx 0;
+}
+.lucheng_title{
+  font-size: 30rpx;
+  color: #212121;
+  text-align: center;
+  padding: 60rpx 0 30rpx 0;
+}
+.lucheng_intro{
+  font-size: 16rpx;
+  color: #212121;
+  text-align: center;
+  padding: 0 0 52rpx 0;
+}
+.liucheng_img{
+  display: block;
+  width: 647rpx;
+  height: 658rpx;
+  margin: 0 auto;
+}
+
+/* 合作伙伴 */
+.hezuo_wrap .model_intro{
+  background-color: #303030;
+}
+.hezuo_wrap .model_intro_title{
+  color: #fff;
+  border-bottom:1px solid #fff;
+}
+.hezuo_wrap .model_intro_inf{
+  width: 318rpx;
+  color: #fff;
+}
+.hezuo_wrap .model_intro_title{
+  padding-right:0;
+}
+.hezuo_wrap .about_us_img{
+  display: block;
+  width: 385rpx;
+  height: 475rpx;
+}
+
+/* 商品展示 */
+.goods_wrap{
+  background-color: #f2f2f2;
+}
+.goods_title{
+  font-size: 30rpx;
+  color: #b4a078;
+  text-align: center;
+  padding: 60rpx 0 34rpx;
+}
+.goods_list_wrap{
+  margin: 0 9rpx;
+}
+.goods_img_wrap{
+  float:left;
+  width: 33.33%;
+}
+.goods_img{
+  display: block;
+  width: 226rpx;
+  height: 226rpx;
+  margin: 0 auto 18rpx;
+}

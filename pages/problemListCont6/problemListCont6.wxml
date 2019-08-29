@@ -1,0 +1,8 @@
+<!--pages/problemListCont/problemListCont6.wxml-->
+<view class="container">
+  <view class="problem_title">商务合作请联系“{{phone}}”</view>
+  <view class="problem_title">商务合作包括但不限于</view>
+  <view class="problem_cont">1．品牌合作</view>
+  <view class="problem_cont">2．渠道合作</view>
+  <view class="problem_cont">3．媒体合作</view>
+</view>

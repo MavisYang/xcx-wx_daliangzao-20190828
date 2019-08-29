@@ -1,0 +1,82 @@
+/* pages/midAutumnFestival/midAutumnFestival.wxss */
+.container{
+  background-color: #fff;
+}
+image{
+  width: 750rpx;
+  display: block;
+}
+/* .banner{
+  width: 750rpx;
+} */
+.banner_goods{
+  width: 508rpx;
+  margin: -254rpx auto 0;
+}
+.mid_goods_2{
+  margin: 52rpx auto 43rpx;
+}
+.footer_wrap{
+  background-color: #fafafc;
+  margin: 84rpx 0 0 0;
+  padding: 60rpx 0 0 0;
+}
+.footer_goods{
+  width: 358rpx;
+  margin: 0 auto;
+}
+.footer_goods_price{
+  text-align: center;
+  line-height: 1;
+  padding: 32rpx 0 0 0 ;
+}
+.price_title_1{
+  font-size: 20rpx;
+  color: #666;
+}
+.price_title_2{
+  font-size: 30rpx;
+  color: #f07531;
+  padding: 0 0 0 20rpx;
+}
+.price_title_3{
+  font-size: 46rpx;
+  font-weight: bolder;
+  color: #f07531;
+  padding: 0 30rpx 0 2rpx;
+  position: relative;
+  top: 8rpx;
+}
+.price_title_4{
+  font-size: 20rpx;
+  color: #666;
+  text-decoration: line-through;
+}
+.footer_buy_btn{
+  display: block;
+  width: 252rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #fbae33;
+  margin: 28rpx auto 94rpx;
+}
+/* 预售提醒 */
+.footer_festival_infor{
+  /* height: 222rpx; */
+  font-size: 20rpx;
+  line-height: 40rpx;
+  color: #fff;
+  background-color: #000;
+  padding: 0 0 36rpx 88rpx;
+}
+.footer_festival_title{
+  font-size: 24rpx;
+  padding: 34rpx 0 24rpx 0;
+}
+.footer_festival_cont1 text{
+  font-size: 36rpx;
+  color: #ffc900;
+}

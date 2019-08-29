@@ -1,0 +1,15 @@
+<!--problemList.wxml-->
+<view class="container">
+
+  <view class="pro_list_wrap">
+    <block wx:for="{{proList}}" wx:key="">
+      <navigator url="{{item.url}}" class="each_pro">
+        <view class="">{{item.protitle}}</view>
+        <image src="../../images/gray_back.png" class="with_arrow"></image>
+      </navigator>
+    </block>
+  </view> 
+
+  <navigator url="/pages/feedback/feedback" class="pro_footer">意见反馈</navigator>
+
+</view>

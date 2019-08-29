@@ -1,0 +1,17 @@
+<!--pages/problemListCont/problemListCont1.wxml-->
+<view class="container">
+  <view class="problem_title">1.已经购买的商品在哪查看</view>
+  <view class="problem_cont">进入我的订单页面如果没有定制在“待定制”订单状态下列表中查看，如果已经定制或者无需定制产品在“待发货”订单状态下查看。</view>
+
+  <view class="problem_title">2.如何定制</view>
+  <view class="problem_cont">首先只有已经购买（支付）的商品方可定制.商品购买后，在公众号“我的-定制商品”菜单下选择需要定制的商品，点击定制即可进入定制页面进行定制，也可以联系专属客户经理跟住指引进行定制。</view>
+
+  <view class="problem_title">3.关于配送时间</view>
+  <view class="problem_cont">需要注意的是，需要定制的商品只有点击了“定制完成”后状态流转至“待发货”方真正发去发货流程，非定制商品将会在次日发货，定制商品根据定制工艺的不同一般在5-10个工作日内发货。快递时间根据收货的不同一般在1-3个自然日。</view>
+
+  <view class="problem_title">4.如何退换货</view>
+  <view class="problem_cont">非定制商品，在收货起七个自然日内，在外包装不影响二次销售的前提下，可以申请退换货服务，具体请拨打客服电话“{{phone}}”根据客服提示完成退换货服务，定制商品无法提供退换货服务。</view>
+
+</view>
+
+

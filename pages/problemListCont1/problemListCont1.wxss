@@ -1,0 +1,20 @@
+/* pages/problemListCont/problemListCont1.wxss */
+page{
+  background-color: #f4f4f4;
+}
+.container{
+  padding:20rpx;
+}
+.problem_title{
+  color:#000;
+  font-size:28rpx;
+  font-weight: bold;
+  padding-bottom:20rpx;
+}
+.problem_cont{
+  color:#6f7478;
+  font-size: 24rpx;
+  line-height:40rpx;
+  padding-left:1em;
+  padding-bottom:20rpx;
+}

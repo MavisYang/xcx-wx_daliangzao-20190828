@@ -1,0 +1,28 @@
+<!--pages/changePattern/changePattern.wxml  选择模式的开屏页-->
+<view class='container'>
+  <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/change_bg.png' class='change_bg'></image>
+  <!-- 一键选礼 - 弹窗 -->
+  <view class='change_pattern_wrap'>
+      <view class='change_pattern_content'>
+      
+          <view  bindtap='patternXL'  class='change_each_wrap  {{pattern0 ? "change_each_active" : ""}}'>
+              <image src='{{pattern0 ? "/images/xuanli_icon_pre.png" : "/images/xuanli_icon_n.png"}}' class='change_each_icon'></image>
+              <view class='change_each_title'>一键选礼模式</view>
+              <view class='change_each_cont'>选择送礼场景</view>
+              <view class='change_each_cont'>智能选择清单</view>
+          </view>
+
+          <view  bindtap='patternLL'  class='change_each_wrap  {{pattern1 ? "change_each_active" : ""}}'>
+              <image src='{{pattern1 ? "/images/liulan_icon_pre.png" : "/images/liulan_icon_n.png"}}' class='change_each_icon'></image>
+              <view class='change_each_title'>商品浏览模式</view>
+              <view class='change_each_cont'>按照分类推荐</view>
+              <view class='change_each_cont'>选择礼品</view>
+          </view>
+      
+      </view>
+  </view>
+</view>
+<!-- 回到首页 -->
+<view  bindtap='backIndex'  class="back_btn  {{shareFlag == 1 ? '' : 'back_btn_hidden'}}">
+  <image src='/images/share_back_index.png'  class='back_btn_icon'></image>
+</view>

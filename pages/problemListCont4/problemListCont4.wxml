@@ -1,0 +1,13 @@
+<!--pages/problemListCont/problemListCont4.wxml-->
+<view class="container">
+  <view class="problem_title">1.如何退换货</view>
+  <view class="problem_cont">非定制商品，在收货起七个自然日内，在外包装不影响二次销售的前提下，可以申请退换货服务，具体请拨打客服电话“{{phone}}”根据客服提示完成退换货服务，定制商品无法提供退换货服务。</view>
+
+  <view class="problem_title">2.退款流程是什么？</view>
+  <view class="problem_cont">
+    <view>1.联系客服申请退换货</view>
+    <view>2.客服提供退货地址，请将商品包装好邮寄至此地址，并付说明注明订单号，联系方式。</view>
+    <view>3.客服收到货品确认无误后，提交退款。</view>
+    <view>4.2个工作日内，退款金额返回至付款账号，退款完成。</view>
+  </view>
+</view>

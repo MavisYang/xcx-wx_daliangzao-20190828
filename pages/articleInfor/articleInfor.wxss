@@ -1,0 +1,147 @@
+@import "../../wxParse/wxParse.wxss";
+/* articleInfor.wxss */
+page{
+  background-color: #fff;
+}
+.article_banner{
+  width: 100%;
+  position: relative;
+}
+.article_banner_img{
+  width: 100%;
+}
+.article_infor_wrap{
+  position: relative;
+}
+.article_title{
+  width: 580rpx;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #232323;
+  padding: 40rpx 0 16rpx;
+  margin: 0 auto;
+}
+.article_intro{
+  text-align: center;
+  font-size: 18rpx;
+  color: #232323;
+}
+.article_opera{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 26rpx 0 50rpx 0;
+}
+.jingpin_icon{
+  width: 24rpx;
+  height: 24rpx;
+  margin-left:16rpx;
+}
+.article_opera text{
+  font-size: 20rpx;
+  color:#b4a078;
+  padding:0 18rpx 0 6rpx;
+}
+.article_gift_infor{
+  float: right;
+  width: 360rpx;
+}
+.article_gift_intro{
+  width: 300rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 22rpx;
+  color: #646464;
+  padding-top:14rpx;
+}
+.article_gif_price{
+  font: normal  normal  26rpx Arial;
+  color:#ff8401;
+  padding-top:30rpx;
+}
+.new_price{
+  font: bold  30rpx "Microsoft Yahei";
+  color: #b4a078;
+  padding: 0 22rpx 0 0 ;
+}
+.old_price{
+  font: 24rpx "Microsoft Yahei";
+  color: #c8c8c8;
+  text-decoration: line-through;
+}
+
+.article_gift_title{
+  height: 68rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #272727;
+  line-height: 34rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  padding:40rpx 10rpx 0 0 ;
+}
+/* 收藏 */
+.article_collect_wrap{
+  position: absolute;
+  top:40rpx;
+  right: 30rpx;
+}
+.article_banner_zan{
+  display: block;
+  margin: 0 auto;
+  width: 35rpx;
+  height: 35rpx;
+}
+.article_collect_title{
+  font-size: 20rpx;
+  color: #b4a078;
+  text-align: center;
+  padding:10rpx 0 0 0 ;
+}
+/* 收藏结束 */
+.list_btn{
+  width: 114rpx;
+  height: 126rpx;
+  position: fixed;
+  right: 40rpx;
+  bottom: 200rpx;
+  z-index: 2;
+}
+.article_cont{
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.wxParse-p{
+  display: block;
+  font-size:32rpx;
+  color:#333;
+  padding:0 32rpx;
+}
+.list_item_wrap image{
+  width: 100%;
+  margin:50rpx 0;
+}
+.article_cont image{
+  width: 100% !important;
+}
+.wxParse-p image{
+  width: 100% !important;
+}
+/* 商品块 */
+.article_gift{
+  width: 650rpx;
+  height: 250rpx;
+  margin: 38rpx auto;
+  border: 1rpx solid #b4a078;
+  box-sizing: border-box;
+}
+.article_gift image{
+  float: left;
+  width: 248rpx !important;
+  height: 246rpx;
+}

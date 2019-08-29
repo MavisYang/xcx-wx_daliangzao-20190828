@@ -1,0 +1,85 @@
+<!--pages/girslDayInfo/girlsDayInfo.wxml  女神节 - 活动页  -->
+<view class='container'>
+  <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/girlsDay/girlsday_info_top.png'  mode='widthFix' class='girlsday_info_top'></image>
+  <view class='goods_wrap'>
+    <view class='goods_title_wrap'>
+      <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/girlsDay/girlsday_info_title_1.png'  mode='widthFix' class='girlsday_info_title_1'></image>
+    </view>
+
+    <view class='goods_wrap_1  clearfix'>
+        <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/girlsDay/girlsday_info_goods_1_1.png' mode='widthFix' class='girlsday_info_goods_1'></image>
+        <view class='girlsday_info_goods_right'>
+          <view class='goods_name'>Mary Shin手工精油皂+永生花礼盒</view>
+          <text class='goods_lod_price'  decode="true" >市场价￥512</text>
+          <view class='goods_new_price'>活动价￥<text class='goods_new_price_num'>450</text></view>
+          <navigator url='/pages/buy/buy?com_id=3272' class='buy_btn'>立即抢购</navigator>
+        </view>
+        <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/girlsDay/girlsday_info_goods1_flower.png' class='goods_1_right'></image>
+    </view>
+
+    <view class='goods_each_wrap'>
+      <view class='goods_each_cont'>
+        <navigator url='/pages/buy/buy?com_id=3287' class='goods_each'>
+          <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/girlsDay/girlsday_info_goods_1_2.png' mode='widthFix' class='goods_each_img'></image>
+          <view class='goods_each_title'>摩洛哥护发精油+KENT英国皇室猪鬃梳</view>
+          <view class='goods_each_price'>活动价￥<text class='goods_each_price_num'>482</text></view>
+        </navigator>
+        <navigator url='/pages/buy/buy?com_id=3270' class='goods_each'>
+          <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/girlsDay/girlsday_info_goods_1_3.png' mode='widthFix' class='goods_each_img'></image>
+          <view class='goods_each_title'>【大良造】精致生活礼盒（香槟+巧克力）</view>
+          <view class='goods_each_price'>活动价￥<text class='goods_each_price_num'>193</text></view>
+        </navigator>
+        <navigator url='/pages/buy/buy?com_id=3296' class='goods_each'>
+          <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/girlsDay/girlsday_info_goods_1_4.png' mode='widthFix' class='goods_each_img'></image>
+          <view class='goods_each_title'>【FOREO】LUNA2电动硅胶洁面仪</view>
+          <view class='goods_each_price'>活动价￥<text class='goods_each_price_num'>1373</text></view>
+        </navigator>
+      </view>
+    </view>
+
+    <view class='goods_footer_wrap'>
+      <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/girlsDay/girlsday_info_footer_bg.png'  class='goods_footer_bg'></image>
+
+      <!-- goods -->
+      <view class='goods_footer_cont'>
+
+        <view class='goods_title_wrap'>
+          <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/girlsDay/girlsday_info_title_1.png'  mode='widthFix' class='girlsday_info_title_1'></image>
+        </view>
+        <view class='goods_wrap_1  goods_wrap_2 clearfix'>
+            <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/girlsDay/girlsday_info_goods_2_1.png' mode='widthFix' class='girlsday_info_goods_1'></image>
+            <view class='girlsday_info_goods_right'>
+              <view class='goods_name goods_name_2'>[大良造]珊瑚地毯+桑蚕丝眼罩+拖鞋礼盒</view>
+              <text class='goods_lod_price'  decode="true" >市场价￥388</text>
+              <view class='goods_new_price  goods_new_price_2'>活动价￥<text class='goods_new_price_num'>338</text></view>
+              <navigator url='/pages/buy/buy?com_id=3294' class='buy_btn'>立即抢购</navigator>
+            </view>
+        </view>
+
+        <view class='goods_each_wrap'>
+          <view class='goods_each_cont  clearfix'>
+            <navigator url='/pages/buy/buy?com_id=3292' class='goods_each  goods_each_2'>
+              <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/girlsDay/girlsday_info_goods_2_2.png' mode='widthFix' class='goods_each_img'></image>
+              <view class='goods_each_title'>德国小甘菊护手霜精灵礼盒</view>
+              <view class='goods_each_price'>活动价￥<text class='goods_each_price_num'>68</text></view>
+            </navigator>
+            <navigator url='/pages/buy/buy?com_id=3219' class='goods_each  goods_each_2'>
+              <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/girlsDay/girlsday_info_goods_2_3.png' mode='widthFix' class='goods_each_img'></image>
+              <view class='goods_each_title'>【corkcile】不锈钢保温杯</view>
+              <view class='goods_each_price'>活动价￥<text class='goods_each_price_num'>238</text></view>
+            </navigator>
+            <navigator url='/pages/buy/buy?com_id=3289' class='goods_each  goods_each_2'>
+              <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/girlsDay/girlsday_info_goods_2_4.png' mode='widthFix' class='goods_each_img'></image>
+              <view class='goods_each_title'>【大良造】洋气商务礼盒(凌美笔+笔记本)</view>
+              <view class='goods_each_price'>活动价￥<text class='goods_each_price_num'>335</text></view>
+            </navigator>
+          </view>
+        </view>
+
+      </view>
+      <!-- goods -->
+      
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,65 @@
+<!--pages/newYears/newYears.wxml-->
+
+<view class='container'>
+    <view class='content_wrap'>
+      <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dog_top_bg.png' mode='widthFix'  class='ny_top_bg'></image>
+      <view class='ny_active'>
+        <image src='{{urlHttp}}images/dog_active_icon.png' mode='widthFix' class='ny_active_icon'></image>
+      </view>
+
+      <!-- 拼命三郎 -->
+      <view class='ny_title  ny_title_1'>
+        <image src='{{urlHttp}}images/dog_title_1.png' mode='widthFix'  title='好礼推荐'></image>
+      </view>
+
+      <navigator url='/pages/buy/buy?com_id=3327' class='ny_goods_wrap_1'>
+        <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dog_goods_1.png' mode='widthFix' ></image>
+      </navigator>
+
+      <view class='ny_goods_wrap_2  clearfix'>
+        <navigator url='/pages/buy/buy?com_id=3250' class='each_goods'>
+          <view class='each_goods_img'>
+            <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dog_goods_2.png'  mode='widthFix'></image>
+          </view> 
+        </navigator>
+        <navigator url='/pages/buy/buy?com_id=3284' class='each_goods'>
+          <view class='each_goods_img'>
+            <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dog_goods_3.png'  mode='widthFix'></image>
+          </view> 
+        </navigator>
+        <navigator url='/pages/buy/buy?com_id=3326' class='each_goods'>
+          <view class='each_goods_img'>
+            <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dog_goods_4.png'  mode='widthFix'></image>
+          </view> 
+        </navigator>
+      </view>
+
+      <!-- 铁娘子 -->
+      <view class='ny_title  ny_title_1'>
+        <image src='{{urlHttp}}images/dog_title_2.png' mode='widthFix'></image>
+      </view>
+
+      <navigator url='/pages/buy/buy?com_id=3289'  class='ny_goods_wrap_1'>
+        <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dog_goods_5.png' mode='widthFix'></image>
+      </navigator>
+
+      <view class='ny_goods_wrap_2  clearfix'>
+        <navigator url='/pages/buy/buy?com_id=3280' class='each_goods'>
+          <view class='each_goods_img'>
+            <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dog_goods_6.png'  mode='widthFix'></image>
+          </view> 
+        </navigator>
+        <navigator url='/pages/buy/buy?com_id=3281' class='each_goods'>
+          <view class='each_goods_img'>
+            <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dog_goods_7.png'  mode='widthFix'></image>
+          </view> 
+        </navigator>
+        <navigator url='/pages/buy/buy?com_id=3276' class='each_goods'>
+          <view class='each_goods_img'>
+            <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dog_goods_8.png'  mode='widthFix'></image>
+          </view> 
+        </navigator>
+      </view>
+
+    </view>
+</view>

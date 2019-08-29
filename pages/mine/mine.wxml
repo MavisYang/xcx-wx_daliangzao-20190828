@@ -1,0 +1,101 @@
+<!--index.wxml-->
+<view class="container  {{hidden}}">
+  <view  bindtap="bindViewTap" class="userinfo">
+
+    <block  wx:if="{{userInfo.avatarUrl}}">
+        <image class="userinfo-avatar"   src="{{userInfo.avatarUrl}}"></image> 
+    </block>
+    <block wx:else>
+        <image class="userinfo-avatar"   src="/images/def_photo.png"></image> 
+    </block>
+    
+    <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+
+    <!-- 用户身份 -->
+    <!-- <view class='user_type'>
+      <block wx:if="{{userRole == 1}}">
+        <view style="text-align:center;"><image src='/images/business_icon.png' class='user_business_icon'></image></view>
+      </block>
+    </view> -->
+
+  </view>
+
+  <!-- 模块按钮 -->
+  <view class='cont_btn_wrap'>
+    <view  bindtap='linkOrder'   class='cont_btn_each  cont_btn_each_left'>
+        <view class='btn_each_cont'>
+            <image src='/images/mine_address_icon.png'  class='mine_each_icon'></image>  
+            <view class='mine_each_name'>我的订单</view>
+        </view>  
+    </view>
+    <view  bindtap='linkGift'  class='cont_btn_each  cont_btn_each_left'>
+        <view class='btn_each_cont'>
+            <image src='/images/mine_help_icon.png'  class='mine_each_icon'></image>  
+            <view class='mine_each_name'>我的礼物</view>
+        </view>  
+    </view>
+    <view  class='cont_btn_each'  bindtap='mineEarnings'>
+        <view class='btn_each_cont'>
+            <image src='/images/mine_jifen_icon.png'  class='mine_each_icon'></image>  
+            <view class='mine_each_name'>我的积分</view>
+        </view>
+    </view>
+    <view class='clearfix'></view>
+    <view  bindtap='linkAddress'  class='cont_btn_each  cont_btn_each_left'>
+        <view class='btn_each_cont'>
+            <image src='/images/mine_coupon_icon.png'  class='mine_each_icon'></image>  
+            <view class='mine_each_name'>我的地址</view>
+        </view>
+    </view>
+    <view  bindtap='linkCollect'  class='cont_btn_each  cont_btn_each_left'>
+        <view class='btn_each_cont'>
+            <image src='/images/mine_collect_icon.png'  class='mine_each_icon'></image>  
+            <view class='mine_each_name'>我的收藏</view>
+        </view>
+    </view>
+    <view  class='cont_btn_each'>
+        <view class='btn_each_cont'>
+            <image src='/images/mine_service_icon.png'  class='mine_each_icon'></image>  
+            <view class='mine_each_name'>我的客服</view>
+        </view>
+        <view class='mine_each_service'>周一至周五</view>
+        <view class='mine_each_service'>9:00-17:00</view>
+        <button  open-type="contact" class="service_btn" plain="true" hover-class="none"></button>
+    </view>
+
+    <view class='clearfix'></view>
+
+    <block wx:if="{{userId=='oovpNwo_ocpujBYeYATSXkDUfJnU'}}">
+        <navigator url='/pages/buyMoonCake/buyMoonCake'  class="only_exit">优惠月饼购买入口</navigator>
+    </block>
+
+
+
+    <block wx:if="{{userId=='oovpNwvQGE0uUqpsQrbiVigaEFM0'}}">
+      <navigator url='/pages/buyMoonCake/buyMoonCake'  class="only_exit">优惠月饼购买入口</navigator>
+      <!-- 假拆分订单临时入口 -->
+      <navigator url='/pages/buyOnly/buyOnly'>特殊用户购买页入口</navigator>
+      <view>----</view>
+      <view>----</view>
+      <view>----</view>
+
+      <navigator url='/pages/indepCoupon/indepCoupon'>28张优惠劵</navigator>
+      <view>----</view>
+      <view>----</view>
+      <view>----</view>
+      <navigator url='/pages/indepCoupon2/indepCoupon2'>30张优惠劵</navigator>
+      <view>----</view>
+      <view>----</view>
+      <view>----</view>
+      <navigator url='/pages/indepCoupon3/indepCoupon3'>30张优惠劵,每人限领一张</navigator>
+    </block>
+
+  </view>
+  <!-- <view class="service_tel">客服电话：{{phone}}</view> -->
+
+</view>
+
+<!-- 提示信息 -->
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>

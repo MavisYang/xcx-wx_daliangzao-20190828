@@ -1,0 +1,54 @@
+/* pages/indepCoupon/indepCoupon.wxss */
+page{
+  background-color: #fff;
+}
+.container{
+  width: 100vh;
+  height: 100vh;
+  background-color: #000;
+}
+.indep_coupon_wrap{
+  position: fixed;
+  top: 132rpx;
+  left: 0;
+  z-index: 10;
+}
+.indep_coupon_bg{
+  width: 750rpx;
+}
+.indep_coupon_cont{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.indep_coupon_logo{
+  display: block;
+  width: 206rpx;
+  height: 156rpx;
+  margin: 104rpx auto 0;
+}
+.indep_coupon_title{
+  text-align: center;
+  font-size: 36rpx;
+  color: #dcbc83;
+  padding: 100rpx 0 60rpx 0;
+}
+.indep_coupon_btn{
+  display: block;
+  width: 196rpx;
+  height: 196rpx;
+  margin: 0 auto;
+}
+/*  关闭优惠劵弹窗  */
+.close_coupon{
+  display: block;
+  margin: 20rpx auto;
+  width: 56rpx;
+  height: 56rpx;
+}
+.close_coupon image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}

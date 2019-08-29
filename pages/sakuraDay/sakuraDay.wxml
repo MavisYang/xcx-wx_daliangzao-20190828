@@ -1,0 +1,81 @@
+<!--pages/sakuraDay/sakuraDay.wxml 樱花节  -->
+<view class='container'>
+  <!-- banner -->
+  <view class="sakura_banner">
+    <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_banner.jpg' mode='widthFix'></image>
+  </view>
+
+  <!-- 礼盒推荐 -->
+  <view class='each_modle_wrap'>
+    <view class="modle_title"><image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_title1.png' mode='widthFix'  alt="礼盒推荐"></image></view>
+    <view class='modle_one_wrap'>
+      <navigator url='/pages/buy/buy?com_id=3339' class='modle_big_img'>
+        <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_img1.png' mode='widthFix'  alt="和风定食餐具礼盒"></image>
+      </navigator>
+      <view  class="modle_one_each clearfix">
+        <navigator url='/pages/buy/buy?com_id=3340' class='modle_small_img'>
+          <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_img2.png'  alt="和风定食餐具礼盒 "></image>
+        </navigator>
+        <navigator url='/pages/buy/buy?com_id=3341' class='modle_small_img'>
+          <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_img3.png'  alt="樱花限定卫浴礼盒 "></image>
+        </navigator>
+      </view>
+    </view>
+    <view class='modle_one_wrap'>
+      <navigator url='/pages/buy/buy?com_id=3342' class='modle_big_img'>
+        <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_img4.png' mode='widthFix'  alt="日式昭和品酒礼盒"></image>
+      </navigator>
+      <view  class="modle_one_each clearfix">
+        <navigator url='/pages/buy/buy?com_id=3343' class='modle_small_img'>
+          <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_img5.png'  alt="日式江户品茗礼盒   "></image>
+        </navigator>
+        <navigator url='/pages/buy/buy?com_id=3344' class='modle_small_img'>
+          <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_img6.png'  alt="和风定食餐具礼盒 "></image>
+        </navigator>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 人气单品 -->
+  <view class='each_modle_wrap'>
+    <view class="modle_title"><image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_title2.png' mode='widthFix'  alt="人气单品"></image></view>
+    <view class='modle_two_wrap  clearfix'>
+      <view class='modle_two_cont'>
+        <navigator url='/pages/buy/buy?com_id=3345' class='modle_two_big'>
+          <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_img7.png' alt="【六扇门】和风樱花折扇 （喷绘烤漆工艺）"></image>
+        </navigator>
+        <navigator url='/pages/buy/buy?com_id=3346' class='modle_two_small'>
+          <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_img8.png' alt="【大良造】 樱花不锈钢保温杯"></image>
+        </navigator>
+        <navigator url='/pages/buy/buy?com_id=3347' class='modle_two_small'>
+          <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_img9.png' alt="【六号公寓】 樱花防晒晴雨伞"></image>
+        </navigator>
+      </view>
+
+      <view class='modle_two_cont'>
+        <navigator url='/pages/buy/buy?com_id=3348' class='modle_two_big'>
+          <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_img10.png' alt="【内野】 樱花洗浴四件套礼盒 （毛巾+搓澡巾+浴盐*2）"></image>
+        </navigator>
+        <navigator url='/pages/buy/buy?com_id=3349' class='modle_two_small'>
+          <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_img11.png' alt="【虚靡时光】 和风茶杯藤编礼盒（6个装）"></image>
+        </navigator>
+        <navigator url='/pages/buy/buy?com_id=3350' class='modle_two_small'>
+          <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_img12.png' alt="【大良造】 日本进口黑白樱花瓷碗套装"></image>
+        </navigator>
+      </view>
+
+      <view class='modle_two_cont'>
+        <navigator url='/pages/buy/buy?com_id=3351' class='modle_two_big'>
+          <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_img13.png' alt="【大良造】 日式和风樱花手绘茶杯套装"></image>
+        </navigator>
+        <navigator url='/pages/buy/buy?com_id=3352' class='modle_two_small'>
+          <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_img14.png' alt="【大良造】 日式和风樱花手绘茶杯套装"></image>
+        </navigator>
+        <navigator url='/pages/buy/buy?com_id=3353' class='modle_two_small'>
+          <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/sakuraDay/sakura_index_img15.png' alt="【大良造】 手工粗陶紫砂茶具套装"></image>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

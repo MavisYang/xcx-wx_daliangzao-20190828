@@ -1,0 +1,69 @@
+<!--index.wxml  我的收藏  -->
+<view class="container">
+  <view class="header">
+    <view  data-id="0"  bindtap="navChange"  class="header_nav  header_nav_left  {{currentItem == 0 ? 'nav_active' : ''}}">专题</view>
+    <view  data-id="1"  bindtap="navChange"  class="header_nav  header_nav_right {{currentItem == 1 ? 'nav_active' : ''}}">商品</view>
+    <view class='clearfix'></view>
+  </view>
+
+  <!-- 专题 -->
+  <view class="content  {{showcont == 0 ? 'show' : ''}}">
+    
+    <view class="each_content_wrap">
+      <block wx:for="{{contentList}}">
+        <navigator url="/pages/articleInfor/articleInfor?id={{item.id}}" class="each_content">
+          <image src="{{item.find_logo}}"  class="content_img"  mode='widthFix'></image>
+          <view class='each_cont_wrap'>
+            <view class='each_cont'>
+              <!-- 描述 -->
+              <view class='content_infor_wrap'>
+                <view class='content_title'>{{item.find_name}}</view>
+                <view class='content_intro'>{{item.find_des}}</view>
+              </view>
+            
+
+              <!-- 浏览+关注 -->
+              <view class="content_infor">
+                <view class="content_infor_cont">
+                  <image src="/images/liulan_gray.png"  class="content_icon"></image>
+                  <text>{{item.find_yuedu}}</text>
+                  <image src="/images/zan_gray_n.png"    class="content_icon"></image>
+                  <text>{{item.find_shoucang}}</text>
+                </view>        
+              </view>
+
+            </view>
+          </view>
+        </navigator>
+
+
+
+
+
+
+      </block>
+    </view>
+  </view>
+
+  <!-- 商品 -->
+  <view class="content  {{showcont == 1 ? 'show' : ''}}">
+    <view  class="list">
+      <block wx:for="{{goodsList}}" wx:key="index">
+        <navigator url="/pages/buy/buy?com_id={{item.id}}"  class="list_item_wrap">
+          <view class="list_item">
+            <image src="{{item.commodity_logo}}" class="full_image" mode="aspectFit"/>
+            <!-- <view class="full_img_footer">{{item.commodity_des}}</view> -->
+          </view>        
+          <view class="full_title">{{item.commodity_name}}</view>
+          <view class="full_price"> 
+            <text class="full_price_unit">¥{{item.commodity_sale}}</text>
+            <text class="full_price_old"  decode="{{true}}">&nbsp;&nbsp;¥ {{item.commodity_cost}}&nbsp;&nbsp;</text>
+          </view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+
+
+</view>
+

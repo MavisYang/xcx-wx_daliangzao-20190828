@@ -1,0 +1,122 @@
+/* pages/partnerBusinessRecord/partnerBusinessRecord.wxss */
+page{
+  background-color: #f9f9f9;
+}
+.container{
+  height: 100%;
+  background-color: #f9f9f9;
+}
+.top_wrap{
+  width: 100%;
+  height: 274rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #f9f9f9;
+}
+.partner_banner{
+  display: block;
+  width: 100%;
+}
+.month_wrap{
+  position: relative;
+  height: 130rpx;
+  margin: 15rpx 0 0 0;
+}
+.month_change_left{
+  width:130rpx;
+  height: 130rpx;
+  position: absolute;
+  left:52rpx;
+  top: 0;
+  z-index:10;
+}
+.month_change_right{
+  width:130rpx;
+  height: 130rpx;
+  position: absolute;
+  right:52rpx;
+  top: 0;
+  z-index:10;
+}
+.month_change_left_icon,.month_change_right_icon{
+  display: block;
+  width: 16rpx;
+  height: 32rpx;
+  position: relative;
+  top: 49rpx;
+}
+.month_change_right_icon{
+  left: 114rpx;
+}
+.month_change_time{
+  text-align: center;
+  line-height: 130rpx;
+}
+
+/* tab切换 */
+.top_tab_wrap{
+  width: 646rpx;
+  border: 2px solid #b4a078;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 30rpx auto 50rpx;
+}
+.each_tab{
+  float:left;
+  width: 324rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #b4a078;
+  background-color: #f9f9f9;
+}
+.each_tab_active{
+  color: #fff;
+  background-color: #b4a078;
+}
+
+/* 列表 */
+.tab_content{
+  display:flex;
+  background-color:#fff;
+  margin-top:274rpx;
+  height: 100%;
+}
+.tab_content_list{
+  background-color: #fff;
+}
+.tab_title,.each_tab_cont{
+  font-size: 24rpx;
+  line-height: 100rpx;
+  color: #adadad;
+  border-bottom: 1px solid #d9d9d9;
+}
+.each_tab_cont{
+  color: #111;
+}
+.tab_title_time,.tab_title_name,.tab_cont_time,.tab_cont_name{
+  float: left;
+  font-size: 24rpx;
+}
+.tab_title_type,.tab_cont_type{
+  float: right;
+  width: 200rpx;
+  text-align: center;
+}
+.tab_title_time,.tab_cont_time{
+  padding-left: 50rpx;
+  width: 164rpx;
+}
+.tab_title_name,.tab_cont_name{
+  width: 324rpx;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.tab_cont_type{
+  color: #b4a078;
+}

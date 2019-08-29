@@ -1,0 +1,47 @@
+/* feedback.wxss */
+.container{
+  display: flex;
+}
+.feedback_banner,.feedback_textarea,.feedback_input input{
+  display: block;
+  margin: 0 auto;
+  font-size: 32rpx;
+  font-family:"Microsoft Yahei",Tahoma,Arial,Helvetica,STHeiti;
+}
+.feedback_banner{
+  width: 750rpx;
+  height:246rpx;
+}
+.feedback_textarea{
+  width: 670rpx;
+  height: 220rpx;
+  padding: 40rpx;
+  font-size: 24rpx;
+  color: #c7c7c7;
+  background-color: #fff;
+}
+.top{
+  margin-bottom: 25rpx;
+}
+.feedback_input input{
+   width: 670rpx;
+   padding:0 40rpx;
+   height: 100rpx;
+   font-size: 24rpx;
+   color: #c7c7c7;
+   background-color: #fff;
+}
+
+.feedback_btn{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 98rpx;
+  font-size: 24rpx;
+  line-height: 98rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #b4a078;
+  margin:30rpx auto 0;
+}

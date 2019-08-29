@@ -1,0 +1,150 @@
+<!--index.wxml-->
+  <view  class="container  {{contentShow}}"  >  
+      <!-- <view   bindtouchmove="touchM"   scroll-top="{{scrollTop}}"   class="container">  -->
+      <view class="main">
+        <view  wx:if="{{hasList}}" >
+            <view class="cart-box">
+                <view class="cart-list" wx:for="{{carts}}" wx:key="{{index}}">
+                  <block wx:if="{{item.commodity_flag == 0 && item.canBuy && item.num >= item.limitNum}}">
+                      <view class="cart-list-wrap" 
+                          bindtouchstart="touchS" 
+                          bindtouchmove="touchM" 
+                          bindtouchend="touchE"
+                        data-index="{{index}}" 
+                        style="left:{{touchDel == index ? txtStyle : '0'}}"> 
+                  
+
+                        <view class='cart_flag_wrap'   bindtap="selectList"  data-comid="{{item.com_id}}"  data-num="{{item.num}}"   data-index="{{index}}"  data-repertory="{{item.com_group_id}}">
+                          <!-- wx:if 是否选择显示不同图标  flag : 1 选中 -->
+                          <image wx:if="{{item.flag == 1}}"  class="cart-pro-select"   src='/images/cart_choose_pre.png'></image>
+                          <image wx:else  class="cart-pro-select"  src='/images/cart_choose_n.png'></image>
+                       </view> 
+
+                         
+                          <!-- 跳转到商品详情 -->
+                          <view bindtap='buyUrl' data-comid="{{item.com_id}}" class="cart-thumb">
+                              <image src="{{item.logo}}"></image>
+                          </view>
+                          <view class="cart-pro-name">{{item.name}}</view>
+                          <view class="cart-pro-infor">
+                              <text wx:if="{{item.style1_name}}">{{item.style1_name}} </text>
+                              <text wx:if="{{item.style2_name}}">{{item.style2_name}} </text>
+                              <text wx:if="{{item.style3_name}}">{{item.style3_name}} </text>
+                              <text wx:if="{{item.style4_name}}">{{item.style4_name}} </text>
+                              <text wx:if="{{item.style5_name}}">{{item.style5_name}} </text>
+                              <text wx:if="{{item.giftbox_name}}">{{item.giftbox_name}} </text>
+                              <text wx:if="{{item.process_name}}">{{item.process_name}}</text>
+                          </view>  
+                          <view class="cart-pro-price">¥<text>{{item.new_price}}</text></view> 
+                          <!-- 增加减少数量按钮 -->
+                          <view class="cart-count-box">
+
+                              <image  class="cart-count-down"  data-inventory="{{item.inventory}}"  bindtap="minusCount" data-index="{{index}}"  src="{{item.num>item.limitNum?'../../images/minus_pre.png':'../../images/minus.png'}}"></image>
+                              <text class="cart-count-num">{{item.num}}</text>
+                              <image class="cart-count-add" bindtap="addCount" data-index="{{index}}"  src="{{item.repertory > item.num ? '../../images/add_pre.png' : '../../images/add.png'}}"></image>
+                          </view> 
+                          <!-- <text class="cart-del" bindtap="deleteList" data-index="{{index}}">×</text> -->
+                      </view>
+                      <view data-index="{{index}}" data-id="{{item.id}}"  data-flag="{{item.commodity_flag}}"  
+                      catchtap = "delItem" class="inner del">删除</view>   
+                  </block>
+                </view> 
+            </view> 
+
+            <!-- 底部操作栏 -->
+            <view class="cart-footer">
+              <view class="cart-footer-cont">
+                <image  wx:if="{{selectAllStatus}}" class="total-select" bindtap="selectAll" src='/images/cart_choose_pre.png'></image>
+                <image wx:else  class="total-select" bindtap="selectAll"  src='/images/cart_choose_n.png'></image>
+                <text class="buy-btn" bindtap="{{firstClick == 0 ? 'tz' : ''}}">立即购买</text>
+                <view class="cart-toatl-price">
+                  <text class="price_title">合计：</text>
+                  <text class="price_yuan">¥ </text>
+                  <text class="price_money"> {{totalPrice}}</text>
+                </view> 
+                <view class="cart-footer-title">全选</view>     
+              </view>       
+            </view>
+        </view>
+        <view wx:else>
+            <view class="cart-no-data">购物车是空的哦~</view>
+        </view> 
+      </view>
+      <!-- </view>  -->
+</view>  
+
+
+<!-- 失效宝贝 -->
+<block wx:if="{{shixiao_num > 0}}">
+  <!-- <view  wx:if="{{hasList}}" > -->
+      <!-- 标题 -->
+      <view class='like_title_wrap'>
+          <view class='like_line'></view>
+          <view class='like_title'>失效宝贝</view>
+      </view>
+      <view class="cart-box">
+          <view class="cart-list  shixiao_cart_list" wx:for="{{carts}}" wx:key="{{index}}">
+            <!-- 失效 / 无库存 -->
+            <block wx:if="{{item.commodity_flag != 0  || !item.canBuy || item.num < item.limitNum}}">
+                <view class="cart-list-wrap" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="left:{{touchDel == index ? txtStyle : '0'}}"> 
+                    <!-- 标识 -->
+                    <block wx:if="{{item.commodity_flag != 0  ||  item.num < item.limitNum}}">
+                      <view class="shixiao">失效</view>
+                    </block>
+                    <block wx:else>
+                      <view class="shixiao">售罄</view>
+                    </block>
+                    
+                    <!-- 跳转到商品详情 -->
+                    <view bindtap='buyUrl' data-comid="{{item.com_id}}" class="cart-thumb">
+                      <image src="{{item.logo}}"></image>
+                    </view>
+                    <view class="cart-pro-name  shixiao_pro_name">{{item.name}}</view>
+
+                    <!-- 提示信息 -->
+                    <view class="shixiao_msg">
+                    
+                      <block wx:if="{{item.commodity_flag != 0}}">
+                        <view>该商品已下架</view>
+                      </block>
+                      <block wx:elif="{{item.num < item.limitNum}}">
+                        <view>请重新选择规格</view>
+                      </block>
+                      <block wx:else>
+                        <view>该商品已售罄</view>
+                      </block>
+                    </view> 
+                    
+                </view>
+                <view data-index="{{index}}" data-id="{{item.id}}" data-flag="{{item.commodity_flag}}"  catchtap = "delItem" class="inner del">删除</view>   
+            </block>
+          </view> 
+      </view> 
+  <!-- </view> -->
+</block>
+
+<!-- 猜你喜欢 -->
+<view class='like_wrap  {{contentShow}}'  style="padding-bottom:{{paddingBottom}}rpx;">
+  <view class='like_title_wrap'>
+    <view class='like_line'></view>
+    <view class='like_title'>猜你喜欢</view>
+  </view>
+  <view class='like_goods_list  clearfix'>
+    <block  wx:for='{{likeList}}'  wx:key='key'  wx:for-index='i'>
+      <navigator url='{{item.url}}' class='each_goods'>
+        <view class='each_goods_img_wrap'>
+          <image src='{{item.imgSrc}}' class='each_goods_img'></image>
+        </view>
+        <view class='each_goods_name'>{{item.name}}</view>
+        <view class='each_goods_price'>￥{{item.newPrice}}<text decode='true'>￥{{item.oldPrice}}</text></view>
+      </navigator>
+    </block>
+    
+  </view>
+</view>
+
+<!-- 蒙层 -->
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>
+<view wx:if="{{maskBg}}" class="modal_bg "></view>

@@ -1,0 +1,90 @@
+<!--pages/eachGiftInfor/eachGiftInfor.wxml  礼物详情页 -->
+<view class="container">
+
+  <view class="banner">
+    <image  src='{{src}}' mode='widthFix'></image>
+  </view>
+
+  <view class="goods_infor_wrap  clearfix">
+    <view class='gift_intro'>
+          <view class='goods_title'>礼物：</view>
+          <view class='goods_infor'>
+            <block wx:for="{{infor.affList}}"  wx:key="index" wx:for-index="i">
+              <block wx:if="{{item.com_num > 0}}">
+                <view class='goods_name'>{{item.com_name}}</view>
+                <view class='goods_num'>X{{item.com_num}}</view>
+              </block>
+            </block>
+          </view>
+      </view>
+  </view>
+
+  <view class='space'></view>
+
+  <view class="choose_wrap">
+    <view class="choose_content  clearfix">
+      <image src='{{url}}' class="user_photo"></image>
+      <view class="choose_msg">
+        <view class="msg_name">{{name}}</view>
+      </view>
+    </view>
+    <view class="msg_infor">{{msg}}</view>
+  </view>
+
+  <view class="upload_wrap">
+    <block wx:if="{{newImgList}}" wx:for="{{newImgList}}" wx:key="{{index}}" wx:for-index="i">
+      <view class="upload_img_wrap">
+        <image src='{{item}}' data-src="{{item}}" bindtap="previewImg"  data-id="{{i}}" class="upload_img"></image>
+      </view>  
+    </block> 
+  </view>
+
+  <!-- 来自送礼物 -->
+  <!-- <block wx:if="{{sta == 0}}"> -->
+    <!-- <block wx:if="{{order_type == 0}}">
+      <view  class="footer_btn  {{footerHidden ? 'footer_btn_hidden' : ''}}">
+          <view bindtap="addGiftList"  class="footer_each_btn ">放入礼物盒</view> 
+      </view>
+    </block>  -->
+    <!-- <block wx:else>  -->
+      <!--   收送礼物人信息   -->
+      <!-- <view class='receive_wrap'  wx:if="{{infor.user_head}}">
+        <image src='{{infor.user_head}}'  class='receive_photo'></image>
+        <view class='receive_name'>{{infor.user_name}}</view>
+        <view class='receive_time'>在{{infor.createTimeStr}}已领取</view>
+      </view> -->
+      <!-- <view  class="footer_btn">
+          <navigator url='/pages/childrensDay/childrensDay'  class="footer_each_btn_two  footer_each_btn_left ">选购更多好礼</navigator> 
+      </view> -->
+    <!-- </block> -->
+  <!-- </block> -->
+  <!-- 来自收礼物 -->
+  <!-- <block wx:else> -->
+    <!-- <block  wx:if="{{order_type == 2}}">  -->
+      <!--   收送礼物人信息   -->
+      <view class='receive_wrap'  wx:if="{{infor.user_head}}">
+        <image src='{{infor.user_head}}'  class='receive_photo'></image>
+        <view class='receive_name'>{{infor.user_name}}</view>
+        <view class='receive_time'>在{{infor.createTimeStrGift}}已领取</view>
+      </view>
+      <!-- <view  class="footer_btn">
+          <navigator url='/pages/childrensDay/childrensDay'  class="footer_each_btn_two  footer_each_btn_left ">选购更多好礼</navigator> 
+      </view> -->
+    <!-- </block> -->
+  <!-- </block> -->
+</view> 
+
+
+<!-- 送朋友  -->
+<view class="qrfh_wrap  {{showSendFriendMsg ? '' : 'hidden'}}">
+  <view class='qrfh_content_wrap'>
+    <view class='qrfh_cont_wrap'>
+      <view class='qrfh_cont'>将会按照朋友填写的地址为您发货，</view>
+      <view class='qrfh_cont'>是否确认？</view>
+    </view>
+    <view class='qrsh_btn_wrap  clearfix'>
+      <view class='qrfh_cancle'  bindtap='cancelSendFriend'>取消</view>
+      <view class='qrfh_sure'  bindtap='sureSendFriend'>确定</view>
+    </view>
+  </view>
+</view>

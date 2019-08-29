@@ -1,0 +1,161 @@
+/* kindSecondList.wxss */
+page{
+  background-color: #f4f4f4;
+}
+.container{
+  display: flex;
+  max-height: 100vh;
+  overflow: hidden;
+}
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+::-webkit-scrollbar-thumb{
+  color:transparent;
+}
+::-webkit-scrollbar-track-piece{
+  color: transparent;
+}
+.header_nav_wrap{
+  width: 100%;
+  height:78rpx;
+  font-size: 24rpx;
+  color: #7f7f7f;
+  background-color: #fff;
+  border-bottom: 2rpx solid #f0f0f0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.header_nav{
+  width: 100%;
+}
+.each_nav_wrap{
+  width: 33%;
+}
+.header_nav_title{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  line-height: 78rpx;
+  color:#a0b0b5;
+  border-bottom: 3rpx solid #fff;
+  box-sizing: border-box;
+}
+.nav_item_active{
+  color:#b4a078;
+  border-bottom:3rpx solid #b4a078; 
+  box-sizing: border-box;
+}
+
+/*  标题 */
+.content_title_wrap{
+  width:100%;
+  height:50rpx;
+  position:relative;
+  margin:0 auto;
+  padding: 15rpx 0;
+  background-color: #fff;
+  text-align: center;
+}
+.title_line{
+  width:100%;
+  height:2rpx;
+  background-color: #c4cdd3;
+  position:absolute;
+  top:50%;
+  left:0;
+  margin-top:-1rpx;
+}
+.title_contemt{
+  display: inline-block;
+  padding:0 20rpx;
+  height:50rpx;
+  font-size: 32rpx;
+  line-height: 50rpx;
+  text-align: center;
+  position: relative;
+  margin-top:0;
+  z-index: 2;
+  color: #6f7478;
+  background-color: #fff;
+}
+
+/*  列表 */
+.list{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #fff;
+  margin-top:78rpx;
+}
+.list_item_wrap{
+  width: 50%;
+  box-sizing: border-box;
+  border-bottom:1px solid #f0f0f0;
+}
+
+.list_item_wrap:nth-child(odd){
+  border-right:1px solid #f0f0f0;
+}
+.list_item_wrap:nth-child(even){
+  border-left:1px solid #f0f0f0;
+}
+
+.list_item{
+  width: 100%;
+  /* height:340rpx; */
+  overflow: hidden;
+  position: relative;
+   margin: 0 auto;
+}
+.full_image{
+  display: block;
+  width: 100%;
+}
+.full_img_footer{
+  width:100%;
+  height:50rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  color:#fff;
+  text-align: center;
+  background-color: rgba(0,0,0,0.6);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.full_title{
+  height:72rpx;
+  font-size: 30rpx;
+  line-height: 36rpx;
+  color:#444;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding: 23rpx 20rpx 0 32rpx ;
+}
+.full_price{
+  font:bold 30rpx "Microsoft Yahei";
+  color:#b4a078;
+  padding: 34rpx 0 30rpx 32rpx;
+}
+.full_price_unit{
+  font: normal  normal  22rpx Arial;
+  text-decoration: line-through;
+  color:#c8c8c8;
+  padding-left:26rpx;
+}
+/* 列表结束 */
+/* 加载更多 */
+.loading{
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #c8c8c8;
+}

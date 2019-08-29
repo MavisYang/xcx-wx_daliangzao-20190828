@@ -1,0 +1,21 @@
+<!--brandInfor.wxml-->
+<scroll-view scroll-y class="container">
+  <view class="list_banner" wx:if="{{src}}">
+    <image class="list_banner_img"  src="{{src}}" mode='widthFix'></image>
+  </view>
+  
+  <view class="list">
+    <block wx:for="{{contentList}}" wx:key="{{index}}">
+      <navigator url="/pages/buy/buy?com_id={{item.id}}"  class="list_item_wrap">
+        <view class="list_item">
+          <image wx:if="{{item.commodity_logo}}" src="{{item.commodity_logo}}" class="full_image" mode="widthFix"/>
+          <!-- <view class="full_img_footer">{{item.commodity_des}}</view> -->
+        </view>        
+        <view class="full_title">{{item.commodity_name}}</view>
+        <view class="full_price">¥ {{item.commodity_sale}} <text class='full_price_unit' decode="true">&nbsp;&nbsp;¥{{item.commodity_cost}}&nbsp;&nbsp;</text></view>
+      </navigator>
+    </block>
+  </view>
+
+  <!-- <loading hidden="{{loadingHidden}}">正在加载...</loading> -->
+</scroll-view>

@@ -1,0 +1,276 @@
+/* index.wxss */
+page {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right:0;
+}
+/* .container{
+  height: 100vh;
+  overflow: hidden;
+} */
+.header_nav_wrap{
+  width:100%;
+  height:166rpx;
+  color:#fff;
+  background-color:#f4f4f4;
+  overflow : auto ;
+}
+.header_nav{
+  height: 166rpx;
+  white-space: nowrap; 
+  /* display: flex; */
+}
+.header_nav_each{
+  display: inline-block;
+  width:33%;
+  height:166rpx;
+  margin-right:0.3%;
+}
+.header_nav_each image{
+  width: 100%;
+  height: 166rpx;
+}
+
+.each_content{
+  background-color: #fff;
+  margin: 4rpx 0 1px 0;
+  position: relative;
+}
+.content_title{
+  font-size: 34rpx;
+  font-weight: bold;
+  padding: 28rpx 0;
+  color:#414547;
+}
+.content_img{
+  display: block;
+  width:100%;
+}
+.content_intro{
+  font-size: 32rpx;
+  color: #414547;
+  padding:30rpx 0;
+}
+.content_icon{
+  display: block;
+  float: left;
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.content_infor{
+  position: absolute;
+  right: 12rpx;
+  bottom: 16rpx;
+  text-align: right;
+  padding-bottom: 30rpx;
+}
+.content_infor_cont{
+  display: inline-block;
+}
+.content_infor text{
+  display: block;
+  float: left;
+  font-size: 20rpx;
+  line-height: 24rpx;
+  color:#b4a078;
+  padding:0 16rpx 0 9rpx;
+}
+
+
+.each_cont_wrap{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.66);
+}
+.each_cont{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+.each_cont:before {
+  content:'';
+  display:inline-block;
+  height:100%;
+  vertical-align:middle;
+}
+/* 分类名 */
+.content_kind_name{
+  font-size: 20rpx;
+  line-height: 1;
+  color: #b4a078;
+  border-left: 1px solid #b4a078;
+  border-right: 1px solid #b4a078;
+  padding: 0 10rpx;
+  position: absolute;
+  top: 35rpx;
+  left: 31rpx;
+}
+.content_infor_wrap{
+  display: inline-block;
+  vertical-align: middle;
+}
+.content_title{
+  font-size: 40rpx;
+  color: #fff;
+  padding-bottom: 14rpx;
+  text-align: center;
+}
+.content_intro{
+  display: inline;
+  font-size: 16rpx;
+  color: #fffefe;
+  padding: 6rpx 28rpx;
+  text-align: center;
+  border: 1px solid #9e9a99;
+}
+
+/* 图片轮播 */
+.banner_wrap{
+  /* height:350rpx; */
+  overflow:hidden;
+  /* margin-top:180rpx; */
+}
+.banner_wrap swiper{
+  height:380rpx;
+}
+.banner navigator{
+  display: block;
+}
+.banner navigator,.slide-image{
+  width:100%;
+  height:100%;
+  text-align: center;
+  margin: 0 auto;
+}
+.banner_space_small{
+  height:24rpx;
+}
+
+
+.middle{  
+    width: 100%;  
+    height: 670rpx;  
+    position: relative;  
+}  
+.middle-down{  
+    width: 100%;  
+    height: 670rpx;  
+    position: relative;  
+  
+}  
+.middle-bg{  
+    width: 100%;  
+    height: 670rpx;  
+    position: absolute;  
+    left: 0;  
+    right: 0;  
+    top: 0;  
+    bottom: 0;  
+}  
+.middle-phone{  
+    width: 514rpx;  
+    height: 646rpx;  
+    position: absolute;  
+    left: 50%;  
+    top: 0;  
+    z-index:10;   
+}  
+.swiper{  
+    /* position: absolute;  
+    width: 100%;  
+    left: 0;  
+    top: 14px;  
+    z-index: 11;  
+    height: 205px;  */
+}  
+.swiper-lb{  
+    height: 720rpx;  
+    width: 100%;  
+     /* background: #fff;  */  
+    overflow: hidden;  
+    position: relative;  
+}  
+.swiper-ul{  
+    position: absolute;  
+    left:0;    
+    /* background: #ffe400; */  
+     padding-left: 71rpx; 
+}  
+.swiper-li{  
+    /* margin-left: 4%;   */
+    /* margin-right: 4%;  */
+    padding-bottom: 26rpx;    
+    float: left;  
+    box-sizing: border-box;  
+    /* display: flex;  
+    justify-content: center;  
+    align-items: center;     */
+    position: relative;
+}   
+.swiper-image{
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+.img_left_bg{
+  display: block;
+  width:34rpx;
+  position: absolute;
+  top: 0;
+  left: -5rpx;
+  z-index: 1;
+}
+.img_bg{
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height:26rpx;
+}
+.swiper-image1{  
+    width: 100%;  
+    height: 100%;   
+}  
+/* 经典 - logo */
+.img_logo{
+  display: block;
+  width: 102rpx;
+  height: 102rpx;
+  position: absolute;
+  top: -142rpx;
+  left: 50%;
+  margin: 0 0 0 -51rpx;
+}
+
+/* footer title */
+.img_title_wrap{
+  display: block;
+  position: relative;
+  margin: 0 auto;
+}
+.img_title_line{
+  width: 100%;
+  border-top: 1px solid #aaa;
+}
+.img_title_cont{
+  width: 180rpx;
+  height: 48rpx;
+  font-size: 24rpx;
+  line-height: 48rpx;
+  color: #838383;
+  text-align: center;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -24rpx 0 0 -90rpx;
+}

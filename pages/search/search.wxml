@@ -1,0 +1,44 @@
+<!--search.wxml-->
+<view class="container"  bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+  <form bindsubmit="searchSubmit" action="">
+    <!-- 头部搜索 -->
+    <view class="header">
+      <view class="header_search_wrap">
+        <view class="header_search">
+          <icon type="search"  size="12" color="#929aa0"  class="header_search_icon"></icon>
+          <input type="text" class="header_search_placeholder" value="{{searchValue}}"  bindinput="inputSearch"  bindconfirm="searResult"  focus="true"  confirm-type="search"  placeholder="输入搜索关键字"  placeholder-style="padding-left:5rpx;color: #929aa0;font-family:'Microsoft Yahei';" />    
+        </view>    
+      </view>
+      <view class="cancel_btn"  bindtap="cancelVal">取消</view>   
+    </view>
+
+    <!-- 热门搜索 -->
+    <view class="search_msg">
+      <view class="search_msg_title">热门搜索</view>
+    </view>
+
+    <view class="clearfix"></view>
+
+    <!-- 热门词 -->
+    <view class="search_content">
+      <block wx:for="{{searchList}}"  wx:key="index"  wx:foe-index="i">
+        <view class="each_word"  data-val="{{item.keyword_name}}"   bindtap="writeVal">{{item.keyword_name}}</view>
+      </block>
+    </view>
+  </form>
+
+</view>
+
+<view class='search_logo_wrap'>
+  <view class='logo_title_space'></view>
+  <view class='logo_list  clearfix'>
+    <view class='list_title'>品牌定制</view>
+    <block wx:for="{{logoList}}" wx:key="index" wx:for-index="i">
+      <navigator url='{{item.logoUrl}}' class='logo_nav'>
+        <image wx:if='{{item.logoSrc}}' src='{{item.logoSrc}}' class='logo_img'></image>
+      </navigator>
+    </block>
+  </view>
+</view>
+
+

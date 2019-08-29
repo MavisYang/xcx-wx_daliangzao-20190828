@@ -1,0 +1,56 @@
+/* pages/changePattern/changePattern.wxss */
+.change_bg{
+  display: block;
+  width: 100%;
+  height: 100vh;
+}
+/* 选择浏览模式 */
+.change_pattern_wrap{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.6)
+}
+.change_pattern_content{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-top: -352rpx;
+}
+.change_each_wrap{
+  width: 292rpx;
+  height: 258rpx;
+  background-color: #fff;
+  border-radius: 20px;
+  padding-top: 34rpx;
+  margin: 30rpx auto;
+}
+.change_each_icon{
+  display: block;
+  width: 52rpx;
+  height: 56rpx;
+  margin:0 auto 28rpx;
+}
+.change_each_title{
+  font-size: 30rpx;
+  line-height: 66rpx;
+  color: #b4a078;
+  text-align: center;
+}
+.change_each_cont{
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color: #a6a6a6;
+  text-align: center;
+}
+.change_each_active{
+  color: #fff;
+  background-color:#b19e78;
+}
+.change_each_active .change_each_title,.change_each_active .change_each_cont,.change_each_active .change_each_cont{
+  color: #fff;
+}

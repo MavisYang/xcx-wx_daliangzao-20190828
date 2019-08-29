@@ -1,0 +1,15 @@
+<!--allGiftList.wxml   全部商品  -->
+<view class="container">
+  <view class="list">
+      <block wx:for="{{giftList}}" wx:key="{{index}}">
+        <navigator url="/pages/buy/buy"  class="list_item_wrap">
+          <view class="list_item">
+            <image src="{{item.src}}" class="full_image" mode="widthFix"/>
+            <view class="full_img_footer">{{item.intro}}</view>
+          </view>        
+          <view class="full_title">{{item.title}}</view>
+          <view class="full_price"> <text class="full_price_unit">¥</text>{{item.price}}</view>
+        </navigator>
+      </block>
+    </view>
+</view>

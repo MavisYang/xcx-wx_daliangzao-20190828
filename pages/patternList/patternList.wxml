@@ -1,0 +1,119 @@
+<!--pages/patternList/patternList.wxml  一键选礼 - 列表  -->
+<!--searchList.wxml  bindscrolltoupper="refesh"  -->
+<view scroll-y class="container"    bindscroll="scroll"  enable-back-to-top>
+
+  <view class="header_fixed">
+    <view class='pattern_result_wrap'>
+        <view class='pattern_result_cont'>
+            <view class='each_result_wrap'>
+                <view class='each_result_cont'>{{activeName1}}</view>
+                <image src='/images/xuanli_list_top_icon.png'  class='each_result_icon'></image>
+            </view>
+            <view class='each_result_wrap'>
+                <view class='each_result_cont'>{{activeName2}}</view>
+                <image src='/images/xuanli_list_top_icon.png'  class='each_result_icon'></image>
+            </view>
+            <view class='each_result_wrap'>
+                <view class='each_result_cont'>{{activeName3}}</view>
+                <image src='/images/xuanli_list_top_icon.png'  class='each_result_icon'></image>
+            </view>
+        </view>
+        <view class='pattern_result_model'>
+            <view class='pattern_return_cont  clearfix'  bindtap='returnChoose'>
+                <view class='return_choose'>重新选择</view>
+                <image src='/images/return_choose.png'  class='return_icon'></image>
+            </view>
+        </view>
+    </view>
+
+
+    <!-- 顶部导航栏 -->
+    <view class="header_nav">
+      <block wx:for="{{navList}}" wx:key="{{index}}">
+
+        <view class="each_nav  {{index == activeIndex ? 'nav_item_active' : ''}}">
+          <view bindtap="onTapTag" data-index="{{index}}" id="{{item.id}}"  data-type="{{index == activeIndex ? '1' : '0'}}"  data-val="{{dataVal}}" class="nav_item">
+            <text class="header_nav_title">{{item.title}}</text>             
+
+            <block wx:if="{{index == activeIndex}}">
+              <image class="header_nav_icon" src="{{pre}}" ></image>      
+            </block>
+
+            <block wx:elif="{{index != activeIndex && item.id == 'price'}}">
+              <image class="header_nav_icon_price" src="{{noActPrice}}"></image>      
+            </block> 
+
+            <block wx:else>
+              <image class="header_nav_icon" src="{{n}}"></image>      
+            </block> 
+          </view>
+            
+        </view>
+
+      </block>
+    </view>
+  </view>
+
+
+   <view class="list">
+    <block wx:for="{{contentList}}" wx:key="{{index}}"  wx:for-index="i">
+
+      <view class='each_nav_wrap  list_item_wrap'>
+        <navigator url="/pages/buy/buy?com_id={{item.id}}"  open-type='redirect'  class="list_item_nav">
+          <view class="list_item">
+            <image src="{{item.commodity_logo}}" class="full_image" mode="widthFix"/>
+          </view>        
+          <view class="full_title">{{item.commodity_name}}</view>
+          <view class="full_price">¥ {{item.commodity_sale}} <text class='full_price_unit' decode="true">&nbsp;&nbsp;¥{{item.commodity_cost}}&nbsp;&nbsp;</text></view>
+        </navigator>
+        <!-- <image src="{{item.collectState ? '/images/collect_icon_pre.png' : '/images/collect_icon_n.png'}}"  data-state="{{item.collectState}}"  data-id="{{i}}"  class="collect_icon"  data-comid="{{item.id}}"  bindtap="collect"></image>  -->
+      </view>
+      
+    </block>
+  </view> 
+
+  <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>  
+  <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view> 
+
+  <!-- 右侧按钮 -->
+  <view class='right_btn_wrap'>
+
+    <view class="right_btn  {{posYes? '' : 'hidden'}}"  bindtap='goTop'><image src='/images/list_right_btn_top.png'  class='right_icon'  alt="回到顶部"></image></view>
+
+    <view class='right_btn'  bindtap='openChangeModel'><image src='/images/change_liulan.png'  class='right_icon'  alt="模式"></image></view>
+
+    <view class='right_btn'  bindtap='goCar'><image src='/images/right_tab_car.png'  class='right_icon'  alt="购物车"></image></view>
+  </view>
+
+</view>
+
+<!-- 切换弹层 -->
+<view class='change_msg_bg  {{showMsg ? "" : "hidden"}}'  bindtap='closeMsg'>
+  <view class='change_msg_wrap'>
+    <view class='change_msg_cont'>
+      您已进入一键选礼模式点击右下角可以切换至商品浏览模式
+      <image src='/images/close_icon_white.png' class='change_msg_close' alt='关闭'></image>
+    </view>
+    <view class='change_msg_icon'><image src='/images/msg_bg_right.png' class='change_msg_icon'></image></view>
+  </view>
+</view>
+
+<!-- 切换提示弹窗 -->
+<view class='change_model_wrap  {{showChangeModel ? "" : "hidden"}}'>
+  <view class='change_model_content'>
+    <image src='/images/close_icon_gray.png'  bindtap='closeChangeModel'  class='change_model_close'  alt='关闭'></image>
+    <view class='change_model_cont'>
+      <view class='change_model_title1'>将为您切换至</view>
+      <view class='change_model_title2'>商品浏览模式</view>
+      <view class='change_model_title3'>是否确认？</view>
+      <view class='change_btn_wrap  clearfix'>
+        <image src='/images/change_msg_bg.png' class='change_model_bg'></image>
+        <view class='each_change_btn  btn_left'  bindtap='goChooseGift'>确认</view>
+        <view class='each_change_btn'  bindtap='closeChangeModel'>取消</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+

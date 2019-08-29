@@ -1,0 +1,107 @@
+<!--pages/aboutUs/aboutUs.wxml-->
+<view class='container'>
+  <view class='nav'>关于我们</view>
+  <view class='model_intro  clearfix'>
+    <view class='model_intro_left'>
+      <image src='{{httpAdd}}/images/about_us_1.png' class="about_us_img"></image>
+    </view>
+    <view class='model_intro_right'>
+      <view class='model_intro_cont'>
+        <view class='model_intro_title'>大良造</view>
+        <view class='model_intro_inf'>大良造是致力于帮助企业用户解决送礼难题，产品定制不便的而开发的一款一站式高端礼品定制平台。</view>
+        <view class='model_intro_inf'>我们本着“精良之选 用心造物”的理念，整合国内外知名高端品牌，挖掘多角度的礼赠场景，为用户提供高质量的定制工艺，满足灵活个性化的定制需求。</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='nav'>关于定制</view>
+  <view class='model_intro  clearfix'>
+    <view class='model_intro_right'>
+      <view class='model_intro_cont'>
+        <view class='model_intro_title'>用心定制</view>
+        <view class='model_intro_inf'>我们不但拥有精良的买手团队，根据每一位用户场景，对象的不同精心推荐与挑选素材，我们还拥有专业的定制团队，严格按照客户需求，用心定制好每一款商品。</view>
+        <view class='model_intro_inf'>于此同时，我们常年与多家专业的工厂及供应商合作，可以满足各类高需求高质量的礼品定制服务。</view>
+      </view>
+    </view>
+    <view class='model_intro_right2'>
+      <image src='{{httpAdd}}/images/about_us_2.png' class="about_us_img"></image>
+    </view>
+  </view>
+
+  <view class='gongyi_wrap'>
+    <view class='gongyi_title'>定制工艺</view>
+    <view class='each_gongyi  clearfix'>
+      <image src='{{httpAdd}}/images/gongyi_yayin.png' class='each_gongyi_img'></image>
+      <view class='each_gongyi_intro'>
+        <view class='each_gongyi_title'>压印</view>
+        <view class='each_gongyi_cont'>压印是将板料放在上、下模之间，在压力作用下使其材料厚度发生变化，并将挤压外的材料，充塞在有起伏细纹的模具形腔凸、凹处，而在工件表面得到形成起伏鼓凸及字样或花纹的一种成形方法。</view>
+        <view class='each_gongyi_btn'>加工周期：3-5个工作日</view>
+      </view>
+    </view>
+
+    <view class='each_gongyi  clearfix'>
+      <image src='{{httpAdd}}/images/gongyi_siyin.png' class='each_gongyi_img'></image>
+      <view class='each_gongyi_intro'>
+        <view class='each_gongyi_title'>丝印</view>
+        <view class='each_gongyi_cont'>丝网印刷是通过刮板的挤压，使油墨通过图文部分的网孔转移到承印物上，形成与原稿一样的图文。丝网印刷设备简单、操作方便，印刷、制版简易且成本低廉，适应性强。</view>
+        <view class='each_gongyi_btn'>加工周期：3-5个工作日</view>
+      </view>
+    </view>
+
+    <view class='each_gongyi  clearfix'>
+      <image src='{{httpAdd}}/images/gongyi_tang.png' class='each_gongyi_img'></image>
+      <view class='each_gongyi_intro'>
+        <view class='each_gongyi_title'>烫金/烫银/烫黑金</view>
+        <view class='each_gongyi_cont'>烫印，是指在精装书封壳的封一或封四及书背部分烫上色箔等材料的文字和图案，或用热压方法压印上各种凸凹的书名或花纹。</view>
+        <view class='each_gongyi_btn'>加工周期：3-5个工作日</view>
+      </view>
+    </view>
+
+    <view class='each_gongyi  clearfix'>
+      <image src='{{httpAdd}}/images/gongyi_jiguang.png' class='each_gongyi_img'></image>
+      <view class='each_gongyi_intro'>
+        <view class='each_gongyi_title'>激光</view>
+        <view class='each_gongyi_cont'>激光加工是利用光的能量经过透镜聚焦后在焦点上达到很高的能量密度，靠光热效应来加工的。</view>
+        <view class='each_gongyi_btn'>加工周期：1-3个工作日</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 定制流程 -->
+  <view class='liucheng_wrap'>
+    <view class='lucheng_title'>定制流程</view>
+    <view class='lucheng_intro'>在大良造，礼品定制就如同购物般，愉快而又简单。</view>
+    <image src='{{httpAdd}}/images/liucheng_img.png' class='liucheng_img'></image>
+  </view>
+
+  <!-- 合作伙伴 -->
+  <view class='hezuo_wrap'>
+    <view class='nav'>合作伙伴</view>
+    <view class='model_intro  clearfix'>
+      <view class='model_intro_right'>
+        <view class='model_intro_cont'>
+          <view class='model_intro_title'>商务礼品专家</view>
+          <view class='model_intro_inf'>大良造是上海古德智造文化创意有限公司独立开发的平台。我们成立已有9年时间，期间为许多知名品牌企业提供专业的服务 ，其中包含：星巴克、资生堂、雅诗兰黛、凯迪拉克、雪佛兰等。</view>
+          <view class='model_intro_inf'>为其提供商务礼品解决方案，包括选品建议、采购服务、定制服务及售后服务。</view>
+        </view>
+      </view>
+      <view class='model_intro_right2'>
+        <image src='{{httpAdd}}/images/hezuo_img.png' class="about_us_img"></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- 商品展示 -->
+  <view class='goods_wrap'>
+    <view class='goods_title'>精良之选  用心造物</view>
+    <view class='goods_list_wrap  clearfix'>
+      <block wx:for="{{goodsList}}" wx:key="index" wx:foe-index="i">
+        <view class='goods_img_wrap'>
+          <image src='{{httpAdd}}{{item.src}}' class="goods_img"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+
+
+</view>

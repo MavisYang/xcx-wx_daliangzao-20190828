@@ -1,0 +1,244 @@
+/* kindSecondList.wxss */
+page{
+  background-color: #fff;
+}
+.container{
+  display: flex;
+  max-height: 100vh;
+  overflow: hidden;
+}
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+::-webkit-scrollbar-thumb{
+  color:transparent;
+}
+::-webkit-scrollbar-track-piece{
+  color: transparent;
+}
+.header_nav_wrap{
+  width: 100%;
+  /* height:78rpx; */
+  font-size: 24rpx;
+  color: #7f7f7f;
+  background-color: #fff;
+  padding-top:4rpx;
+  /* border-bottom: 1rpx solid #dfe6ea; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.header_nav{
+  width:100%;
+}
+.each_nav_wrap{
+  display: inline-block;
+  width:33%;
+}
+.header_nav_title{
+  display: inline-block;
+  width: 100%;
+  line-height: 78rpx;
+  text-align: center;
+  color:#a0b0b5;
+  border-bottom: 3rpx solid #f0f0f0;
+  box-sizing: border-box;
+}
+.nav_item_active{
+  color:#b4a078;
+  border-bottom:3rpx solid #b4a078; 
+  box-sizing: border-box;
+}
+.nav_item{
+  display: inline-block;
+  height: 78rpx;
+  padding:0 3rpx 0 23rpx;
+  box-sizing: border-box;
+}
+
+/*  标题 */
+.content_title_wrap{
+  width:100%;
+  height:50rpx;
+  position:relative;
+  margin:0 auto;
+  padding: 15rpx 0;
+  background-color: #fff;
+  text-align: center;
+}
+.title_line{
+  width:100%;
+  height:2rpx;
+  background-color: #c4cdd3;
+  position:absolute;
+  top:50%;
+  left:0;
+  margin-top:-1rpx;
+}
+.title_contemt{
+  display: inline-block;
+  padding:0 20rpx;
+  height:50rpx;
+  font-size: 32rpx;
+  line-height: 50rpx;
+  text-align: center;
+  position: relative;
+  margin-top:0;
+  z-index: 2;
+  color: #6f7478;
+  background-color: #fff;
+}
+.tab-content{
+  position:relative;
+}
+.scoll-h{
+  height: 100vh;
+  overflow: hidden;
+}
+/*  列表 */
+.list{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #fff;
+  margin-top:146rpx;
+}
+.list_item_wrap{
+  width: 50%;
+  box-sizing: border-box;
+  border-bottom:1px solid #f0f0f0;
+}
+
+.list_item_wrap:nth-child(odd){
+  border-right:1px solid #f0f0f0;
+}
+.list_item_wrap:nth-child(even){
+  border-left:1px solid #f0f0f0;
+}
+
+.list_item{
+  width: 100%;
+  /* height:340rpx; */
+  overflow: hidden;
+  position: relative;
+   margin: 0 auto;
+}
+.full_image{
+  display: block;
+  width: 100%;
+}
+.full_img_footer{
+  width:100%;
+  height:50rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  color:#fff;
+  text-align: center;
+  background-color: rgba(0,0,0,0.6);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.full_title{
+  height:72rpx;
+  font-size: 30rpx;
+  line-height: 36rpx;
+  color:#444;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding: 23rpx 20rpx 0 32rpx ;
+}
+.full_price{
+  font:bold 30rpx "Microsoft Yahei";
+  color:#b4a078;
+  padding: 34rpx 0 30rpx 32rpx;
+}
+.full_price_unit{
+  font: normal  normal  22rpx Arial;
+  text-decoration: line-through;
+  color:#c8c8c8;
+  padding-left:26rpx;
+}
+/* 列表结束 */
+.loading{
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #c8c8c8;
+}
+
+/* 新导航 - 筛选 */
+.header_nav{
+  background-color: #fff;
+}
+.condition_one{
+  width: 100%;
+  display:flex;
+  flex-flow:row;
+  justify-content:center;
+  align-items:center;
+  border-bottom:2px solid #b4a078; 
+}
+.condition_two{
+  width: 100%;
+  display:flex;
+  flex-flow:row;
+  justify-content:center;
+  align-items:center;
+}
+.condition_each_nav{
+  width: 25%;
+  display:flex;
+  flex-flow:row;
+  justify-content:center;
+  align-items:center;
+  position: relative;
+}
+.condition_icon{
+  width: 10rpx;
+  height: 10rpx;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  margin: -6rpx 0 0 22rpx;
+  border: 1px solid #000;
+  border-radius: 100%;
+}
+.condition_icon_active{
+  background-color: #b4a078;
+  border: 1px solid #b4a078;
+}
+.condition_title{
+  display: block;
+  float: left;
+  font-size: 24rpx;
+  line-height: 68rpx;
+  color: #000;
+  text-align: center;
+  position: relative;
+}
+.condition_title_active{
+  color: #b4a078;
+}
+/* 排序icon */
+.sort_icon{
+  display: block;
+  float: left;
+  width: 12rpx;
+  height: 16rpx;
+  margin: 2rpx 0 0 6rpx; 
+}
+.right_line{
+  width: 2px;
+  height: 18rpx;
+  background-color: #f0f0f0;
+  position: absolute;
+  top:25rpx;
+  right: 0;
+}

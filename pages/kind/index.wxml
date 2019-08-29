@@ -1,0 +1,79 @@
+<!--index.wxml  分类列表  -->
+<view class="container">
+
+    <view class="list">
+      <block wx:for="{{contentList}}" wx:key="{{index}}"> 
+        <block wx:if="{{item.id != 2998 && item.id != 2999}}">
+        <navigator url="/pages/kindSecondList/kindSecondList?classify_name={{item.classify_name}}&classify_des={{item.classify_des}}&id={{item.id}}"  class="list_item_wrap">
+          <view class="list_item">
+            <image src="{{item.classify_logo}}" class="full_image"  />
+          </view>        
+        </navigator>
+        </block>
+        <block wx:if="{{item.id == 2998}}">
+          <view  class="list_item_wrap"  bindtap='openVipWind'>
+            <view class="list_item">
+              <image src="{{item.classify_logo}}" class="full_image"  />
+            </view> 
+          </view>
+        </block>
+        <block wx:if="{{item.id == 2999}}">
+          <view  data-id="{{item.id}}"  class="list_item_wrap" bindtap='openNeibuWind'>
+            <view class="list_item">
+              <image src="{{item.classify_logo}}" class="full_image"  />
+            </view> 
+          </view>
+        </block>
+      </block>
+    </view>  
+
+     <!-- <image src='/images/kind_bg.png' mode='widthFix'  class='kind_bg'></image>  -->
+
+</view>
+
+<!-- vip弹窗 -->
+<view class='vip_wind_wrap  {{showVip ? "" : "hidden"}}'>
+  <view class='vip_content'>
+   <view class='vip_cont'>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/vip_icon_bg.png'  class='vip_bg'></image>
+    <!-- input -->
+    <view class='input_cont_wrap'>
+      <view class='input_wrap'>
+        <image src='/images/vip_input_bg.png'  class='vip_input_bg'></image>
+        <input type='text'   placeholder='{{commandPlaceholder}}'  class='input_inp'  value="{{command}}"  placeholder-class="input_placeholder"  bindinput ="commandInput"  bindfocus="commandInputFocus"></input>
+        <view class='input_btn'  bindtap='comeInVip'>立即进入</view>
+      </view>
+    </view>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/vip_icon_right.png' class='vip_bg_icon'></image>
+   </view>
+   <view class='close_vip_wind'  bindtap='closeVipWind'>
+    <image src='/images/vip_close_icon.png' class='close_icon'></image>
+   </view>
+  </view>
+</view>
+
+<!-- 内部员工弹窗 -->
+<view class='vip_wind_wrap  {{showNeibu ? "" : "hidden"}}'>
+  <view class='vip_content'>
+   <view class='vip_cont'>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/neibu_icon_bg.png'  class='vip_bg'></image>
+    <!-- input -->
+    <view class='input_cont_wrap'>
+      <view class='input_wrap'>
+        <image src='/images/vip_input_bg.png'  class='vip_input_bg'></image>
+        <input type='text'   placeholder='{{commandPlaceholder}}'  class='input_inp'  value="{{commandNeibu}}"  placeholder-class="input_placeholder"  bindinput ="commandNeibuInput"  bindfocus="commandNeibuInputFocus"></input>
+        <view class='input_btn'  bindtap='comeInNeibu'>立即进入</view>
+      </view>
+    </view>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/vip_icon_right.png' class='vip_bg_icon'></image>
+   </view>
+   <view class='close_vip_wind'  bindtap='closeNeibuWind'>
+    <image src='/images/vip_close_icon.png' class='close_icon'></image>
+   </view>
+  </view>
+</view>
+
+<!-- 提示弹窗 -->
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>

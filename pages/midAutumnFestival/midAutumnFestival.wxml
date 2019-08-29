@@ -1,0 +1,43 @@
+<!--pages/midAutumnFestival/midAutumnFestival.wxml  中秋节 -->
+<view class='container'>
+  <image class='banner' wx:if="{{urlHttp}}" src='{{urlHttp}}images/midAutumnFestival/mid_autumn_banner.png'  mode='widthFix'></image>
+  <image class='banner_goods' wx:if="{{urlHttp}}" src='{{urlHttp}}images/midAutumnFestival/mid_autumn_1.png?v=201808161728' mode='widthFix'></image>
+  <image class='mid_goods_2'  wx:if="{{urlHttp}}" src='{{urlHttp}}images/midAutumnFestival/mid_autumn_2.jpg'  mode='widthFix'></image>
+
+  <image wx:if="{{urlHttp}}"  src='{{urlHttp}}images/midAutumnFestival/mid_autumn_3.png'  mode='widthFix'></image>
+  <image wx:if="{{urlHttp}}"  src='{{urlHttp}}images/midAutumnFestival/mid_autumn_4.png'  mode='widthFix'></image>
+  <image wx:if="{{urlHttp}}"  src='{{urlHttp}}images/midAutumnFestival/mid_autumn_5.png'  mode='widthFix'></image>
+  <image wx:if="{{urlHttp}}"  src='{{urlHttp}}images/midAutumnFestival/mid_autumn_6.png'  mode='widthFix'></image>
+
+  <image wx:if="{{urlHttp}}"  src='{{urlHttp}}images/midAutumnFestival/mid_autumn_7.png'  mode='widthFix'></image>
+
+  <image wx:if="{{urlHttp}}"  src='{{urlHttp}}images/midAutumnFestival/mid_autumn_8.png'  mode='widthFix'></image>
+  <image wx:if="{{urlHttp}}"  src='{{urlHttp}}images/midAutumnFestival/mid_autumn_9.png'  mode='widthFix'></image>
+  <image wx:if="{{urlHttp}}"  src='{{urlHttp}}images/midAutumnFestival/mid_autumn_10.png?v=201808161728'  mode='widthFix'></image>
+
+  <view class='footer_wrap'>
+    <navigator url='/pages/buy/buy?com_id=3582'>
+      <image class='footer_goods' wx:if="{{urlHttp}}"  src='{{urlHttp}}images/midAutumnFestival/mid_autumn_11.png'  mode='widthFix'></image>
+    </navigator>
+    <view class='footer_goods_price'>
+      <text class='price_title_1'>预售价：</text>
+      <text class='price_title_2'>¥</text>
+      <text class='price_title_3'>188</text>
+      <text class='price_title_1'>原价：</text>
+      <text class='price_title_4'>208</text>
+    </view>
+    <navigator url='/pages/buy/buy?com_id=3582' class='footer_buy_btn'>点击购买</navigator>
+  </view>
+  
+  <view class='footer_festival_infor'>
+    <view class='footer_festival_title'>中秋佳节~戊戌年 八月十五</view>
+    <view class='footer_festival_cont1'>中秋特惠预售期：<text>2018.08.4 ~ 2018.08.31</text></view>
+    <view>预售商品发货时间：将在2018.08.27根据订单时间依次发货。</view>
+    <view>企业关怀/员工福利/商务礼增</view>
+  </view>
+
+</view>
+<!-- 回到首页 -->
+<view  bindtap='backIndex'  class="back_btn  {{shareFlag == 1 ? '' : 'back_btn_hidden'}}">
+  <image src='/images/share_back_index.png'  class='back_btn_icon'></image>
+</view>

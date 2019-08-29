@@ -1,0 +1,17 @@
+<!--feedback.wxml-->
+<view class="container">
+
+  <image wx:if="{{urlHttp}}" src="{{urlHttp}}images/feedback_banner.png" class="feedback_banner"></image>
+  <view class="feedback_cont">
+    <textarea class="feedback_textarea  top"  bindinput='textareaInput'  placeholder="请提出您的宝贵意见，我们会在第一时间改进..."/>
+    <view class="feedback_input top">
+      <input type="number" bindinput='telphoneInput' placeholder="请留下您的手机号码（选填）" maxlength="11"/>
+    </view>
+    <view class="feedback_btn" data-id="0" data-forid="0" data-current="0" bindtap="feedback">提交</view>
+  </view>
+
+
+</view>
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>

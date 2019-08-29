@@ -1,0 +1,35 @@
+<!--pages/awaitState/awaitStateFromList.wxml-->
+<view class="container">
+
+  <view class="banner">
+    <image  src='{{uploadImg.giftImg}}' mode='widthFix'></image>
+  </view>
+
+  <view class="choose_wrap">
+    <view class="choose_content">
+      <image src='{{uploadImg.fromUserHead}}' class="user_photo"></image>
+      <view class="choose_msg">
+        <view class="msg_name">{{uploadImg.fromUserName}}</view>
+        <view class="msg_infor">{{uploadImg.giftMsg}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="upload_wrap">
+    <block wx:if="{{uploadImg.imgList}}" wx:for="{{uploadImg.imgList}}" wx:key="index" wx:for-index="i">
+      <view class="upload_img_wrap">
+        <image src='{{item}}' data-src="{{item}}" bindtap="previewImg"   data-id="{{i}}" class="upload_img"></image>
+      </view>  
+    </block> 
+  </view>
+
+  <view wx:if="{{recHidden == true}}" class="footer_btn">
+    <view bindtap="wantSent"  class="footer_each_btn  footer_each_btn_left">我也要送</view>
+    <view bindtap='selectWuliu' class="footer_each_btn">查看物流信息</view>
+  </view>
+
+  <view wx:if="{{sendHidden == true}}" class="footer_btn">
+    <navigator url='/pages/orderList/orderList' class="footer_each_btn">挑选其他礼物</navigator>
+  </view>
+
+</view>

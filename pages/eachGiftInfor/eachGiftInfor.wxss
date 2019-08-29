@@ -1,0 +1,270 @@
+/* pages/eachGiftInfor/eachGiftInfor.wxss */
+/* pages/awaitState/awaitState.wxss */
+page{
+  background-color: #fff;
+}
+ .container{
+  display: block;
+  position: relative;
+  min-height: 100vh;
+  /* padding: 0 0 200rpx 0; */
+} 
+.space{
+  height: 15rpx;
+  background-color: #f9f9f9;
+}
+.banner image{
+  width:710rpx;
+}
+.goods_infor_wrap{
+  padding: 0 36rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  padding-bottom: 10rpx;
+}
+.goods_title,.goods_name{
+  float: left;
+  color: #4a4949;
+}
+.goods_infor{
+  float:left ;
+  width: 550rpx;
+}
+.goods_name{
+  width: 500rpx;
+  color: #b4a078;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.goods_num{
+  float: right;
+  color: #272727;
+}
+.choose_wrap{
+  /* height: 143rpx; */
+  padding:30rpx 0;
+  background-color: #fff;
+}
+.choose_content{
+  width: 100%;
+  height: 86rpx;
+  background-color: #fff;
+  position: relative;
+}
+.user_photo{
+  float:left;
+  width: 68rpx;
+  height: 68rpx;
+  margin:12rpx 24rpx 0 36rpx;
+}
+.choose_msg{
+  float: left;
+  font-size: 26rpx;
+  line-height: 42rpx;
+  margin:12rpx 0 0 0;
+}
+.msg_name{
+  width: 560rpx;
+  font-size: 28rpx;
+  line-height:62rpx; 
+  color: #2d2d2d;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.msg_infor{
+  width: 560rpx;
+  font-size: 28rpx;
+  color: #969696;
+  padding: 33rpx 36rpx 0 36rpx;
+}
+
+.choose_icon{
+  width: 20rpx;
+  height: 32rpx;
+  position: absolute;
+  top:27rpx;
+  right: 40rpx;
+}
+.msg_tetxarea{
+  width: 710rpx;
+  padding:20rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  color: #ccc;
+}
+.send_btn{
+  width: 88%;
+  height: 96rpx;
+  font-size: 34rpx;
+  line-height: 96rpx;
+  color: #fff;
+  text-align: center;
+  background-color: #169bd5;
+  position: fixed;
+  bottom: 20rpx;
+  left:6%;
+  border-radius: 8rpx;
+  z-index: 1;
+}
+
+.state_title{
+  display: inline-block;
+  margin: 90rpx auto 20rpx;
+}
+.await_icon,.await_title{
+  float: left;
+}
+.await_icon{
+  width: 42rpx;
+  height: 42rpx;
+  margin:0 40rpx;
+}
+.await_title{
+  font-size: 30rpx;
+}
+.banner{
+  width: 480rpx;
+  margin:0 auto 20rpx;
+  padding-top:20rpx;
+}
+.banner image{
+  width: 100%;
+}
+.footer_btn{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 40rpx;
+  display: flex;
+  justify-content: center;
+}
+.footer_flag{
+  display: block;
+  width: 100%;
+  height: 120rpx;
+  position: absolute;
+  left: 0;
+  bottom: 80rpx;
+  color: #959595;
+  font-size: 24rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.footer_each_btn,.footer_each_btn_two{
+  display: inline-block;
+  width: 300rpx;
+  height: 80rpx;
+  color: #959595;
+  font-size: 24rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border: 1px solid #969696;
+}
+.footer_each_btn_two{
+  width: 300rpx;
+  margin: 0 65rpx;
+}
+.footer_each_btn_left{
+  color: #b4a078;
+  border: 1px solid #b4a078;
+}
+.footer_btn_hidden{
+  display: none;
+}
+/* 上传图片 */
+.upload_wrap{
+  padding:20rpx;
+}
+.upload_img_wrap{
+  float:left;
+  width: 110rpx;
+  height: 110rpx;
+  margin: 25rpx;
+  position: relative;
+}
+.delete_img{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: -15rpx;
+  right: -15rpx;
+  z-index: 2;
+}
+.upload_img{
+  width: 110rpx;
+  height: 110rpx;
+}
+
+/* 定制完成  */
+.qrfh_wrap{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0; 
+  z-index: 9999;
+  background-color: rgba(0,0,0,0.6);
+}
+.qrfh_content_wrap{
+  width: 80%;
+  height: 283rpx;
+  background-color: #fff;
+  border-radius: 4px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -141rpx 0 0 -40%; 
+}
+.qrfh_cont_wrap{
+  padding: 50rpx 15rpx;
+  font-size: 32rpx;
+  line-height: 46rpx;
+  text-align: center;
+  color: #999;
+}
+.qrfh_btn_wrap{
+  position: absolute;
+  left:0;
+  bottom: 0;
+}
+.qrfh_cancle,.qrfh_sure{
+  float: left;
+  width: 50%;
+  height: 90rpx;
+  font-size: 40rpx;
+  line-height: 90rpx;
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+.qrfh_cancle{
+  color:#222;
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.qrfh_sure{
+  color: #b4a078;
+}
+/* 收礼物者信息 */
+.receive_wrap{
+  clear: both;
+  display: block;
+  width: 100%;
+  position: absolute;
+  left:0;
+  bottom: 40rpx;
+}
+.receive_photo{
+  display: block;
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 100%;
+  margin: 0 auto;
+}
+.receive_name,.receive_time{
+  font-size:28rpx;
+  line-height:40rpx;
+  text-align: center;
+  color:#959595;
+}

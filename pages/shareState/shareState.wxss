@@ -1,0 +1,95 @@
+/* pages/shareState/shareState.wxss */
+page{
+  background-color: #fff;
+}
+.banner{
+  width:710rpx;
+  margin:20rpx;
+}
+.banner image{
+  width:710rpx;
+}
+.choose_wrap{
+  height: 86rpx;
+  padding:30rpx 0;
+  background-color: #fff;
+}
+.choose_content{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: relative;
+}
+.user_photo{
+  float:left;
+  width: 62rpx;
+  height: 62rpx;
+  margin:12rpx 24rpx 0 36rpx;
+}
+.choose_msg{
+  font-size: 26rpx;
+  line-height: 42rpx;
+  margin-left:122rpx;
+}
+.msg_name{
+  width: 560rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.msg_infor{
+  width: 560rpx;
+  color: #b2b2b2;
+}
+
+.choose_icon{
+  width: 20rpx;
+  height: 32rpx;
+  position: absolute;
+  top:27rpx;
+  right: 40rpx;
+}
+.msg_tetxarea{
+  width: 710rpx;
+  padding:20rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  color: #ccc;
+}
+.send_btn{
+  width: 88%;
+  height: 96rpx;
+  font-size: 34rpx;
+  line-height: 96rpx;
+  color: #fff;
+  text-align: center;
+  background-color: #169bd5;
+  position: fixed;
+  bottom: 20rpx;
+  left:6%;
+  border-radius: 8rpx;
+  z-index: 1;
+}
+
+.state_title{
+  display: inline-block;
+  margin: 90rpx auto 20rpx;
+}
+.await_icon,.await_title{
+  float: left;
+}
+.await_icon{
+  width: 42rpx;
+  height: 42rpx;
+  margin:0 40rpx;
+}
+.await_title{
+  font-size: 30rpx;
+}
+.banner{
+  width: 580rpx;
+  margin:0 auto;
+}
+.banner image{
+  width: 100%;
+}

@@ -1,0 +1,82 @@
+<!--pages/dragonBoatFestivalInfor/dragonBoatFestivalInfor.wxml  端午节活动  -->
+<view class="container  {{urlHttp ? '' : 'hidden'}}">
+
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_1.jpg'  mode='widthFix'  class='big_img'></image>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_2.jpg'  mode='widthFix'  class='big_img'></image>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_3.jpg'  mode='widthFix'  class='big_img'></image>
+
+    <!-- 大良造端午礼盒 -->
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_4.png'  mode='widthFix'  class='big_img'></image>
+    <navigator url='/pages/buy/buy?com_id=3419'>
+      <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_5.jpg'  alt="大良造端午礼盒"  class='goods_img'></image>
+    </navigator>
+
+    <view class='goods_price_wrap'>
+      <image wx:if="{{urlHttp}}" src="{{urlHttp}}images/dragon_boat_festive/dragon_infor_bg.png" class='goods_price_bg'></image>
+      <view class='goods_price_cont'><text  class='goods_price_cont_icon'>¥</text>168</view>
+    </view>
+    <view class='goods_btn_wrap'>
+      <image wx:if="{{urlHttp}}" src="{{urlHttp}}images/dragon_boat_festive/dragon_infor_space.jpg"  class='goods_btn_bg'></image>
+      <navigator url='/pages/buy/buy?com_id=3419' class='goods_btn'>立即购买</navigator>
+    </view>
+
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_6.jpg'  mode='widthFix'  class='big_img'></image>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_7.jpg'  mode='widthFix'  class='big_img'></image>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_8.jpg'  mode='widthFix'  class='big_img'></image>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_9.jpg'  mode='widthFix'  class='big_img'></image>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_10.jpg'  mode='widthFix'  class='big_img'></image>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_11.jpg'  mode='widthFix'  class='big_img'></image>
+
+
+    <!-- 午早有机粽礼盒 -->
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_12.png'  mode='widthFix'  class='big_img'></image>
+    <navigator url='/pages/buy/buy?com_id=3457'>
+      <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_13.jpg'  alt="午早有机粽礼盒"  class='goods_img'></image>
+    </navigator>
+    
+    <view class='goods_price_wrap'>
+      <image wx:if="{{urlHttp}}" src="{{urlHttp}}images/dragon_boat_festive/dragon_infor_bg.png" class='goods_price_bg'></image>
+      <view class='goods_price_cont'><text  class='goods_price_cont_icon'>¥</text>208</view>
+    </view>
+    <view class='goods_btn_wrap'>
+      <image wx:if="{{urlHttp}}" src="{{urlHttp}}images/dragon_boat_festive/dragon_infor_space.jpg"  class='goods_btn_bg'></image>
+      <navigator url='/pages/buy/buy?com_id=3457' class='goods_btn'>立即购买</navigator>
+    </view>
+
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_14.jpg'  mode='widthFix'  class='big_img'></image>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_15.jpg'  mode='widthFix'  class='big_img'></image>
+
+    <!-- 星冰粽 冰逸款兑换券 -->
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_16.png'  mode='widthFix'  class='big_img'></image>
+    <navigator url='/pages/buy/buy?com_id=3458'>
+      <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_17.jpg'  alt="星冰粽 冰逸款兑换券"  class='goods_img'></image>
+    </navigator>
+
+    <view class='goods_price_wrap'>
+      <image wx:if="{{urlHttp}}" src="{{urlHttp}}images/dragon_boat_festive/dragon_infor_bg.png" class='goods_price_bg'></image>
+      <view class='goods_price_cont'><text  class='goods_price_cont_icon'>¥</text>198</view>
+    </view>
+    <view class='goods_btn_wrap'>
+      <image wx:if="{{urlHttp}}" src="{{urlHttp}}images/dragon_boat_festive/dragon_infor_space.jpg"  class='goods_btn_bg'></image>
+      <navigator url='/pages/buy/buy?com_id=3458' class='goods_btn'>立即购买</navigator>
+    </view>
+
+
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_18.jpg'  mode='widthFix'  class='big_img'></image>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_19.jpg'  mode='widthFix'  class='big_img'></image>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_20.jpg'  mode='widthFix'  class='big_img'></image>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_21.jpg'  mode='widthFix'  class='big_img'></image>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_22.jpg'  mode='widthFix'  class='big_img'></image>
+
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_23.jpg'  mode='widthFix'  class='big_img'></image>
+
+    <view class='footer_wrap'>
+      <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dragon_boat_festive/dragon_infor_24.jpg'  mode='widthFix'  class='big_img'></image>
+      <view class='footer_msg'>临近端午假期，从6月15日端午系列商品开始停止发货</view>
+    </view>
+
+</view>
+<!-- 回到首页 -->
+<view  bindtap='backIndex'  class="back_btn  {{shareFlag == 1 ? '' : 'back_btn_hidden'}}">
+  <image src='/images/share_back_index.png'  class='back_btn_icon'></image>
+</view>

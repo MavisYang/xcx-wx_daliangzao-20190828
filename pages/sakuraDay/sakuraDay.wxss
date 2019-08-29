@@ -1,0 +1,60 @@
+/* pages/sakuraDay/sakuraDay.wxss 樱花节  */
+.container{
+  background-color: #fff;
+}
+image{
+  display: block;
+  width: 100%;
+}
+.sakura_banner{
+  width: 100%;
+}
+.modle_title{
+  margin: 80rpx 0 5rpx 0;
+}
+.modle_title image{
+  display: block;
+  width: 100%;
+}
+.modle_one_wrap{
+  text-align: center;
+}
+.modle_big_img image{
+  display: block;
+  width: 100%;
+  margin: 25rpx 0 0 0;
+}
+.modle_one_each{
+  display: inline-block;
+}
+.modle_small_img{
+  float: left;
+  width: 342rpx;
+  height: 361rpx;
+  margin: 20px 5rpx 0;
+}
+.modle_small_img image{
+  height: 100%;
+}
+.modle_two_wrap{
+  text-align: center;
+  margin: 125rpx 0 30rpx 0;
+}
+.modle_two_cont{
+  display: inline-block;
+}
+.modle_two_big,.modle_two_small{
+  display: block;
+  float: left;
+  width: 246rpx;
+  height: 361rpx;
+  margin: 0 5rpx 18rpx;
+}
+.modle_two_small{
+  width: 232rpx;
+}
+.modle_two_big image,.modle_two_small image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}

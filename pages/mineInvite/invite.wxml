@@ -1,0 +1,29 @@
+<!--invite.wxml-->
+<scroll-view scroll-y class="container">
+  <image src="/images/mine_invite_bg.jpg"  class="invite_bg"></image>
+
+  <navigator url="" class="rule_btn">
+    <view class="">活</view>
+    <view class="">动</view>
+    <view class="">规</view>
+    <view class="">则</view>
+  </navigator>
+
+  <!-- 马上邀请 -->
+  <navigator url="" class="invite_btn"><image src="/images/mine_invite_btn.png"></image></navigator>
+  
+  <view class="mine_infor_wrap">
+    <navigator url="/pages/mineInviteAward/mineInviteAward" class="mine_btn">《我的现金奖励》</navigator>
+    <view class="money_wrap">
+      <text>累计：<text class="money">1000元，</text></text>
+      <text>可兑换：<text class="money">1000元，</text></text>
+      <text>邀请好友：<text class="money">3人</text></text>
+    </view>
+
+    <view class="rule_wrap">
+      <view class="rule_title">活动规则</view>
+      <view class="rule_cont">发送邀请链接给好友，好友注册后每一笔订单的实际付款金额的8%作为奖励，同时还有推荐的好友每一笔订单的实际付款金额的4%作为奖励，无奖励上限，满100可提现。</view>
+    </view>
+
+  </view>
+</scroll-view>

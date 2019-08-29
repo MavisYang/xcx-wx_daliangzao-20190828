@@ -1,0 +1,113 @@
+<!-- 点击结算后的确认订单 -->
+<view class="container   {{hidden}}">
+
+ <block wx:for="{{carts}}" wx:key="index"  wx:for-index="{{i}}"> 
+  <view class="goods_infor">
+    <view class="each_goods">
+      <image src="{{item.logo}}" class="goods_img"></image>
+      <view class="goods_cont">
+
+        <view class="goods_price">￥<text>{{item.new_price}}</text></view>
+        <view class="goods_name">{{item.name}}</view>
+        <view class="goods_style"> 
+          <text wx:if="{{item.style1_name}}">{{item.style1_name}} </text>
+          <text wx:if="{{item.style2_name}}">{{item.style2_name}} </text>
+          <text wx:if="{{item.style3_name}}">{{item.style3_name}} </text>
+          <text wx:if="{{item.style4_name}}">{{item.style4_name}} </text>
+          <text wx:if="{{item.style5_name}}">{{item.style5_name}} </text>
+          <text wx:if="{{item.giftbox_name}}">{{item.giftbox_name}} </text>
+          <text wx:if="{{item.process_name}}">{{item.process_name}}</text>
+        </view>
+        <view class="goods_num">x{{item.num}}</view>
+      </view>
+    </view> 
+  </view>
+ </block> 
+ <view bindtap='coupon'  class="youhuijuan_title  double_line">
+    <view class="text1">选择优惠劵</view>
+    <text class="coupon_name">{{couponName}}</text>
+    <image src="{{addressEditImg}}"  class="address_edit_img  flexbox"/>
+  </view>
+  
+  <view class="infor_content">
+
+    <view class="each_infor borderBottom">
+      <view class="infor_title">配送费</view>
+      <view class="infor_num">快递￥0.00</view>
+      <view class="clearfix"></view>
+    </view>
+
+    <view class="each_infor peisong  borderBottom">
+      <view class="infor_title">定制费用</view>
+      <view class="infor_num">￥0.00</view>
+      <view class="clearfix"></view>
+    </view>
+
+    <view class="each_infor peisong  borderBottom">
+      <view class="infor_title">优惠劵</view>
+      <view class="infor_num  infor_num_coupon">-￥{{minNum}}</view>
+      <view class="clearfix"></view>
+    </view>
+    
+    <view class="each_infor peisong  borderBottom">
+      <view class="infor_title">商品合计</view>
+      <view class="infor_num">￥{{total1}}</view>
+      <view class="clearfix"></view>
+    </view>
+
+    <!-- 发票 -->
+    <view class="add_invoice_wrap  borderBottom">
+      <label  bindtap="checkboxChange" data-value="{{value}}"   class="each_infor peisong checkbox">
+        <checkbox  bindtap="checkboxChange" class="{{checked ? 'checkact' : ''}}"  disabled='{{invoice ? false : true}}' value="{{value}}" checked="{{checked}}"  color="#fff"/>{{invCont}}
+      </label>
+      <view bindtap='invoice' class="addInvoice"><image src='../../images/gray_more_2.png'></image></view>
+    </view>
+
+    <!-- 同意协议 -->
+    <view class="add_invoice_wrap">
+      <label  bindtap="agrService"  data-value="{{servalue}}"   class="each_infor peisong">
+        <checkbox  bindtap="agrService" class="{{serchecked ? 'checkact' : ''}}"  checked="{{serchecked}}"  color="#fff"/>
+        我同意
+      </label>
+      <navigator url='/pages/serviceCont/serviceCont'  class='service_navig'>《大良造服务协议》</navigator>
+    </view>
+  </view>
+
+  <view class="footer_total"> 
+
+    <!-- <block wx:if="{{allowPay == 0}}">
+      <view class="footer_right  {{serchecked ? '' : 'footer_right_gray'}}" bindtap="{{serchecked ? 'save' : ''}}">去付款</view>
+    </block>
+    <block wx:else>
+      <view class="footer_right  {{footer_right_gray}}" >去付款</view>
+    </block> -->
+
+    <block wx:if="{{allowPay == 0}}">
+      <form bindsubmit="{{serchecked ? 'save' : ''}}"   data-id="{{i}}"  report-submit  >
+        <button formType="submit"  class='form_button'>
+            <view class="footer_right  {{serchecked ? '' : 'footer_right_gray'}}">去付款</view>
+        </button>
+      </form>
+    </block>
+    <block wx:else>
+      <view class="footer_right  {{footer_right_gray}}" >去付款</view>
+    </block>
+
+    <view class="footer_left">
+      <text class="footer_left_totaltit">￥</text>
+      <text class="footer_left_total">{{total2}}</text>
+      <text class='footer_left_coupon'>已优惠￥{{minNum}}</text>
+    </view>
+    
+  </view>
+
+</view>
+ <view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view> 
+<view wx:if="{{maskBg}}" class="modal_bg "></view>
+
+
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>

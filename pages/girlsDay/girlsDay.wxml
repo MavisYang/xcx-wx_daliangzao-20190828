@@ -1,0 +1,30 @@
+<!--pages/girlsDay/girlsDay.wxml  女神节  -->
+<view class='container'>
+
+  <!-- logo -->
+  <view class='logo_wrap'>
+    <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/girlsDay/girlsday_top_logo.png' mode="widthFix" class='logo_img'></image>
+  </view>
+
+  <view class='goods_wrap'>
+    <navigator url='/pages/newYears/newYears' class='goods_1'>
+      <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dog_img_1.png' mode="widthFix"  class='goods_img_1'></image>
+    </navigator>
+    <view class='goods_wrap_2  clearfix'>
+      <navigator url='/pages/buy/buy?com_id=3327' class='goods_2'>
+        <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dog_img_2.png?v=20180322' mode="widthFix" class='goods_img_2'></image>
+      </navigator>
+      <navigator url='/pages/buy/buy?com_id=3289' class='goods_2'>
+        <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/dog_img_3.png?v=20180322' mode="widthFix" class='goods_img_2'></image>
+      </navigator>
+    </view>
+  </view>
+  <view class='footer_btn_wrap'>
+    <view  class='footer_btn_title'  bindtap='goToIndex'>
+      <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/girlsDay/girlsday_footer_icon.png' class='footer_icon' mode='widthFix'></image>
+    </view>
+  </view>
+
+</view>
+
+

@@ -1,0 +1,11 @@
+<!--pages/dragonBoatFestival/dragonBoatFestival.wxml  端午节  -->
+<view class="container"  wx:if="{{urlHttp}}images/sunner_bg.png}}">
+    <view class="main_wrap">
+      <image  wx:if="{{urlHttp}}"  src='{{urlHttp}}images/sunner_bg.png'  class='festival_bg'  mode='widthFix'></image>
+      <navigator url="/pages/kindSecondList/kindSecondList?classify_name=办公主题&classify_des=办公主题&id=3027" class='festival_buy_btn'>立即购买></navigator>
+    </view>
+    <view  bindtap='linkIndex'  class='festival_btn'>
+      <image src='/images/dragon_boat_festival_icon.png' class='festival_icon'></image>
+      <view class='festival_btn_name'> 按 下 选 购 更 多 好 礼 </view>
+    </view>
+</view>

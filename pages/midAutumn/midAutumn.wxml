@@ -1,0 +1,11 @@
+<!--pages/dragonBoatFestival/dragonBoatFestival.wxml  中秋节  -->
+<view class="container"  wx:if="{{urlHttp}}images/sunner_bg.png}}">
+    <view class="main_wrap  {{flag == 1 ? 'main_wrap_show' : ''}}">
+      <image   wx:if="{{urlHttp}}"  src='{{urlHttp}}images/festive_new.png'  class="festival_bg  {{flag == 1 ? 'main_wrap_show' : ''}}"  mode='widthFix'></image>
+      <navigator url="/pages/kindSecondList/kindSecondList?classify_name=中秋&classify_des=中秋佳品&id=3033" class="festival_buy_btn  {{flag == 1 ? 'main_wrap_show' : ''}}">点击购买</navigator>
+    </view>
+    <view  bindtap='linkIndex'  class='festival_btn'>
+      <image src='/images/dragon_boat_festival_icon.png' class='festival_icon'></image>
+      <view class='festival_btn_name'> 按 下 选 购 更 多 好 礼 </view>
+    </view>
+</view>

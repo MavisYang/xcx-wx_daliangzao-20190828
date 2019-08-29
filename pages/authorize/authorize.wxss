@@ -1,0 +1,44 @@
+/* pages/authorize/authorize.wxss */
+.container{
+  min-height: 100vh;
+  background-color: #fff;
+}
+.main_content{
+  display: block;
+  width: 82%;
+  margin: 126rpx auto 0;
+}
+.icon_img{
+  display: block;
+  width: 158rpx;
+  height: 158rpx;
+  margin: 0 auto;
+}
+.icon_name{
+  font-size: 38rpx;
+  font-weight: bold;
+  line-height: 86rpx;
+  text-align: center;
+}
+.icon_line{
+  width:100%;
+  height: 34px;
+  border-bottom: 1px solid #f4f4f4;
+}
+.authorize_msg_title{
+  padding: 54rpx 0 38rpx 0;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.authorize_msg_cont{
+  font-size: 28rpx;
+  color: #676767;
+}
+.authorize_btn{
+  height: 86rpx;
+  line-height: 86rpx;
+  border:0px none;
+  color: #fff;
+  background-color: #1aad1a;
+  margin: 88rpx auto 0;
+}

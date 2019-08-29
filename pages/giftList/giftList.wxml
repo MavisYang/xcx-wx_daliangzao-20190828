@@ -1,0 +1,15 @@
+<!--pages/giftList/giftList.wxml-->
+<view class='container'>
+
+  <block wx:for="{{giftList}}" wx:key="index" wx:for-index="i">
+    <view bindtap='giftInfor' data-id="{{i}}"  class='each_list'>
+      <image src='{{item.giftImg}}' class='each_list_icon' mode='widthFix'></image>
+      <view class='each_list_cont'>
+        <view class='list_title'>{{item.giftMsg}}</view>
+        <view class='list_cont_time'>获赠时间：{{item.createTimeStr}}</view>
+        <view class='list_cont_time'>{{item.fromUserName}}赠送</view>
+      </view>
+    </view>
+  </block>
+
+</view>

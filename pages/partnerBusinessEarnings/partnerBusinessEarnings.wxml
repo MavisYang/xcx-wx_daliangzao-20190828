@@ -1,0 +1,59 @@
+<!--pages/partnerBusinessEarnings /partnerBusinessEarnings .wxml  商务 - 我的收益  -->
+<view class='container'>
+  <image  wx:if="{{urlHttp}}" src='{{urlHttp}}images/partner/partner_month_banner.png' mode='widthFix'  class='partner_banner'></image>
+
+  <view class='month_wrap'>
+    <view class='month_change_left'  bindtap='monthPre'><image   wx:if="{{urlHttp}}" src='{{urlHttp}}images/partner/partner_tab_jt_left.png' class='month_change_left_icon'></image></view>
+    <view class='month_change_time'  data-year='{{year}}'  data-month="{{month}}">{{year}}年{{month}}月</view>
+    <view class='month_change_right' bindtap='monthN'><image   wx:if="{{urlHttp}}" src='{{urlHttp}}images/partner/partner_tab_jt_right.png' class='month_change_right_icon'></image></view>
+  </view>
+
+  <view class='month_cont_wrap'>
+    <view class='month_cont_title  clearfix'>
+      <view class='month_cont_title_left'></view>
+      <view class='month_cont_title_center'>邀请客户</view>
+      <view class='month_cont_title_right'>订单金额</view>
+    </view>
+    <!-- 每个月 -->
+    <view class='month_cont_each clearfix'>
+      <view class='month_cont_left'>业绩指标</view>
+      <view class='month_cont_center'>{{perPersonNum}}</view>
+      <view class='month_cont_right'>{{perSum}}<text>元</text></view>
+    </view>
+
+    <view class='month_cont_each clearfix'>
+      <view class='month_cont_left'>累计完成</view>
+      <view class='month_cont_center  month_cont_finish'  bindtap='recordInfor'  data-id="0">{{sharePersonNum}}</view>
+      <view class='month_cont_right' bindtap='recordInfor'  data-id="1"><text class="month_cont_right_underline">{{accumulativeTotalMoney}}</text><text>元</text></view>
+    </view>
+
+    <view class='month_cont_each clearfix'>
+      <view class='month_cont_left'>尚需完成</view>
+      <view class='month_cont_center  month_cont_nofinish'>{{needDonePersonNum}}</view>
+      <view class='month_cont_right '><text  class='month_cont_nofinish'>{{needDoneSum}}</text><text>元</text></view>
+    </view>
+
+    <view class='cont_line'></view>
+
+    <view class='month_cont_earnings'>
+      <view class='month_cont_each clearfix'>
+        <view class='month_cont_left'>业绩提成</view>
+        <view class='month_cont_center'>{{performanceMoney}}</view>
+      </view>
+      <view class='month_cont_each clearfix'>
+        <view class='month_cont_left'>提成档</view>
+        <view class='month_cont_center'>{{level}}（{{levelPercent}}%）</view>
+      </view>
+    </view>
+
+    <view class='cont_line'></view>
+
+  </view>
+
+  <button class='invite_join'  plain="true"  open-type="share">邀请加盟</button>
+
+</view>
+<!-- 提示弹窗 -->
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>

@@ -1,0 +1,72 @@
+<!--pages/partner/mineEarnings/mineEarnings.wxml  我的积分  -->
+<view class='container'>
+  <view class='main_content'>
+
+    <!-- 已加入合伙人 -->
+    <block>
+      <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/partner/partner_earnings_banner.png' mode='widthFix'  class='partner_banner'></image>
+      <view class='partner_infor_wrap'>
+        <view class='partner_infor_title_wrap'>
+          <view class='partner_infor_title'>余额<text>/元</text></view>
+          <view class='partner_infor_title_money'>{{allMoney}}</view>
+
+          <!-- 邀请数量 -->
+          <view class='partner_infor_each  clearfix'  data-id="0"  bindtap='inviteRecord'>
+            <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/partner/partner_data_icon_num.png' class='partner_infor_icon'></image>
+            <view class='partner_infor_each_title'>累计邀请</view>
+            <view class='partner_infor_right'>
+              <view class='partner_infor_money'>{{allInviteNum}}</view>
+              <view class='partner_infor_money_u'>人</view>
+              <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/partner/partner_earnings_jiantou.png' class='partner_infor_jiantou'></image>
+            </view>
+          </view>
+
+          <!-- 累计收益 -->
+          <view class='partner_infor_each  clearfix'  data-id="1"  bindtap='inviteRecord'>
+            <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/partner/partner_data_icon_shouyi.png' class='partner_infor_icon'></image>
+            <view class='partner_infor_each_title'>累计收益</view>
+            <view class='partner_infor_right'>
+              <view class='partner_infor_money'>{{allEarnings}}</view>
+              <view class='partner_infor_money_u'>元</view>
+              <image wx:if="{{urlHttp}}" src='{{urlHttp}}images/partner/partner_earnings_jiantou.png' class='partner_infor_jiantou'></image>
+            </view>
+          </view>
+
+          <!-- 提现记录 -->
+          <view class='record_list'>
+            <!-- <view class='record_list_title'>提现记录</view>
+            <view class='record_list_cont'>
+
+              <block>
+                <view class='each_record  clearfix'>
+                  <view class='record_time'>2018-5-16</view>
+                  <view class='record_money'>￥500</view>
+                  <view class='record_sta  record_succeed'>审核中</view>
+                </view>
+
+                <view class='each_record  clearfix'>
+                  <view class='record_time'>2018-5-16</view>
+                  <view class='record_money'>￥500</view>
+                  <view class='record_sta'>成功</view>
+                </view>
+              </block>
+
+            </view> -->
+            <view class='record_btn_wrap clearfix'>
+              <button class='record_btn_each'  plain="true"  open-type="share">邀请好友</button>
+              <view class='record_btn_each  record_btn_tx'  bindtap='applyWithdrawal'>申请提现</view>
+            </view>
+          </view>
+
+
+        </view>
+      </view>
+    </block>
+    
+  </view>
+</view>
+
+<!-- 提示弹窗 -->
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>

@@ -1,0 +1,17 @@
+<!--pages/authorize/authorize.wxml  授权  -->
+<view class='container'>
+
+  <view class='main_content'>
+    <image src='/images/dragon_boat_festival_icon.png'  class='icon_img'></image>
+    <view class='icon_name'>大良造</view>
+    <view class='icon_line'></view>
+    <view class='authorize_msg_title'>请同意授权</view>
+    <view class='authorize_msg_cont'>·以便大良造为您提供更好的服务</view>
+    <button  open-type='getUserInfo' lang="zh_CN"  bindgetuserinfo="onGotUserInfo"  class='authorize_btn'>确认授权</button>
+
+  </view>
+
+</view>
+<view class="modal_wrap  {{hiddenmodal ? 'hidden' : ''}}">
+  <view class="modal  {{hiddenmodal ? 'hidden' : ''}}">{{modalCont}}</view>
+</view>

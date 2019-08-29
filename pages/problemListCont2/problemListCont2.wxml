@@ -1,0 +1,15 @@
+<!--pages/problemListCont/problemListCont2.wxml-->
+<view class="container">
+  <view class="problem_title">1.礼品管家</view>
+  <view class="problem_cont">专属礼品管家，提供个性1对1专属服务。</view>
+
+  <view class="problem_title">2.如何联系专属客服</view>
+  <view class="problem_cont">“我的”页面查看专属客服电话</view>
+
+  <view class="problem_title">3.闪电定制</view>
+  <view class="problem_cont">工作时间30分钟内生成多种定制方案预览效果，急速定制，缩短50%以上定制时间。</view>
+
+  <view class="problem_title">4.按时送达</view>
+  <view class="problem_cont"></view>
+
+</view>

@@ -1,0 +1,56 @@
+<!--mineInviteAward.wxml  邀请有礼 - >  我的奖励    -->
+
+<view class="container">
+
+  <view class="header">
+    <view class="header_title">我的奖励金额：</view>
+    <view class="header_cont">
+      <view class="header_each">
+        <view class="header_each_title">累计：</view>
+        <view class="header_each_num">1000元</view>
+      </view>
+      <view class="header_each_line"></view>
+
+      <view class="header_each">
+        <view class="header_each_title">可兑换：</view>
+        <view class="header_each_num">1000元</view>
+      </view>
+      <view class="header_each_line"></view>
+
+      <view class="header_each">
+        <view class="header_each_title">邀请好友：</view>
+        <view class="header_each_num">3人</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="list_title">
+    <view class="list_title_icon"></view>
+    <view class="list_title_cont">邀请/资金纪录</view>
+  </view>
+
+  <view class="list_content_wrap">
+    <view class="list_content">
+    
+      <block wx:for="{{recordList}}" wx-key="">
+        <view class="list_each">
+          <view class="each_title_icon"></view>
+          <view class="each_cont">
+            <view class="cont_left">
+              <view class="cont_title">【{{item.name}}】加入竞拍金额</view>
+              <view class="cont_time">{{item.time}}</view>
+            </view>
+            <view class="cont_right">
+              <image src="/images/award_icon.png" class="right_icon"></image>
+              <view class="right_num">+{{item.money}}</view>
+            </view>  
+          </view>
+        </view>
+      </block>
+
+    </view>
+  </view>
+
+  <view class="tack_btn">去提现</view>
+
+</view>

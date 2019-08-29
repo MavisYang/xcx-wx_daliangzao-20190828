@@ -1,0 +1,51 @@
+<!--kindSecondList.wxml  分类二级列表  bindscrolltolower="pullUpLoad" -->
+<scroll-view class="container">
+
+  <!-- 导航 -->
+  <view class="header_nav_wrap"  wx:if="{{contentList != ''}}">
+    <scroll-view scroll-x="true" class="header_nav" scroll-left="{{scrollLeft}}">
+      <block wx:for="{{contentList}}" wx:key="id" wx:for-index="i">
+        <view class="each_nav_wrap">             
+          <view  data-id="{{i}}"  data-current="{{i}}" data-forid="{{item.id}}"  data-forname="{{item.classify_name}}"  data-forclassifydes="{{item.classify_des}}" class="header_nav_title  {{currentTab==i?'nav_item_active':''}}"   bindtap="tagChoose">{{item.classify_name}}</view> 
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+  <!-- 内容 -->
+  <swiper class="tab-content"   data-forname="{{contentList.classify_name}}"  current="{{currentTab}}"  duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item wx:for="{{contentList}}" wx:key="index"  wx:for-index="i" >
+        <scroll-view scroll-y class="scoll-h"  data-id="{{i}}" data-forid="{{item.id}}"  data-current="{{i}}"   bindscrolltolower="searchScrollLower">
+          <view class="list"> 
+            <!-- 二级标题 -->
+            <!-- <view class="content_title_wrap">
+              <view class="title_line"></view>
+              <view class="title_contemt">{{Title}}</view>
+            </view> -->
+
+            <!-- 数据列表 -->
+            <!-- <view class="list_list">              -->
+              <block wx:for="{{tuijian}}" wx:key="{{index}}">
+                <navigator url="/pages/buy/buy?com_id={{item.id}}&flag={{flag}}"  class="list_item_wrap">
+                  <view class="list_item">
+                    <image src="{{item.commodity_logo}}" class="full_image" mode="widthFix"/>
+                    <!-- <view class="full_img_footer">{{item.commodity_des}}</view> -->
+                  </view>        
+                  <view class="full_title">{{item.commodity_name}}</view>
+                  <view class="full_price">¥ {{item.commodity_sale}} <text class='full_price_unit' decode="true">&nbsp;&nbsp;¥{{item.commodity_cost}}&nbsp;&nbsp;</text></view>
+                </navigator>
+              </block>
+            <!-- </view> -->
+            <!-- 数据列表结束 -->
+
+          </view> 
+          <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>  
+          <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+        </scroll-view>
+    </swiper-item>
+  </swiper>
+  
+</scroll-view>
+<!-- 回到首页 -->
+<view  bindtap='backIndex'  class="back_btn  {{shareFlag == 1 ? '' : 'back_btn_hidden'}}">
+  <image src='/images/share_back_index.png'  class='back_btn_icon'></image>
+</view>

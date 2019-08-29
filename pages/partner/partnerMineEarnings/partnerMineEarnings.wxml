@@ -1,0 +1,21 @@
+<!--pages/partner/mineEarnings/mineEarnings.wxml  我的收益  -->
+<view class='container'>
+  <image src='/images/partner/mine_earnings_bg.jpg' mode='widthFix'  class='mine_bg'></image>
+  <view class='main_content'>
+
+    <!-- 未加入线上合伙人 -->
+    <block>
+
+      <view class='user_infor'>
+        <image src='{{userPhoto?  userPhoto: "/images/def_photo.png"}}'></image>
+        <view class='user_name'>{{userName}}</view>
+      </view>
+
+    </block>
+  
+  </view>
+
+
+
+
+</view>

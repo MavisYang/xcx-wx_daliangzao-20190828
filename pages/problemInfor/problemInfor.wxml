@@ -1,0 +1,8 @@
+<!--problemInfor.wxml-->
+<view class="container">
+  <block wx:for="{{problemInfor}}"  wx:key="index">
+    <view class="problem_title">{{item.title}}</view>
+    <view class="send_time">{{item.time}}发布</view>
+    <view class="problem_cont">{{item.content}}</view>
+  </block>
+</view>
